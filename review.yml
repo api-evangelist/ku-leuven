@@ -1,0 +1,61 @@
+---
+name: KU Leuven
+description: KU Leuven public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/ku-leuven/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 3
+    summary: >-
+      KU Leuven has a genuinely documented public developer footprint via ICTS
+      Data Services (person, curriculum, organigram, research, educational
+      offering, vacancies REST APIs) plus an OAuth-protected individual timetable
+      API, and a Dataverse-based Research Data Repository (RDR). The RDR public
+      info endpoint was verified live returning version 6.7.1; all documentation
+      and portal pages probed returned HTTP 200. RDR write access and the intranet
+      variants are gated (API token, ORCID, roles, service accounts). No single
+      unified API gateway/portal with self-serve keys was found, and no machine
+      OpenAPI spec is publicly served (the RDR OpenAPI doc is restricted to KU
+      Leuven IPs). Rated 3 for a real, documented but partly gated footprint.
+      No endpoints or properties were fabricated.
+    endpoints:
+      - url: https://admin.kuleuven.be/icts/services/dataservices
+        status: 200
+        note: ICTS Data Services hub / de-facto developer portal.
+      - url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+        status: 200
+        note: RDR API documentation page.
+      - url: https://rdr.kuleuven.be/api/info/version
+        status: 200
+        note: Public RDR (Dataverse) API endpoint, returned version 6.7.1 live.
+      - url: https://rdr.kuleuven.be/dataverse/rdr
+        status: 200
+        note: RDR Dataverse portal root.
+      - url: https://admin.kuleuven.be/icts/services/dataservices/api/person
+        status: 200
+        note: Person information API docs.
+      - url: https://admin.kuleuven.be/icts/services/dataservices/api/program-opleiding
+        status: 200
+        note: Educational offering (programs) API docs.
+      - url: https://admin.kuleuven.be/icts/services/dataservices/apiorganigraminformatie
+        status: 200
+        note: Organizational chart API docs.
+      - url: https://admin.kuleuven.be/icts/services/dataservices/apivacatures
+        status: 200
+        note: Vacancies API docs.
+      - url: https://admin.kuleuven.be/icts/services/dataservices/api/uurrooster
+        status: 200
+        note: Individual timetable API docs (OAuth/SAML protected).
+      - url: https://github.com/kuleuven
+        status: 200
+        note: Official KU Leuven GitHub org, ~132 repositories.
+      - url: https://github.com/KU-Leuven-Libraries
+        status: 200
+        note: KU Leuven Libraries GitHub (open datasets, digital humanities).
+      - url: https://www.kuleuven.be
+        status: 200
+        note: Official institutional website.
+      - url: https://www.linkedin.com/school/ku-leuven/
+        status: 0
+        note: LinkedIn school page; returns 999 to bots (anti-scraping), exists in browser.

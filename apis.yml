@@ -1,0 +1,120 @@
+---
+aid: ku-leuven
+name: KU Leuven
+description: >-
+  KU Leuven (Katholieke Universiteit Leuven) is a research university in Leuven,
+  Belgium, founded in 1425 and ranked #45 in the QS World University Rankings
+  2025. It maintains a documented public developer footprint through its ICTS
+  Data Services, which expose REST APIs for person/who-is-who information,
+  curriculum information, organizational-chart data, research information,
+  educational offerings, and job vacancies, alongside an OAuth-protected
+  individual timetable API. KU Leuven also operates the Research Data Repository
+  (RDR), a Dataverse-based institutional repository whose REST API is publicly
+  reachable, and runs an active official GitHub organization.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/ku-leuven/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Research Data
+  - Open Data
+  - Belgium
+  - Europe
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: ku-leuven:rdr
+    name: KU Leuven Research Data Repository (RDR) API
+    description: >-
+      Dataverse-based institutional research data repository API. Largely aligned
+      with the upstream Dataverse.org API. The public info endpoints (e.g.
+      /api/info/version) are reachable without authentication; write operations
+      require an API token, a registered ORCID and the Dataset Creator role.
+    humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+    baseURL: https://rdr.kuleuven.be/api
+    tags: [ Research Data, Dataverse, Open Data, Repository ]
+    properties:
+      - type: Documentation
+        url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+      - type: Documentation
+        url: https://guides.dataverse.org/en/latest/api/index.html
+  - aid: ku-leuven:person
+    name: KU Leuven Person Information API
+    description: >-
+      ICTS Data Services REST API exposing public personnel / who-is-who person
+      information. An expanded intranet variant requires a service account.
+    humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+    tags: [ Directory, People, Education ]
+    properties:
+      - type: Documentation
+        url: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  - aid: ku-leuven:program
+    name: KU Leuven Educational Offering (Onderwijsaanbod) API
+    description: >-
+      ICTS Data Services REST API exposing public educational offering data,
+      including programs (opleidingen) and course components.
+    humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/program-opleiding
+    tags: [ Courses, Catalog, Education ]
+    properties:
+      - type: Documentation
+        url: https://admin.kuleuven.be/icts/services/dataservices/api/program-opleiding
+  - aid: ku-leuven:organigram
+    name: KU Leuven Organizational Chart (Organigram) API
+    description: >-
+      ICTS Data Services REST API exposing public organizational-structure
+      information matching the institutional organizational chart. An expanded
+      intranet variant is available via service account.
+    humanURL: https://admin.kuleuven.be/icts/services/dataservices/apiorganigraminformatie
+    tags: [ Organization, Directory, Education ]
+    properties:
+      - type: Documentation
+        url: https://admin.kuleuven.be/icts/services/dataservices/apiorganigraminformatie
+  - aid: ku-leuven:vacancies
+    name: KU Leuven Vacancies (Vacatures) API
+    description: >-
+      ICTS Data Services REST API exposing public job vacancy / job posting data.
+    humanURL: https://admin.kuleuven.be/icts/services/dataservices/apivacatures
+    tags: [ Jobs, Vacancies, Education ]
+    properties:
+      - type: Documentation
+        url: https://admin.kuleuven.be/icts/services/dataservices/apivacatures
+  - aid: ku-leuven:timetable
+    name: KU Leuven Individual Timetable (Uurrooster) API
+    description: >-
+      ICTS Data Services API exposing an individual's personal timetable.
+      Protected by OAuth 2.0 (authorization code grant) with SAML as a fallback;
+      OAuth client credentials are issued by KU Leuven on request.
+    humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/uurrooster
+    tags: [ Timetable, Schedule, OAuth, Education ]
+    properties:
+      - type: Documentation
+        url: https://admin.kuleuven.be/icts/services/dataservices/api/uurrooster
+      - type: Authentication
+        url: https://webwsq.aps.kuleuven.be/sap/bc/sec/oauth2/authorize/index.html
+common:
+  - type: Website
+    url: https://www.kuleuven.be
+  - type: DeveloperPortal
+    url: https://admin.kuleuven.be/icts/services/dataservices
+  - type: GitHub
+    url: https://github.com/kuleuven
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/ku-leuven/
+  - type: SourceCode
+    url: https://github.com/KU-Leuven-Libraries
+  - type: Plans
+    url: plans/ku-leuven-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/ku-leuven-rate-limits.yml
+  - type: FinOps
+    url: finops/ku-leuven-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

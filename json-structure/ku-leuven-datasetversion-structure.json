@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0",
+  "$id": "https://rdr.kuleuven.be/structure/datasetversion.json",
+  "name": "KuLeuvenRdrDatasetVersion",
+  "description": "JSON Structure for the KU Leuven RDR DatasetVersion object (Dataverse 6.7.1).",
+  "type": "object",
+  "properties": {
+    "id": { "type": "int64" },
+    "version": { "type": "int64" },
+    "versionNumber": { "type": "int64" },
+    "minorVersionNumber": { "type": "int64" },
+    "versionState": { "type": "string", "enum": ["DRAFT", "RELEASED", "ARCHIVED", "DEACCESSIONED"] },
+    "UNF": { "type": "string" },
+    "versionNote": { "type": "string" },
+    "createTime": { "type": "string", "format": "date-time" },
+    "lastUpdateTime": { "type": "string", "format": "date-time" },
+    "releaseTime": { "type": "string", "format": "date-time" },
+    "friendlyVersionNumber": { "type": "string" },
+    "inReview": { "type": "boolean" }
+  },
+  "required": ["id", "versionState"]
+}

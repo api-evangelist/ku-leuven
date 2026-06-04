@@ -1,0 +1,48 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "rdr": "https://rdr.kuleuven.be/schema/",
+    "dvcore": "https://dataverse.org/schema/core#",
+    "schema": "https://schema.org/",
+    "KuLeuven": {
+      "@id": "schema:CollegeOrUniversity",
+      "@type": "@id"
+    },
+    "name": "schema:name",
+    "url": "schema:url",
+    "identifier": "schema:identifier",
+    "Dataset": "schema:Dataset",
+    "Dataverse": "rdr:Dataverse",
+    "DatasetVersion": "rdr:DatasetVersion",
+    "DataFile": {
+      "@id": "schema:DataDownload"
+    },
+    "protocol": "rdr:protocol",
+    "authority": "rdr:authority",
+    "publicationDate": "schema:datePublished",
+    "createDate": "schema:dateCreated",
+    "modificationTime": "schema:dateModified",
+    "authorString": "schema:author",
+    "contentType": "schema:encodingFormat",
+    "filesize": "schema:contentSize",
+    "versionState": "rdr:versionState",
+    "version": "schema:version",
+    "checksumValue": {
+      "@id": "schema:sha256"
+    }
+  },
+  "@type": "CollegeOrUniversity",
+  "name": "KU Leuven",
+  "url": "https://www.kuleuven.be",
+  "identifier": "ku-leuven",
+  "department": {
+    "@type": "Organization",
+    "name": "ICTS Data Services",
+    "url": "https://admin.kuleuven.be/icts/services/dataservices"
+  },
+  "subjectOf": {
+    "@type": "DataCatalog",
+    "name": "KU Leuven Research Data Repository (RDR)",
+    "url": "https://rdr.kuleuven.be"
+  }
+}

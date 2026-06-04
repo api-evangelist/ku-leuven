@@ -1,0 +1,28 @@
+{
+  "status": "OK",
+  "data": {
+    "id": 12345,
+    "identifier": "RDR-ABCDEF",
+    "protocol": "doi",
+    "authority": "10.48804",
+    "publicationDate": "2025-09-12T08:30:00Z",
+    "createDate": "2025-08-01T10:15:00Z",
+    "modificationTime": "2025-09-12T08:30:00Z",
+    "storageIdentifier": "file://12345",
+    "released": true,
+    "identifierRegistered": true,
+    "authorString": "Researcher, A.; Researcher, B.",
+    "metadataLanguage": "en",
+    "yearPublishedCreated": "2025",
+    "previewImageAvailable": false,
+    "latestVersion": {
+      "id": 67890,
+      "versionNumber": 1,
+      "minorVersionNumber": 0,
+      "versionState": "RELEASED",
+      "friendlyVersionNumber": "1.0",
+      "createTime": "2025-08-01T10:15:00Z",
+      "releaseTime": "2025-09-12T08:30:00Z"
+    }
+  }
+}

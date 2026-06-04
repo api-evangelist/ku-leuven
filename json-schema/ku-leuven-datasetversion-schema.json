@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://rdr.kuleuven.be/schemas/datasetversion.json",
+  "title": "KU Leuven RDR DatasetVersion",
+  "description": "A versioned snapshot of a dataset in the KU Leuven RDR (Dataverse). Fields derived from the live Dataverse 6.7.1 OpenAPI DatasetVersion schema.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "version": { "type": "integer", "description": "Internal version sequence." },
+    "versionNumber": { "type": "integer", "description": "Major version number." },
+    "minorVersionNumber": { "type": "integer", "description": "Minor version number." },
+    "versionState": { "type": "string", "enum": ["DRAFT", "RELEASED", "ARCHIVED", "DEACCESSIONED"], "description": "Lifecycle state of the version." },
+    "UNF": { "type": "string", "description": "Universal Numeric Fingerprint." },
+    "versionNote": { "type": "string" },
+    "createTime": { "type": "string", "format": "date-time" },
+    "lastUpdateTime": { "type": "string", "format": "date-time" },
+    "releaseTime": { "type": "string", "format": "date-time" },
+    "friendlyVersionNumber": { "type": "string", "description": "Human-readable version, e.g. '1.0'." },
+    "inReview": { "type": "boolean" },
+    "jsonLd": { "type": "string", "description": "JSON-LD metadata serialization for the version." }
+  },
+  "required": ["id", "versionState"],
+  "additionalProperties": true
+}

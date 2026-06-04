@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0",
+  "$id": "https://rdr.kuleuven.be/structure/datafile.json",
+  "name": "KuLeuvenRdrDataFile",
+  "description": "JSON Structure for the KU Leuven RDR DataFile object (Dataverse 6.7.1).",
+  "type": "object",
+  "properties": {
+    "id": { "type": "int64" },
+    "identifier": { "type": "string" },
+    "protocol": { "type": "string" },
+    "authority": { "type": "string" },
+    "contentType": { "type": "string" },
+    "filesize": { "type": "int64" },
+    "checksumType": { "type": "string" },
+    "checksumValue": { "type": "string" },
+    "restricted": { "type": "boolean" },
+    "storageIdentifier": { "type": "string" },
+    "released": { "type": "boolean" }
+  },
+  "required": ["id", "contentType", "filesize"]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://rdr.kuleuven.be/schemas/datafile.json",
+  "title": "KU Leuven RDR DataFile",
+  "description": "A file belonging to a dataset in the KU Leuven RDR (Dataverse). Fields derived from the live Dataverse 6.7.1 OpenAPI DataFile schema.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "identifier": { "type": "string", "description": "File-level persistent identifier suffix." },
+    "protocol": { "type": "string" },
+    "authority": { "type": "string" },
+    "contentType": { "type": "string", "description": "MIME type of the file." },
+    "filesize": { "type": "integer", "description": "Size in bytes." },
+    "checksumType": { "type": "string", "description": "Checksum algorithm, e.g. 'MD5', 'SHA-1'." },
+    "checksumValue": { "type": "string" },
+    "restricted": { "type": "boolean", "description": "Whether the file is access-restricted." },
+    "storageIdentifier": { "type": "string" },
+    "released": { "type": "boolean" },
+    "previewImageAvailable": { "type": "boolean" }
+  },
+  "required": ["id", "contentType", "filesize"],
+  "additionalProperties": true
+}

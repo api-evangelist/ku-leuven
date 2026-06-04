@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://rdr.kuleuven.be/schemas/dataset.json",
+  "title": "KU Leuven RDR Dataset",
+  "description": "A dataset record in the KU Leuven Research Data Repository (Dataverse). Fields derived from the live Dataverse 6.7.1 OpenAPI Dataset schema served at https://rdr.kuleuven.be/openapi.",
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer", "description": "Internal numeric identifier." },
+    "identifier": { "type": "string", "description": "Persistent identifier (DOI) suffix, e.g. RDR-XXXX." },
+    "protocol": { "type": "string", "description": "Persistent identifier protocol, e.g. 'doi'." },
+    "authority": { "type": "string", "description": "PID authority / shoulder." },
+    "storageIdentifier": { "type": "string" },
+    "publicationDate": { "type": "string", "format": "date-time" },
+    "createDate": { "type": "string", "format": "date-time" },
+    "modificationTime": { "type": "string", "format": "date-time" },
+    "released": { "type": "boolean" },
+    "identifierRegistered": { "type": "boolean" },
+    "authorString": { "type": "string" },
+    "metadataLanguage": { "type": "string" },
+    "yearPublishedCreated": { "type": "string" },
+    "previewImageAvailable": { "type": "boolean" }
+  },
+  "required": ["id", "identifier", "protocol", "authority"],
+  "additionalProperties": true
+}

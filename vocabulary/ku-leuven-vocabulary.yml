@@ -1,0 +1,48 @@
+vocabulary:
+  name: KU Leuven Research Data Repository (RDR) Vocabulary
+  description: >-
+    Controlled vocabulary for the core concepts exposed by the KU Leuven Research
+    Data Repository API, a Dataverse 6.7.1 installation at rdr.kuleuven.be. Terms
+    are drawn from the live Dataverse OpenAPI description and Dataverse data model.
+  version: "6.7.1"
+  terms:
+    - term: Dataverse
+      definition: >-
+        A container (collection) that holds datasets and/or other dataverses.
+        The top-level collection in the RDR is the root dataverse.
+      tags: [collection, container, structure]
+    - term: Dataset
+      definition: >-
+        A collection of files plus descriptive metadata, identified by a
+        persistent identifier (DOI). The primary publishable unit in the RDR.
+      tags: [dataset, doi, metadata]
+    - term: DatasetVersion
+      definition: >-
+        A versioned snapshot of a dataset with a lifecycle state (DRAFT,
+        RELEASED, ARCHIVED, DEACCESSIONED) and major/minor version numbers.
+      tags: [version, lifecycle]
+    - term: DataFile
+      definition: >-
+        An individual file belonging to a dataset, carrying a content type,
+        file size, checksum, and restriction status.
+      tags: [file, checksum, access]
+    - term: PersistentIdentifier
+      definition: >-
+        A globally resolvable identifier (DOI) composed of a protocol,
+        authority, and identifier suffix, registered for datasets and files.
+      tags: [doi, pid, identifier]
+    - term: VersionState
+      definition: >-
+        The publication lifecycle state of a dataset version; one of DRAFT,
+        RELEASED, ARCHIVED, or DEACCESSIONED.
+      tags: [lifecycle, state]
+    - term: APIToken
+      definition: >-
+        A per-user secret required for authenticated write operations; issued
+        to accounts holding the Dataset Creator role and a registered ORCID.
+      tags: [auth, token, security]
+    - term: ResponseEnvelope
+      definition: >-
+        The standard Dataverse JSON response wrapper of the form
+        {"status":"OK|ERROR","data":{...}} returned by API operations.
+      tags: [response, envelope, convention]

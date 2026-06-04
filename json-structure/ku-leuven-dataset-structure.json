@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0",
+  "$id": "https://rdr.kuleuven.be/structure/dataset.json",
+  "name": "KuLeuvenRdrDataset",
+  "description": "JSON Structure for the KU Leuven RDR Dataset object (Dataverse 6.7.1).",
+  "type": "object",
+  "properties": {
+    "id": { "type": "int64" },
+    "identifier": { "type": "string" },
+    "protocol": { "type": "string" },
+    "authority": { "type": "string" },
+    "storageIdentifier": { "type": "string" },
+    "publicationDate": { "type": "string", "format": "date-time" },
+    "createDate": { "type": "string", "format": "date-time" },
+    "modificationTime": { "type": "string", "format": "date-time" },
+    "released": { "type": "boolean" },
+    "identifierRegistered": { "type": "boolean" },
+    "authorString": { "type": "string" },
+    "metadataLanguage": { "type": "string" },
+    "yearPublishedCreated": { "type": "string" },
+    "previewImageAvailable": { "type": "boolean" }
+  },
+  "required": ["id", "identifier", "protocol", "authority"]
+}

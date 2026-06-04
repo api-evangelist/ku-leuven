@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://rdr.kuleuven.be/schemas/info-version.json",
+  "title": "KU Leuven RDR Info Version Response",
+  "description": "Response envelope of GET /api/info/version. Confirmed live: {\"status\":\"OK\",\"data\":{\"version\":\"6.7.1\",\"build\":\"1955-8e18f64\"}}.",
+  "type": "object",
+  "properties": {
+    "status": { "type": "string", "description": "Standard Dataverse response status, 'OK' or 'ERROR'." },
+    "data": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string", "description": "Dataverse software version." },
+        "build": { "type": "string", "description": "Build identifier." }
+      },
+      "required": ["version"],
+      "additionalProperties": true
+    }
+  },
+  "required": ["status", "data"],
+  "additionalProperties": false
+}

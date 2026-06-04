@@ -43,6 +43,8 @@ apis:
         url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
       - type: Documentation
         url: https://guides.dataverse.org/en/latest/api/index.html
+      - type: OpenAPI
+        url: openapi/ku-leuven-rdr.yaml
   - aid: ku-leuven:person
     name: KU Leuven Person Information API
     description: >-

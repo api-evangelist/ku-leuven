@@ -99,6 +99,10 @@ apis:
       - type: Authentication
         url: https://webwsq.aps.kuleuven.be/sap/bc/sec/oauth2/authorize/index.html
 common:
+  - type: VulnerabilityDisclosure
+    url: security/ku-leuven-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/ku-leuven-domain-security.yml
   - type: Website
     url: https://www.kuleuven.be
   - type: DeveloperPortal

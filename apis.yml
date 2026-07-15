@@ -99,6 +99,8 @@ apis:
       - type: Authentication
         url: https://webwsq.aps.kuleuven.be/sap/bc/sec/oauth2/authorize/index.html
 common:
+  - type: AgenticAccess
+    url: agentic-access/ku-leuven-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/ku-leuven-vulnerability-disclosure.yml
   - type: DomainSecurity

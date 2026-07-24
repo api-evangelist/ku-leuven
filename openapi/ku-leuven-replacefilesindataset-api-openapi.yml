@@ -1,0 +1,54 @@
+openapi: 3.0.3
+info:
+  title: KU Leuven Research Data Repository (RDR) Access replaceFilesInDataset API
+  description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
+  version: 6.7.1
+servers:
+- url: https://rdr.kuleuven.be/api
+  description: KU Leuven Research Data Repository (RDR) production API
+tags:
+- name: replaceFilesInDataset
+  description: Replace a file to a dataset
+paths:
+  /datasets/{id}/replaceFiles:
+    post:
+      tags:
+      - replaceFilesInDataset
+      summary: Replace a set of files to a dataset
+      description: Replace a set of files to a dataset
+      operationId: Datasets_replaceFilesInDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: Files replaced successfully to dataset
+  /files/{id}/replace:
+    post:
+      tags:
+      - replaceFilesInDataset
+      summary: Replace a file on a dataset
+      description: Replace a file to a dataset
+      operationId: Files_replaceFileInDataset
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: File replaced successfully on the dataset

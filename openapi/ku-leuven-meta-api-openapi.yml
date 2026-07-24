@@ -1,0 +1,72 @@
+openapi: 3.0.3
+info:
+  title: KU Leuven Research Data Repository (RDR) Access Meta API
+  description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
+  version: 6.7.1
+servers:
+- url: https://rdr.kuleuven.be/api
+  description: KU Leuven Research Data Repository (RDR) production API
+tags:
+- name: Meta
+paths:
+  /meta/datafile/{fileId}:
+    get:
+      operationId: Meta_datafile
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      - name: exclude
+        in: query
+        schema:
+          type: string
+      - name: fileMetadataId
+        in: query
+        schema:
+          format: int64
+          type: integer
+      - name: include
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            text/xml:
+              schema:
+                type: string
+      deprecated: true
+      tags:
+      - Meta
+  /meta/dataset/{datasetId}:
+    get:
+      operationId: Meta_dataset
+      parameters:
+      - name: datasetId
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      - name: exclude
+        in: query
+        schema:
+          type: string
+      - name: include
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/xml:
+              schema:
+                type: string
+      deprecated: true
+      tags:
+      - Meta

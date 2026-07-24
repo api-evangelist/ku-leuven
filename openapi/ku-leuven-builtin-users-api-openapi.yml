@@ -1,0 +1,93 @@
+openapi: 3.0.3
+info:
+  title: KU Leuven Research Data Repository (RDR) Access Builtin Users API
+  description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
+  version: 6.7.1
+servers:
+- url: https://rdr.kuleuven.be/api
+  description: KU Leuven Research Data Repository (RDR) production API
+tags:
+- name: Builtin Users
+paths:
+  /builtin-users:
+    post:
+      operationId: BuiltinUsers_save
+      parameters:
+      - name: key
+        in: query
+        schema:
+          type: string
+      - name: password
+        in: query
+        schema:
+          type: string
+      - name: sendEmailNotification
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Builtin Users
+  /builtin-users/{password}/{key}:
+    post:
+      operationId: BuiltinUsers_create
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Builtin Users
+  /builtin-users/{password}/{key}/{sendEmailNotification}:
+    post:
+      operationId: BuiltinUsers_createWithNotification
+      parameters:
+      - name: key
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: sendEmailNotification
+        in: path
+        required: true
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Builtin Users
+  /builtin-users/{username}/api-token:
+    get:
+      operationId: BuiltinUsers_getApiToken
+      parameters:
+      - name: username
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: password
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Builtin Users

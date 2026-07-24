@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: KU Leuven Research Data Repository (RDR) Access Inbox API
+  description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
+  version: 6.7.1
+servers:
+- url: https://rdr.kuleuven.be/api
+  description: KU Leuven Research Data Repository (RDR) production API
+tags:
+- name: Inbox
+paths:
+  /inbox:
+    post:
+      operationId: LDNInbox_acceptMessage
+      requestBody:
+        content:
+          application/ld+json:
+            schema:
+              type: string
+          application/json-ld:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Inbox

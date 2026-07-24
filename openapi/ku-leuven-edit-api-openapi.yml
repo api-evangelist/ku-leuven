@@ -1,0 +1,31 @@
+openapi: 3.0.3
+info:
+  title: KU Leuven Research Data Repository (RDR) Access Edit API
+  description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
+  version: 6.7.1
+servers:
+- url: https://rdr.kuleuven.be/api
+  description: KU Leuven Research Data Repository (RDR) production API
+tags:
+- name: Edit
+paths:
+  /edit/{fileId}:
+    put:
+      operationId: EditDDI_edit
+      parameters:
+      - name: fileId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/xml:
+            schema:
+              format: binary
+              type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Edit

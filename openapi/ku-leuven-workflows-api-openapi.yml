@@ -1,0 +1,25 @@
+openapi: 3.0.3
+info:
+  title: KU Leuven Research Data Repository (RDR) Access Workflows API
+  description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
+  version: 6.7.1
+servers:
+- url: https://rdr.kuleuven.be/api
+  description: KU Leuven Research Data Repository (RDR) production API
+tags:
+- name: Workflows
+paths:
+  /workflows/{invocationId}:
+    post:
+      operationId: Workflows_resumeWorkflow
+      parameters:
+      - name: invocationId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Workflows

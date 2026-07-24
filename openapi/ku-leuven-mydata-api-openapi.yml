@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+  title: KU Leuven Research Data Repository (RDR) Access Mydata API
+  description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
+  version: 6.7.1
+servers:
+- url: https://rdr.kuleuven.be/api
+  description: KU Leuven Research Data Repository (RDR) production API
+tags:
+- name: Mydata
+paths:
+  /mydata/retrieve:
+    get:
+      operationId: DataRetrieverAPI_retrieveMyDataAsJsonString
+      parameters:
+      - name: dataset_valid
+        in: query
+        schema:
+          type: array
+          items:
+            type: boolean
+      - name: dvobject_types
+        in: query
+        schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/DType'
+      - name: filter_validities
+        in: query
+        schema:
+          type: boolean
+      - name: mydata_search_term
+        in: query
+        schema:
+          type: string
+      - name: published_states
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: role_ids
+        in: query
+        schema:
+          type: array
+          items:
+            format: int64
+            type: integer
+      - name: selected_page
+        in: query
+        schema:
+          format: int32
+          type: integer
+      - name: userIdentifier
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+      tags:
+      - Mydata
+components:
+  schemas:
+    DType:
+      enum:
+      - Dataverse
+      - Dataset
+      - DataFile
+      type: string

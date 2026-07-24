@@ -1,0 +1,104 @@
+openapi: 3.0.3
+info:
+  title: KU Leuven Research Data Repository (RDR) Access Notifications API
+  description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
+  version: 6.7.1
+servers:
+- url: https://rdr.kuleuven.be/api
+  description: KU Leuven Research Data Repository (RDR) production API
+tags:
+- name: Notifications
+paths:
+  /notifications/all:
+    get:
+      operationId: Notifications_getAllNotificationsForUser
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+  /notifications/mutedEmails:
+    get:
+      operationId: Notifications_getMutedEmailsForUser
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+  /notifications/mutedEmails/{typeName}:
+    put:
+      operationId: Notifications_muteEmailsForUser
+      parameters:
+      - name: typeName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+    delete:
+      operationId: Notifications_unmuteEmailsForUser
+      parameters:
+      - name: typeName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+  /notifications/mutedNotifications:
+    get:
+      operationId: Notifications_getMutedNotificationsForUser
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+  /notifications/mutedNotifications/{typeName}:
+    put:
+      operationId: Notifications_muteNotificationsForUser
+      parameters:
+      - name: typeName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+    delete:
+      operationId: Notifications_unmuteNotificationsForUser
+      parameters:
+      - name: typeName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications
+  /notifications/{id}:
+    delete:
+      operationId: Notifications_deleteNotificationForUser
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          format: int64
+          type: integer
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Notifications

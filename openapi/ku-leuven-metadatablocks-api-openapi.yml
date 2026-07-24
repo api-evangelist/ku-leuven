@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  title: KU Leuven Research Data Repository (RDR) Access Metadatablocks API
+  description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
+  version: 6.7.1
+servers:
+- url: https://rdr.kuleuven.be/api
+  description: KU Leuven Research Data Repository (RDR) production API
+tags:
+- name: Metadatablocks
+paths:
+  /metadatablocks:
+    get:
+      operationId: MetadataBlocks_listMetadataBlocks
+      parameters:
+      - name: onlyDisplayedOnCreate
+        in: query
+        schema:
+          type: boolean
+      - name: returnDatasetFieldTypes
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Metadatablocks
+  /metadatablocks/{identifier}:
+    get:
+      operationId: MetadataBlocks_getMetadataBlock
+      parameters:
+      - name: identifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+      tags:
+      - Metadatablocks

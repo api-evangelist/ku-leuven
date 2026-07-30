@@ -12,9 +12,21 @@ description: >-
   (RDR), a Dataverse-based institutional repository whose REST API is publicly
   reachable, and runs an active official GitHub organization.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ku-leuven.png
 url: https://raw.githubusercontent.com/api-evangelist/ku-leuven/refs/heads/main/apis.yml
 tags:
   - Education
@@ -28,76 +40,577 @@ created: '2026-06-03'
 modified: '2026-06-03'
 specificationVersion: '0.19'
 apis:
-  - aid: ku-leuven:rdr
-    name: KU Leuven Research Data Repository (RDR) API
-    description: >-
-      Dataverse-based institutional research data repository API. Largely aligned
-      with the upstream Dataverse.org API. The public info endpoints (e.g.
-      /api/info/version) are reachable without authentication; write operations
-      require an API token, a registered ORCID and the Dataset Creator role.
-    humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
-    baseURL: https://rdr.kuleuven.be/api
-    tags: [ Research Data, Dataverse, Open Data, Repository ]
-    properties:
-      - type: Documentation
-        url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
-      - type: Documentation
-        url: https://guides.dataverse.org/en/latest/api/index.html
-      - type: OpenAPI
-        url: openapi/ku-leuven-rdr.yaml
-  - aid: ku-leuven:person
-    name: KU Leuven Person Information API
-    description: >-
-      ICTS Data Services REST API exposing public personnel / who-is-who person
-      information. An expanded intranet variant requires a service account.
-    humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
-    tags: [ Directory, People, Education ]
-    properties:
-      - type: Documentation
-        url: https://admin.kuleuven.be/icts/services/dataservices/api/person
-  - aid: ku-leuven:program
-    name: KU Leuven Educational Offering (Onderwijsaanbod) API
-    description: >-
-      ICTS Data Services REST API exposing public educational offering data,
-      including programs (opleidingen) and course components.
-    humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/program-opleiding
-    tags: [ Courses, Catalog, Education ]
-    properties:
-      - type: Documentation
-        url: https://admin.kuleuven.be/icts/services/dataservices/api/program-opleiding
-  - aid: ku-leuven:organigram
-    name: KU Leuven Organizational Chart (Organigram) API
-    description: >-
-      ICTS Data Services REST API exposing public organizational-structure
-      information matching the institutional organizational chart. An expanded
-      intranet variant is available via service account.
-    humanURL: https://admin.kuleuven.be/icts/services/dataservices/apiorganigraminformatie
-    tags: [ Organization, Directory, Education ]
-    properties:
-      - type: Documentation
-        url: https://admin.kuleuven.be/icts/services/dataservices/apiorganigraminformatie
-  - aid: ku-leuven:vacancies
-    name: KU Leuven Vacancies (Vacatures) API
-    description: >-
-      ICTS Data Services REST API exposing public job vacancy / job posting data.
-    humanURL: https://admin.kuleuven.be/icts/services/dataservices/apivacatures
-    tags: [ Jobs, Vacancies, Education ]
-    properties:
-      - type: Documentation
-        url: https://admin.kuleuven.be/icts/services/dataservices/apivacatures
-  - aid: ku-leuven:timetable
-    name: KU Leuven Individual Timetable (Uurrooster) API
-    description: >-
-      ICTS Data Services API exposing an individual's personal timetable.
-      Protected by OAuth 2.0 (authorization code grant) with SAML as a fallback;
-      OAuth client credentials are issued by KU Leuven on request.
-    humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/uurrooster
-    tags: [ Timetable, Schedule, OAuth, Education ]
-    properties:
-      - type: Documentation
-        url: https://admin.kuleuven.be/icts/services/dataservices/api/uurrooster
-      - type: Authentication
-        url: https://webwsq.aps.kuleuven.be/sap/bc/sec/oauth2/authorize/index.html
+- aid: ku-leuven:person
+  name: KU Leuven Person Information API
+  description: >-
+    ICTS Data Services REST API exposing public personnel / who-is-who person information. An expanded
+    intranet variant requires a service account.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  tags:
+  - Directory
+  - People
+  - Education
+  properties:
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices/api/person
+- aid: ku-leuven:program
+  name: KU Leuven Educational Offering (Onderwijsaanbod) API
+  description: >-
+    ICTS Data Services REST API exposing public educational offering data, including programs (opleidingen)
+    and course components.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/program-opleiding
+  tags:
+  - Courses
+  - Catalog
+  - Education
+  properties:
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices/api/program-opleiding
+- aid: ku-leuven:organigram
+  name: KU Leuven Organizational Chart (Organigram) API
+  description: >-
+    ICTS Data Services REST API exposing public organizational-structure information matching the institutional
+    organizational chart. An expanded intranet variant is available via service account.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/apiorganigraminformatie
+  tags:
+  - Organization
+  - Directory
+  - Education
+  properties:
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices/apiorganigraminformatie
+- aid: ku-leuven:vacancies
+  name: KU Leuven Vacancies (Vacatures) API
+  description: ICTS Data Services REST API exposing public job vacancy / job posting data.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/apivacatures
+  tags:
+  - Jobs
+  - Vacancies
+  - Education
+  properties:
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices/apivacatures
+- aid: ku-leuven:timetable
+  name: KU Leuven Individual Timetable (Uurrooster) API
+  description: >-
+    ICTS Data Services API exposing an individual's personal timetable. Protected by OAuth 2.0 (authorization
+    code grant) with SAML as a fallback; OAuth client credentials are issued by KU Leuven on request.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/uurrooster
+  tags:
+  - Timetable
+  - Schedule
+  - OAuth
+  - Education
+  properties:
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices/api/uurrooster
+  - type: Authentication
+    url: https://webwsq.aps.kuleuven.be/sap/bc/sec/oauth2/authorize/index.html
+- aid: ku-leuven:ku-leuven-access-api
+  name: KU Leuven Access API
+  description: The Access API from KU Leuven — 23 operation(s) for access.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Access
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-access-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-addfilestodataset-api
+  name: KU Leuven addFilesToDataset API
+  description: Uploads a set of files to a dataset
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - addFilesToDataset
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-addfilestodataset-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-addfiletodataset-api
+  name: KU Leuven addFileToDataset API
+  description: Uploads a file for a dataset
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - addFileToDataset
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-addfiletodataset-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-addglobusfilestodataset-api
+  name: KU Leuven addGlobusFilesToDataset API
+  description: Uploads a Globus file for a dataset
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - addGlobusFilesToDataset
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-addglobusfilestodataset-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-admin-api
+  name: KU Leuven Admin API
+  description: The Admin API from KU Leuven — 131 operation(s) for admin.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-admin-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-batch-api
+  name: KU Leuven Batch API
+  description: The Batch API from KU Leuven — 3 operation(s) for batch.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Batch
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-batch-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-builtin-users-api
+  name: KU Leuven Builtin Users API
+  description: The Builtin Users API from KU Leuven — 4 operation(s) for builtin users.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Builtin Users
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-builtin-users-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-datasetfields-api
+  name: KU Leuven Datasetfields API
+  description: The Datasetfields API from KU Leuven — 1 operation(s) for datasetfields.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Datasetfields
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-datasetfields-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-datasets-api
+  name: KU Leuven Datasets API
+  description: The Datasets API from KU Leuven — 92 operation(s) for datasets.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Datasets
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-datasets-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-datatags-api
+  name: KU Leuven Datatags API
+  description: The Datatags API from KU Leuven — 1 operation(s) for datatags.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Datatags
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-datatags-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-dataversefeatureditems-api
+  name: KU Leuven DataverseFeaturedItems API
+  description: >-
+    The DataverseFeaturedItems API from KU Leuven — 1 operation(s) for dataversefeatureditems.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - DataverseFeaturedItems
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-dataversefeatureditems-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-dataverses-api
+  name: KU Leuven Dataverses API
+  description: The Dataverses API from KU Leuven — 39 operation(s) for dataverses.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Dataverses
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-dataverses-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-edit-api
+  name: KU Leuven Edit API
+  description: The Edit API from KU Leuven — 1 operation(s) for edit.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Edit
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-edit-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-externaltools-api
+  name: KU Leuven ExternalTools API
+  description: The ExternalTools API from KU Leuven — 2 operation(s) for externaltools.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - ExternalTools
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-externaltools-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-files-api
+  name: KU Leuven Files API
+  description: The Files API from KU Leuven — 20 operation(s) for files.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-files-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-harvest-api
+  name: KU Leuven Harvest API
+  description: The Harvest API from KU Leuven — 7 operation(s) for harvest.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Harvest
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-harvest-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-inbox-api
+  name: KU Leuven Inbox API
+  description: The Inbox API from KU Leuven — 1 operation(s) for inbox.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Inbox
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-inbox-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-info-api
+  name: KU Leuven Info API
+  description: The Info API from KU Leuven — 49 operation(s) for info.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Info
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-info-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-ingest-api
+  name: KU Leuven Ingest API
+  description: The Ingest API from KU Leuven — 1 operation(s) for ingest.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Ingest
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-ingest-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-licenses-api
+  name: KU Leuven Licenses API
+  description: The Licenses API from KU Leuven — 6 operation(s) for licenses.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Licenses
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-licenses-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-localcontexts-api
+  name: KU Leuven Localcontexts API
+  description: The Localcontexts API from KU Leuven — 2 operation(s) for localcontexts.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Localcontexts
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-localcontexts-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-logout-api
+  name: KU Leuven Logout API
+  description: The Logout API from KU Leuven — 1 operation(s) for logout.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Logout
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-logout-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-mail-api
+  name: KU Leuven Mail API
+  description: The Mail API from KU Leuven — 1 operation(s) for mail.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Mail
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-mail-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-meta-api
+  name: KU Leuven Meta API
+  description: The Meta API from KU Leuven — 2 operation(s) for meta.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Meta
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-meta-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-metadatablocks-api
+  name: KU Leuven Metadatablocks API
+  description: The Metadatablocks API from KU Leuven — 2 operation(s) for metadatablocks.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Metadatablocks
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-metadatablocks-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-mydata-api
+  name: KU Leuven Mydata API
+  description: The Mydata API from KU Leuven — 1 operation(s) for mydata.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Mydata
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-mydata-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-notifications-api
+  name: KU Leuven Notifications API
+  description: The Notifications API from KU Leuven — 6 operation(s) for notifications.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Notifications
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-notifications-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-pids-api
+  name: KU Leuven Pids API
+  description: The Pids API from KU Leuven — 6 operation(s) for pids.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Pids
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-pids-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-replacefilesindataset-api
+  name: KU Leuven replaceFilesInDataset API
+  description: Replace a file to a dataset
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - replaceFilesInDataset
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-replacefilesindataset-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-roles-api
+  name: KU Leuven Roles API
+  description: The Roles API from KU Leuven — 3 operation(s) for roles.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-roles-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-saveauxiliaryfilewithversion-api
+  name: KU Leuven saveAuxiliaryFileWithVersion API
+  description: Save Auxiliary File With Version
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - saveAuxiliaryFileWithVersion
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-saveauxiliaryfilewithversion-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-search-api
+  name: KU Leuven Search API
+  description: The Search API from KU Leuven — 2 operation(s) for search.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-search-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-sendfeedback-api
+  name: KU Leuven Sendfeedback API
+  description: The Sendfeedback API from KU Leuven — 1 operation(s) for sendfeedback.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Sendfeedback
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-sendfeedback-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-uploaddatasetlogo-api
+  name: KU Leuven uploadDatasetLogo API
+  description: Uploads a logo for a dataset
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - uploadDatasetLogo
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-uploaddatasetlogo-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-users-api
+  name: KU Leuven Users API
+  description: The Users API from KU Leuven — 10 operation(s) for users.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-users-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-workflows-api
+  name: KU Leuven Workflows API
+  description: The Workflows API from KU Leuven — 1 operation(s) for workflows.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  baseURL: https://rdr.kuleuven.be/api
+  tags:
+  - Workflows
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-workflows-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
 common:
   - type: AgenticAccess
     url: agentic-access/ku-leuven-agentic-access.yml

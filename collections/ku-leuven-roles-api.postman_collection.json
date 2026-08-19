@@ -1,0 +1,301 @@
+{
+  "item": [
+    {
+      "id": "3c1e24f2-4540-4884-9c46-6e1003e7f0fd",
+      "name": "Roles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a5e9ae1a-dbc7-4b20-9f26-3f937416190a",
+          "name": "Roles create New Role",
+          "request": {
+            "name": "Roles create New Role",
+            "description": {},
+            "url": {
+              "path": [
+                "roles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dvo",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a1b1328b-fc22-422b-a7ee-b4834e987aab",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dvo",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbf8d730-fb06-4bf4-8b51-1751f2961543",
+          "name": "Roles get User Selectable Roles",
+          "request": {
+            "name": "Roles get User Selectable Roles",
+            "description": {},
+            "url": {
+              "path": [
+                "roles",
+                "userSelectable"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9345afa7-73b9-4262-afc9-7861d7f2747e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    "userSelectable"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7bed3769-b1cc-4e5e-9366-e4a5bee4e30d",
+          "name": "Roles view Role",
+          "request": {
+            "name": "Roles view Role",
+            "description": {},
+            "url": {
+              "path": [
+                "roles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "05140ba4-1d4d-41c9-878a-bb916c4b9759",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b4f368f-9251-4131-a187-75d0c92cec23",
+          "name": "Roles delete Role",
+          "request": {
+            "name": "Roles delete Role",
+            "description": {},
+            "url": {
+              "path": [
+                "roles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a29b4f47-fbe8-4dd1-a77c-ce598d26783f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "roles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rdr.kuleuven.be/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7dcd1762-2f27-44c1-b31e-7fdc03c0dd40",
+    "name": "KU Leuven Research Data Repository (RDR) Access Roles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.",
+      "type": "text/plain"
+    }
+  }
+}

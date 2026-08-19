@@ -1,0 +1,1017 @@
+{
+  "item": [
+    {
+      "id": "c423c6b2-d2e1-49b9-bbec-f98b810000ff",
+      "name": "Harvest",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a482382d-8849-4a75-9948-7cb8ba0f1113",
+          "name": "Harvesting Clients harvesting Clients",
+          "request": {
+            "name": "Harvesting Clients harvesting Clients",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "clients"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dae68b51-b8a4-409b-b23f-624580e9f969",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "clients"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8dc37a18-fde1-47b9-bcba-7897ce875e05",
+          "name": "Harvesting Clients harvesting Client",
+          "request": {
+            "name": "Harvesting Clients harvesting Client",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "clients",
+                ":nickName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "nickName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b27a4aa-91f2-4091-addc-f8fd3d017fbf",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "clients",
+                    ":nickName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nickName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "72705e0c-8135-45da-8906-8bd24d2a6e49",
+          "name": "Harvesting Clients modify Harvesting Client",
+          "request": {
+            "name": "Harvesting Clients modify Harvesting Client",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "clients",
+                ":nickName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "nickName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f82931b1-ee1d-4647-b8e3-fc5f3607bcbf",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "clients",
+                    ":nickName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nickName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "31e9f94c-8d22-40d9-a9e7-889fb49ca0bd",
+          "name": "Harvesting Clients create Harvesting Client",
+          "request": {
+            "name": "Harvesting Clients create Harvesting Client",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "clients",
+                ":nickName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "nickName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4dd8d10-0f7a-4e69-a4de-d3acd87bc869",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "clients",
+                    ":nickName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nickName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a423876b-5f00-483d-944f-96fb09988bd8",
+          "name": "Harvesting Clients delete Harvesting Client",
+          "request": {
+            "name": "Harvesting Clients delete Harvesting Client",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "clients",
+                ":nickName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "nickName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ae5c06dd-db87-4687-90b3-a27a050e9366",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "clients",
+                    ":nickName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nickName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87d70422-9246-462b-b2d6-82dda6131011",
+          "name": "Harvesting Clients start Harvesting Job",
+          "request": {
+            "name": "Harvesting Clients start Harvesting Job",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "clients",
+                ":nickName",
+                "run"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "nickName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0414d5a5-1514-4476-a74a-28326dccb7f7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "clients",
+                    ":nickName",
+                    "run"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "nickName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2aee5325-4be0-47e9-810c-7f4ce4b21806",
+          "name": "Harvesting Server oai Sets",
+          "request": {
+            "name": "Harvesting Server oai Sets",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "server",
+                "oaisets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bb585573-592a-4ed3-ae1f-e2b7b66b029b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "server",
+                    "oaisets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "707397c5-bd76-426e-b739-c34de03e5f90",
+          "name": "Harvesting Server create Oai Set",
+          "request": {
+            "name": "Harvesting Server create Oai Set",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "server",
+                "oaisets",
+                "add"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92df7797-9be9-47e9-b314-1fc72b21277c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "server",
+                    "oaisets",
+                    "add"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7686b650-e605-4edd-94ae-5e532021a8d3",
+          "name": "Harvesting Server oai Set",
+          "request": {
+            "name": "Harvesting Server oai Set",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "server",
+                "oaisets",
+                ":specname"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "specname",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fc45f3df-12cc-4aa7-a79e-77d4ec889574",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "server",
+                    "oaisets",
+                    ":specname"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "specname",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "824ad8bf-9b92-487c-b60e-54068980296b",
+          "name": "Harvesting Server modify Oai Set",
+          "request": {
+            "name": "Harvesting Server modify Oai Set",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "server",
+                "oaisets",
+                ":specname"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "specname",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "162e0123-1c48-4db0-80d1-fa64a8fb050d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "server",
+                    "oaisets",
+                    ":specname"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "specname",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a479b195-e6a1-4551-88a5-428e41501bbf",
+          "name": "Harvesting Server delete Oai Set",
+          "request": {
+            "name": "Harvesting Server delete Oai Set",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "server",
+                "oaisets",
+                ":specname"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "specname",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0f8c29fc-b3bf-420a-a0d3-e8b3a31bcffe",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "server",
+                    "oaisets",
+                    ":specname"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "specname",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa015bb7-41ab-4fa5-a850-4fd7f72f4753",
+          "name": "Harvesting Server oai Set List Datasets",
+          "request": {
+            "name": "Harvesting Server oai Set List Datasets",
+            "description": {},
+            "url": {
+              "path": [
+                "harvest",
+                "server",
+                "oaisets",
+                ":specname",
+                "datasets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "specname",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad02dee8-2dae-421b-8dc2-975465b8fd39",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "harvest",
+                    "server",
+                    "oaisets",
+                    ":specname",
+                    "datasets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "specname",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rdr.kuleuven.be/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "173a0b94-6ae2-4bac-a8b9-2c90dbc47096",
+    "name": "KU Leuven Research Data Repository (RDR) Access Harvest API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.",
+      "type": "text/plain"
+    }
+  }
+}

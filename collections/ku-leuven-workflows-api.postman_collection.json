@@ -1,0 +1,105 @@
+{
+  "item": [
+    {
+      "id": "420b6db4-2161-4367-a46c-e7722ee52259",
+      "name": "Workflows",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7a4677e7-9361-4dfa-a0dc-4d688f25e13b",
+          "name": "Workflows resume Workflow",
+          "request": {
+            "name": "Workflows resume Workflow",
+            "description": {},
+            "url": {
+              "path": [
+                "workflows",
+                ":invocationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "invocationId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0824a314-9941-45a4-a7e6-b103ead07c67",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "workflows",
+                    ":invocationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "invocationId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rdr.kuleuven.be/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2c2e2b1f-5cfb-4cb8-8050-c23bec8e5f65",
+    "name": "KU Leuven Research Data Repository (RDR) Access Workflows API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.",
+      "type": "text/plain"
+    }
+  }
+}

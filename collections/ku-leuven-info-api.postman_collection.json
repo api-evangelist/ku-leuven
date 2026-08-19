@@ -1,0 +1,3807 @@
+{
+  "item": [
+    {
+      "id": "e0ec9d09-5f11-41b7-a27d-6973292b78c6",
+      "name": "Info",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "73afab2f-398b-4e2c-8070-373573f87150",
+          "name": "Metrics get Accounts All Time",
+          "request": {
+            "name": "Metrics get Accounts All Time",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff344d20-99bd-4d25-be55-375582a76326",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b958d7aa-9a2f-41a6-85de-83c3c8b22af2",
+          "name": "Metrics get Accounts Time Series",
+          "request": {
+            "name": "Metrics get Accounts Time Series",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "accounts",
+                "monthly"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec350b76-6239-4631-b51a-101178b8cf83",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "accounts",
+                    "monthly"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f003b56f-87d3-4569-a441-cb761b4437a0",
+          "name": "Metrics get Accounts Past Days",
+          "request": {
+            "name": "Metrics get Accounts Past Days",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "accounts",
+                "pastDays",
+                ":days"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "days",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "da5a718b-6683-4e4f-8659-3230d0d43ed2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "accounts",
+                    "pastDays",
+                    ":days"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "days",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ce4b0c25-5df4-4f64-b638-2e62796b203f",
+          "name": "Metrics get Accounts To Month",
+          "request": {
+            "name": "Metrics get Accounts To Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "accounts",
+                "toMonth",
+                ":yyyymm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "yyyymm",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2c96610d-56b0-404b-af62-44d3f0d02728",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "accounts",
+                    "toMonth",
+                    ":yyyymm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "yyyymm",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c4ded4a-daf5-4a3c-9f7a-a7b7b3a78036",
+          "name": "Metrics get Datasets All Time",
+          "request": {
+            "name": "Metrics get Datasets All Time",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "datasets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dataLocation",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f6b5d76e-1280-49f3-9752-0823c52ff374",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "datasets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataLocation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "569ca979-a3f8-4b33-9f88-3f87dcc9dfce",
+          "name": "Metrics get Datasets By Subject",
+          "request": {
+            "name": "Metrics get Datasets By Subject",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "datasets",
+                "bySubject"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dataLocation",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "27bdab54-bf0f-430f-ba5b-fd9fca0f403b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "datasets",
+                    "bySubject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataLocation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13cfa03b-d850-42af-b401-aab7ef7de103",
+          "name": "Metrics get Datasets By Subject To Month",
+          "request": {
+            "name": "Metrics get Datasets By Subject To Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "datasets",
+                "bySubject",
+                "toMonth",
+                ":yyyymm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dataLocation",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "yyyymm",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dabfe239-ddd7-4a17-a6df-84dd1ea3c33e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "datasets",
+                    "bySubject",
+                    "toMonth",
+                    ":yyyymm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataLocation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "yyyymm",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22ebddd5-0559-4e65-b474-744dc27a8691",
+          "name": "Metrics get Datasets Time Seriest",
+          "request": {
+            "name": "Metrics get Datasets Time Seriest",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "datasets",
+                "monthly"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dataLocation",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cfc9bf27-b1f9-4939-aa85-34da7403fa80",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "datasets",
+                    "monthly"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataLocation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94b7f2e1-ebd6-4f6e-bcb6-bab2646c9032",
+          "name": "Metrics get Datasets Past Days",
+          "request": {
+            "name": "Metrics get Datasets Past Days",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "datasets",
+                "pastDays",
+                ":days"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dataLocation",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "days",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f4b491ff-5865-493d-bd83-f902009e62c6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "datasets",
+                    "pastDays",
+                    ":days"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataLocation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "days",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "14106179-e229-4553-9bec-301bd6aa1c3a",
+          "name": "Metrics get Datasets To Month",
+          "request": {
+            "name": "Metrics get Datasets To Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "datasets",
+                "toMonth",
+                ":yyyymm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "dataLocation",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "yyyymm",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e14b3436-7958-45f0-9235-3756db188de3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "datasets",
+                    "toMonth",
+                    ":yyyymm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "dataLocation",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "yyyymm",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bdb66fb8-a692-4ee4-855c-19e7dbdee573",
+          "name": "Metrics get Dataverses All Time",
+          "request": {
+            "name": "Metrics get Dataverses All Time",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "dataverses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3bb9817b-f2eb-4264-ba51-a66958321d09",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "dataverses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a48f511-9d03-4892-8555-d81d52396246",
+          "name": "Metrics get Dataverses By Category",
+          "request": {
+            "name": "Metrics get Dataverses By Category",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "dataverses",
+                "byCategory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d9fa8db7-fab9-4d41-9eb6-e3322e877c2a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "dataverses",
+                    "byCategory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51059e73-f96e-4faa-9567-5d0369aed8b6",
+          "name": "Metrics get Dataverses By Subject",
+          "request": {
+            "name": "Metrics get Dataverses By Subject",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "dataverses",
+                "bySubject"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f05517f-3f02-4d56-be4c-04a58c7beea8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "dataverses",
+                    "bySubject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d54afe91-8d53-4669-b8c2-b345781acd43",
+          "name": "Metrics get Dataverses Time Series",
+          "request": {
+            "name": "Metrics get Dataverses Time Series",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "dataverses",
+                "monthly"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9974f618-8754-40f0-8f0a-cd43fb9b3142",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "dataverses",
+                    "monthly"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf422331-bab5-4c8d-a392-e21e00511cb6",
+          "name": "Metrics get Dataverses Past Days",
+          "request": {
+            "name": "Metrics get Dataverses Past Days",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "dataverses",
+                "pastDays",
+                ":days"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "days",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7a5c7486-ad75-4649-ad75-f850e6194f2e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "dataverses",
+                    "pastDays",
+                    ":days"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "days",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "63d067c9-9039-4f4d-9874-ade02cdacd21",
+          "name": "Metrics get Dataverses To Month",
+          "request": {
+            "name": "Metrics get Dataverses To Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "dataverses",
+                "toMonth",
+                ":yyyymm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "yyyymm",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "654cdb95-f21e-468e-86f9-468a52edf042",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "dataverses",
+                    "toMonth",
+                    ":yyyymm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "yyyymm",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "21ff8ddb-1a49-4ee1-a27b-b6ff2f36b8e5",
+          "name": "Metrics get Downloads All Time",
+          "request": {
+            "name": "Metrics get Downloads All Time",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "downloads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d378f3c0-7add-4b20-b6c0-ec7e73eadb1c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "downloads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d01723cb-ea88-4dd4-83ed-ee21272e96a6",
+          "name": "Metrics get Downloads Time Series",
+          "request": {
+            "name": "Metrics get Downloads Time Series",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "downloads",
+                "monthly"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6db11935-512b-4e2b-9e23-c54bd82d05ef",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "downloads",
+                    "monthly"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6baef6f5-107e-4efd-8e57-e4c8bee73d70",
+          "name": "Metrics get Downloads Past Days",
+          "request": {
+            "name": "Metrics get Downloads Past Days",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "downloads",
+                "pastDays",
+                ":days"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "days",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "905a746f-dfdd-4627-b4b8-0edcf88b6c83",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "downloads",
+                    "pastDays",
+                    ":days"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "days",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92d63634-0064-4f77-8565-a06c320f03ca",
+          "name": "Metrics get Downloads To Month",
+          "request": {
+            "name": "Metrics get Downloads To Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "downloads",
+                "toMonth",
+                ":yyyymm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "yyyymm",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0610c997-8237-48a5-8ca3-46f4e33c62d6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "downloads",
+                    "toMonth",
+                    ":yyyymm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "yyyymm",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "91040829-eda9-4506-9dc5-956f851dc01f",
+          "name": "Metrics get File Downloads All Time",
+          "request": {
+            "name": "Metrics get File Downloads All Time",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "filedownloads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6cba8ae-9dc6-4720-82f1-1c016a21d042",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "filedownloads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "56dbcb55-a906-4053-977e-26f04bd2251e",
+          "name": "Metrics get File Downloads Time Series",
+          "request": {
+            "name": "Metrics get File Downloads Time Series",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "filedownloads",
+                "monthly"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2b22c5fd-edc9-4623-83c0-3a11358e0072",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "filedownloads",
+                    "monthly"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "53bf39a3-347f-4261-83d5-bf8c93dcf4ee",
+          "name": "Metrics get File Downloads To Month",
+          "request": {
+            "name": "Metrics get File Downloads To Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "filedownloads",
+                "toMonth",
+                ":yyyymm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "yyyymm",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f887f3a2-3ae0-4ff8-9898-4ad17f92bc5e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "filedownloads",
+                    "toMonth",
+                    ":yyyymm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "yyyymm",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a10927f-750a-4958-a334-0bd3940f0d9b",
+          "name": "Metrics get Files All Time",
+          "request": {
+            "name": "Metrics get Files All Time",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91554c0b-3945-454c-8677-a5bda3a7ff69",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e304c3bf-7d07-4e07-a6e5-1e7b98213a90",
+          "name": "Metrics get Files By Type",
+          "request": {
+            "name": "Metrics get Files By Type",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "files",
+                "byType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f48ba871-135b-4f5a-8dcc-7981e89d7f44",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "files",
+                    "byType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78ab0628-8dd1-408f-9a0a-484f9188443d",
+          "name": "Metrics get Files By Type Time Series",
+          "request": {
+            "name": "Metrics get Files By Type Time Series",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "files",
+                "byType",
+                "monthly"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a115be50-6e4e-419e-8e58-e00b5039d22f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "files",
+                    "byType",
+                    "monthly"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b440d4f-60f1-43df-8dd3-820dae23a413",
+          "name": "Metrics get Files Time Series",
+          "request": {
+            "name": "Metrics get Files Time Series",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "files",
+                "monthly"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ffce475d-bdb4-4c65-b0bb-4439b80d09b5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "files",
+                    "monthly"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe1a9b4a-e4b4-48d9-b7cd-538522787cb8",
+          "name": "Metrics get Files Past Days",
+          "request": {
+            "name": "Metrics get Files Past Days",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "files",
+                "pastDays",
+                ":days"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "days",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d97ac862-55c8-4249-bf9a-a3ac3d1b1b90",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "files",
+                    "pastDays",
+                    ":days"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "days",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a9293fa4-cc43-42f7-81d5-d0e428e01215",
+          "name": "Metrics get Files To Month",
+          "request": {
+            "name": "Metrics get Files To Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "files",
+                "toMonth",
+                ":yyyymm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "yyyymm",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9013f0c2-9fa6-49cc-bfc9-4c998f55a62a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "files",
+                    "toMonth",
+                    ":yyyymm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "yyyymm",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78590be5-5488-499d-a629-569eddd79e6b",
+          "name": "Metrics get Make Data Count Metric Current Month",
+          "request": {
+            "name": "Metrics get Make Data Count Metric Current Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "makeDataCount",
+                ":metric"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "metric",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a301aa04-8f08-44a8-9300-2a559dcbe320",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "makeDataCount",
+                    ":metric"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "metric",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "83207ad5-ca40-49fb-aadc-62ed7e2fb604",
+          "name": "Metrics get Make Data Count Metric Time Series",
+          "request": {
+            "name": "Metrics get Make Data Count Metric Time Series",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "makeDataCount",
+                ":metric",
+                "monthly"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "metric",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dc6fddb0-9f3e-4d46-a5fe-e08356fc7a95",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "makeDataCount",
+                    ":metric",
+                    "monthly"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "metric",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c805ab8e-4be1-4918-809d-197393049f49",
+          "name": "Metrics get Make Data Count Metric To Month",
+          "request": {
+            "name": "Metrics get Make Data Count Metric To Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "makeDataCount",
+                ":metric",
+                "toMonth",
+                ":yyyymm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "metric",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "yyyymm",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a2a8dc63-cc1c-41a3-a333-9404a12dfc3a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "makeDataCount",
+                    ":metric",
+                    "toMonth",
+                    ":yyyymm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "metric",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "yyyymm",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "387f0391-5cbb-4c36-94f9-e65bde371d26",
+          "name": "Metrics get Dataverses Tree",
+          "request": {
+            "name": "Metrics get Dataverses Tree",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "tree"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1f68dd52-6284-458f-86a6-cc248a239cde",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "tree"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "89e84712-9821-4613-aab8-0ca14bad9670",
+          "name": "Metrics get Dataverses Tree To Month",
+          "request": {
+            "name": "Metrics get Dataverses Tree To Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "tree",
+                "toMonth",
+                ":yyyymm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "yyyymm",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e2126ee5-8882-4ad9-b70a-1c37782a6097",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "tree",
+                    "toMonth",
+                    ":yyyymm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "yyyymm",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cab96210-0fce-46fa-8172-63d0b7245ab2",
+          "name": "Metrics get Unique Downloads All Time",
+          "request": {
+            "name": "Metrics get Unique Downloads All Time",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "uniquedownloads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e7ccc95c-8304-4b47-99dc-01e2619a0a24",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "uniquedownloads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a750eb08-dfee-464e-a820-f96633709059",
+          "name": "Metrics get Unique Downloads Time Series",
+          "request": {
+            "name": "Metrics get Unique Downloads Time Series",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "uniquedownloads",
+                "monthly"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7ff5414b-c16d-44e3-b16a-f3425f3a12b3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "uniquedownloads",
+                    "monthly"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c1d6bda-62e3-4424-ab3c-4bbe6dd10801",
+          "name": "Metrics get Unique Downloads To Month",
+          "request": {
+            "name": "Metrics get Unique Downloads To Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "uniquedownloads",
+                "toMonth",
+                ":yyyymm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "yyyymm",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec044070-79a8-4982-b1be-874f2ee4d1c8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "uniquedownloads",
+                    "toMonth",
+                    ":yyyymm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "yyyymm",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "50084e5f-7534-439e-83d5-31d783adc003",
+          "name": "Metrics get Unique File Downloads All Time",
+          "request": {
+            "name": "Metrics get Unique File Downloads All Time",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "uniquefiledownloads"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "56f1e76c-541b-4f25-814d-4f0fe8d5d2ea",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "uniquefiledownloads"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e72c7f26-6c4d-41c9-9b84-f3e7385dbb19",
+          "name": "Metrics get Unique File Downloads Time Series",
+          "request": {
+            "name": "Metrics get Unique File Downloads Time Series",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "uniquefiledownloads",
+                "monthly"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eaa5f6cb-1e78-47bc-ae17-489575bad496",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "uniquefiledownloads",
+                    "monthly"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8daccfdb-4d39-4e79-b3b6-c5e071010f34",
+          "name": "Metrics get Unique File Downloads To Month",
+          "request": {
+            "name": "Metrics get Unique File Downloads To Month",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "metrics",
+                "uniquefiledownloads",
+                "toMonth",
+                ":yyyymm"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "parentAlias",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "yyyymm",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "45f9e9e7-9fb6-4e8e-a9a5-dc0e9138c98b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "metrics",
+                    "uniquefiledownloads",
+                    "toMonth",
+                    ":yyyymm"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "parentAlias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "yyyymm",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "869e778b-1952-4900-afe8-4eeedf01ad01",
+          "name": "Info get Terms Of Use",
+          "request": {
+            "name": "Info get Terms Of Use",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "apiTermsOfUse"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "43ca2a83-0a13-45e6-95b7-360a418b9dbf",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "apiTermsOfUse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "740f64ca-6a5f-4842-bcfc-f71ce12bd1b9",
+          "name": "Info get Application Terms Of Use",
+          "request": {
+            "name": "Info get Application Terms Of Use",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "applicationTermsOfUse"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "lang",
+                  "value": "<string>",
+                  "description": "Two-character language code."
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fb8d12fb-7522-40b1-a1ba-52bce065608e",
+              "name": "Application Terms of Use (General Terms of Use) that must be agreed to at signup.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "applicationTermsOfUse"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "lang",
+                      "value": "en"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d2c97c9b-5786-494e-84e9-1876a33315f2",
+          "name": "Info get Export Formats",
+          "request": {
+            "name": "Info get Export Formats",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "exportFormats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a2dca69-0587-4c2f-9c65-7bb950e74c30",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "exportFormats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "44ae1e20-2077-46ae-8d1e-6370b8c916f0",
+          "name": "Info get Server",
+          "request": {
+            "name": "Info get Server",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "server"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ddbb4747-592b-4fa3-a767-8c2fbaaf8195",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "server"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "09fdacbb-b0a1-428e-8d2f-f71d72661580",
+          "name": "Info get Dataset Publish Popup Custom Text",
+          "request": {
+            "name": "Info get Dataset Publish Popup Custom Text",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "settings",
+                ":DatasetPublishPopupCustomText"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8a629a7d-7c78-45f0-9eba-ae7d76b4902f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "settings",
+                    ":DatasetPublishPopupCustomText"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f9466b78-955a-42ca-b0ff-88641ab51bd1",
+          "name": "Info get Max Embargo Duration In Months",
+          "request": {
+            "name": "Info get Max Embargo Duration In Months",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "settings",
+                ":MaxEmbargoDurationInMonths"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7f86ca47-e7c7-45c4-aeb8-9d0ca691a7e0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "settings",
+                    ":MaxEmbargoDurationInMonths"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0e861fcd-9dac-413b-bdd3-5385428be43d",
+          "name": "Info get Allows Incomplete Metadata",
+          "request": {
+            "name": "Info get Allows Incomplete Metadata",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "settings",
+                "incompleteMetadataViaApi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7c0a2565-bc9a-4c10-8378-0df6171f2a3a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "settings",
+                    "incompleteMetadataViaApi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f6bf145d-d308-40ab-85a8-d49524cbec5c",
+          "name": "Get version and build information",
+          "request": {
+            "name": "Get version and build information",
+            "description": {
+              "content": "Get version and build information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "info",
+                "version"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8324e9fb-4c1f-446a-b548-157c9b6dfd6e",
+              "name": "Version and build information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "version"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c40bd042-5ce2-4023-a1a7-e9b140688ed2",
+          "name": "Info get Zip Download Limit",
+          "request": {
+            "name": "Info get Zip Download Limit",
+            "description": {},
+            "url": {
+              "path": [
+                "info",
+                "zipDownloadLimit"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96b6d195-6910-4ca9-832e-5e6931034b1e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "info",
+                    "zipDownloadLimit"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rdr.kuleuven.be/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3bc5a9bc-1049-4b81-9bdb-e0688f28ba08",
+    "name": "KU Leuven Research Data Repository (RDR) Access Info API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.",
+      "type": "text/plain"
+    }
+  }
+}

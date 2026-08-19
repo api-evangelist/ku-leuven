@@ -1,0 +1,28 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "KU Leuven Research Data Repository (RDR) Access Sendfeedback API",
+    "version": "6.7.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sendfeedback",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "SendFeedbackAPI_submitFeedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rdr.kuleuven.be/api/sendfeedback"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

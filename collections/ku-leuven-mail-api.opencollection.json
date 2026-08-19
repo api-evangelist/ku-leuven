@@ -1,0 +1,28 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "KU Leuven Research Data Repository (RDR) Access Mail API",
+    "version": "6.7.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Mail",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Mail_sendMail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rdr.kuleuven.be/api/mail/notifications"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

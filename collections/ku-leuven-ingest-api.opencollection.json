@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "KU Leuven Research Data Repository (RDR) Access Ingest API",
+    "version": "6.7.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ingest",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "TestIngest_datafile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rdr.kuleuven.be/api/ingest/test/file",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fileType",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

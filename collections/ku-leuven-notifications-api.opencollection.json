@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "KU Leuven Research Data Repository (RDR) Access Notifications API",
+    "version": "6.7.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Notifications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Notifications_getAllNotificationsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rdr.kuleuven.be/api/notifications/all"
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_getMutedEmailsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rdr.kuleuven.be/api/notifications/mutedEmails"
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_muteEmailsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://rdr.kuleuven.be/api/notifications/mutedEmails/:typeName",
+            "params": [
+              {
+                "name": "typeName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_unmuteEmailsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://rdr.kuleuven.be/api/notifications/mutedEmails/:typeName",
+            "params": [
+              {
+                "name": "typeName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_getMutedNotificationsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://rdr.kuleuven.be/api/notifications/mutedNotifications"
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_muteNotificationsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://rdr.kuleuven.be/api/notifications/mutedNotifications/:typeName",
+            "params": [
+              {
+                "name": "typeName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_unmuteNotificationsForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://rdr.kuleuven.be/api/notifications/mutedNotifications/:typeName",
+            "params": [
+              {
+                "name": "typeName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Notifications_deleteNotificationForUser",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://rdr.kuleuven.be/api/notifications/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

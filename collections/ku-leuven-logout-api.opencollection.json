@@ -1,0 +1,28 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "KU Leuven Research Data Repository (RDR) Access Logout API",
+    "version": "6.7.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Logout",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Logout_logout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rdr.kuleuven.be/api/logout"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

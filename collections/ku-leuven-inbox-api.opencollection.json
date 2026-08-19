@@ -1,0 +1,32 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "KU Leuven Research Data Repository (RDR) Access Inbox API",
+    "version": "6.7.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Inbox",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "LDNInbox_acceptMessage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://rdr.kuleuven.be/api/inbox",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

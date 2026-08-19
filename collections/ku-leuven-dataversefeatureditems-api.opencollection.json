@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "KU Leuven Research Data Repository (RDR) Access DataverseFeaturedItems API",
+    "version": "6.7.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DataverseFeaturedItems",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "DataverseFeaturedItems_updateFeaturedItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://rdr.kuleuven.be/api/dataverseFeaturedItems/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "DataverseFeaturedItems_deleteFeaturedItem",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://rdr.kuleuven.be/api/dataverseFeaturedItems/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

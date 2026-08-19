@@ -1,0 +1,2241 @@
+{
+  "item": [
+    {
+      "id": "71d0d157-2617-4e13-8570-2cee520f4648",
+      "name": "Access",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7f511a0d-4671-4a81-a9d1-a599517aa5dd",
+          "name": "Access datafile Bundle",
+          "request": {
+            "name": "Access datafile Bundle",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                "bundle",
+                ":fileId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fileMetadataId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2b53a064-bab3-41a3-bb57-1277c61f287c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    "bundle",
+                    ":fileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fileMetadataId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d67b6da0-e5e8-48bb-8287-d7daa029d3c1",
+          "name": "Access datafile",
+          "request": {
+            "name": "Access datafile",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":fileId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fbb3665a-18f7-48c8-acde-d4807f1ad27d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":fileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fed28bef-3d2f-47a5-bfee-6a7833930e9e",
+          "name": "Access list Datafile Metadata Aux",
+          "request": {
+            "name": "Access list Datafile Metadata Aux",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":fileId",
+                "auxiliary"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "212d1d86-fb5b-41a9-9771-3478590d32e3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "auxiliary"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af3d39cd-36bd-4673-99e4-8851e088d230",
+          "name": "Access download Auxiliary File",
+          "request": {
+            "name": "Access download Auxiliary File",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":fileId",
+                "auxiliary",
+                ":formatTag",
+                ":formatVersion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "formatTag",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "formatVersion",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf6e1f2f-f642-4336-a944-81ad1e441342",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "auxiliary",
+                    ":formatTag",
+                    ":formatVersion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "formatTag",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "formatVersion",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "{\n  \"downloadInfo\": {\n    \"dataFile\": {\n      \"contentType\": \"Zb]MVv/WP-\\\"f\",\n      \"mergeable\": true,\n      \"id\": 7835,\n      \"publicationDate\": {},\n      \"releaseUser\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"createDate\": {},\n      \"modificationTime\": {},\n      \"indexTime\": {},\n      \"permissionModificationTime\": {},\n      \"permissionIndexTime\": {},\n      \"storageIdentifier\": \"string\",\n      \"dtype\": \"string\",\n      \"dataverseFeaturedItems\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"protocol\": \"string\",\n      \"authority\": \"string\",\n      \"separator\": \"string\",\n      \"globalIdCreateTime\": \"2022-03-10\",\n      \"identifier\": \"string\",\n      \"identifierRegistered\": false,\n      \"alternativePersistentIndentifiers\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"previewImageAvailable\": false,\n      \"storageQuota\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"previewImageFail\": true,\n      \"creator\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssignments\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"released\": true,\n      \"instanceofDataverse\": true,\n      \"instanceofDataset\": true,\n      \"instanceofDataFile\": true,\n      \"dataverseContext\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authorString\": \"string\",\n      \"yearPublishedCreated\": \"string\",\n      \"checksumType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"checksumValue\": \"string\",\n      \"rootDataFileId\": 9962,\n      \"previousDataFileId\": 3464,\n      \"filesize\": 4459,\n      \"restricted\": false,\n      \"provEntityName\": \"string\",\n      \"dataTables\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"auxiliaryFiles\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"ingestReports\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"ingestRequest\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataFileTags\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileMetadatas\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"guestbookResponses\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileAccessRequests\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileAccessRequesters\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"ingestStatus\": \"string\",\n      \"thumbnailForDataset\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"embargo\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"retention\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"deleted\": true,\n      \"markedAsDuplicate\": true,\n      \"duplicateFilename\": \"string\",\n      \"effectivelyPermissionRoot\": false,\n      \"dataTable\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"tags\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"tagLabels\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"tagLabelsAsJsonArrayBuilder\": {},\n      \"ingestReport\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestReportMessage\": \"string\",\n      \"tabularData\": true,\n      \"originalFileFormat\": \"string\",\n      \"originalFileSize\": 1483,\n      \"originalFileName\": \"string\",\n      \"derivedOriginalFileName\": \"string\",\n      \"originalFormatLabel\": \"string\",\n      \"friendlyType\": \"string\",\n      \"owner\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": \"string\",\n      \"draftFileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"latestFileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"latestPublishedFileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"friendlySize\": \"string\",\n      \"originalChecksumType\": \"string\",\n      \"storageIO\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"shapefileType\": true,\n      \"image\": true,\n      \"filePackage\": false,\n      \"ingestScheduled\": false,\n      \"ingestInProgress\": true,\n      \"ingestProblem\": true,\n      \"asThumbnailForDataset\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"unf\": \"string\",\n      \"harvested\": false,\n      \"remoteArchiveURL\": \"string\",\n      \"harvestingDescription\": \"string\",\n      \"displayName\": \"string\",\n      \"directoryLabel\": \"string\",\n      \"currentName\": \"string\",\n      \"publicationDateFormattedYYYYMMDD\": \"string\",\n      \"createDateFormattedYYYYMMDD\": \"string\",\n      \"targetUrl\": \"string\",\n      \"deaccessioned\": false\n    },\n    \"authUserName\": \"string\",\n    \"authMethod\": \"string\",\n    \"accessGranted\": false,\n    \"accessPermissionsApply\": false,\n    \"accessRestrictionsApply\": false,\n    \"passAccessPermissions\": false,\n    \"passAccessRestrictions\": false,\n    \"optionalServicesAvailable\": [\n      {\n        \"serviceName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"serviceDescription\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"contentMimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"serviceArguments\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"mimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"serviceName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"serviceDescription\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"contentMimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"serviceArguments\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"mimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"accessRestrictionsAply\": false,\n    \"mimeType\": \"string\",\n    \"dataFileId\": 3295,\n    \"fileName\": \"string\",\n    \"servicesAvailable\": [\n      {\n        \"serviceName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"serviceDescription\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"contentMimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"serviceArguments\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"mimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"serviceName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"serviceDescription\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"contentMimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"serviceArguments\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"mimeType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ]\n  },\n  \"conversionParam\": \"string\",\n  \"conversionParamValue\": \"string\",\n  \"auxiliaryFile\": {\n    \"id\": 5882,\n    \"dataFile\": {\n      \"contentType\": \"M(I[~/n$zFh/krz\",\n      \"mergeable\": true,\n      \"id\": 6170,\n      \"publicationDate\": {},\n      \"releaseUser\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"createDate\": {},\n      \"modificationTime\": {},\n      \"indexTime\": {},\n      \"permissionModificationTime\": {},\n      \"permissionIndexTime\": {},\n      \"storageIdentifier\": \"string\",\n      \"dtype\": \"string\",\n      \"dataverseFeaturedItems\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"protocol\": \"string\",\n      \"authority\": \"string\",\n      \"separator\": \"string\",\n      \"globalIdCreateTime\": \"2022-03-10\",\n      \"identifier\": \"string\",\n      \"identifierRegistered\": true,\n      \"alternativePersistentIndentifiers\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"previewImageAvailable\": false,\n      \"storageQuota\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"previewImageFail\": true,\n      \"creator\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssignments\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"released\": true,\n      \"instanceofDataverse\": false,\n      \"instanceofDataset\": false,\n      \"instanceofDataFile\": true,\n      \"dataverseContext\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authorString\": \"string\",\n      \"yearPublishedCreated\": \"string\",\n      \"checksumType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"checksumValue\": \"string\",\n      \"rootDataFileId\": 6589,\n      \"previousDataFileId\": 8030,\n      \"filesize\": 4568,\n      \"restricted\": false,\n      \"provEntityName\": \"string\",\n      \"dataTables\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"auxiliaryFiles\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"ingestReports\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"ingestRequest\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataFileTags\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileMetadatas\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"guestbookResponses\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileAccessRequests\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileAccessRequesters\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"ingestStatus\": \"string\",\n      \"thumbnailForDataset\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"embargo\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"retention\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"deleted\": false,\n      \"markedAsDuplicate\": true,\n      \"duplicateFilename\": \"string\",\n      \"effectivelyPermissionRoot\": false,\n      \"dataTable\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"tags\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"tagLabels\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"tagLabelsAsJsonArrayBuilder\": {},\n      \"ingestReport\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestReportMessage\": \"string\",\n      \"tabularData\": true,\n      \"originalFileFormat\": \"string\",\n      \"originalFileSize\": 2233,\n      \"originalFileName\": \"string\",\n      \"derivedOriginalFileName\": \"string\",\n      \"originalFormatLabel\": \"string\",\n      \"friendlyType\": \"string\",\n      \"owner\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": \"string\",\n      \"draftFileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"latestFileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"latestPublishedFileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"friendlySize\": \"string\",\n      \"originalChecksumType\": \"string\",\n      \"storageIO\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"shapefileType\": true,\n      \"image\": true,\n      \"filePackage\": false,\n      \"ingestScheduled\": false,\n      \"ingestInProgress\": false,\n      \"ingestProblem\": true,\n      \"asThumbnailForDataset\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"unf\": \"string\",\n      \"harvested\": true,\n      \"remoteArchiveURL\": \"string\",\n      \"harvestingDescription\": \"string\",\n      \"displayName\": \"string\",\n      \"directoryLabel\": \"string\",\n      \"currentName\": \"string\",\n      \"publicationDateFormattedYYYYMMDD\": \"string\",\n      \"createDateFormattedYYYYMMDD\": \"string\",\n      \"targetUrl\": \"string\",\n      \"deaccessioned\": true\n    },\n    \"formatTag\": \"string\",\n    \"formatVersion\": \"string\",\n    \"origin\": \"string\",\n    \"isPublic\": true,\n    \"contentType\": \"string\",\n    \"fileSize\": 8668,\n    \"checksum\": \"string\",\n    \"type\": \"string\",\n    \"typeFriendly\": \"string\"\n  },\n  \"command\": {\n    \"datasetService\": {\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"versionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authentication\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"recordService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"commandEngine\": {\n        \"value\": \"<Circular reference to #/components/schemas/EjbDataverseEngine detected>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"globusServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userNotificationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {},\n      \"datasetCount\": 1963\n    },\n    \"dataverseService\": {\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrIndexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseLinkingService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetLinkingService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"groupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"rolesService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseFieldTypeInputLevelService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"session\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {},\n      \"datasetSchemaPreface\": \"string\",\n      \"startOfMDB\": \"string\",\n      \"reqValTemplate\": \"string\",\n      \"minItemsTemplate\": \"string\",\n      \"endOfReqVal\": \"string\",\n      \"endOfjson\": \"string\",\n      \"rootDataverseName\": \"string\",\n      \"rootDataverseExists\": true,\n      \"dataverseCount\": 5190\n    },\n    \"rolesService\": {\n      \"em\": {},\n      \"roleAssigneeService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrIndexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"indexAsync\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"usersService\": {\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"passwordResetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {}\n    },\n    \"indexService\": {\n      \"em\": {},\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetVersionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseUserServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"searchPermissionsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrIndexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dsLinkingService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvLinkingService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrClientService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrClientIndexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataFileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetFieldService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetVersionFilesServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"rootDataverseCached\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"variableMetadataUtil\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"indexPermitWaitTimer\": {},\n      \"indexTimer\": {}\n    },\n    \"indexBatchService\": {\n      \"em\": {},\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrIndexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"contentInDatabaseButStaleInOrMissingFromSolr\": {},\n      \"contentInSolrButNotDatabase\": {},\n      \"permissionsInDatabaseButStaleInOrMissingFromSolr\": {},\n      \"permissionsInSolrButNotDatabase\": {}\n    },\n    \"solrIndexService\": {\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"searchPermissionsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetVersionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"rolesSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrClientService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {}\n    },\n    \"searchServiceFactory\": {\n      \"beanManager\": {},\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"solrSearchService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"serviceMap\": {\n        \"key_0\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"defaultSearchService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"availableServices\": {\n        \"key_0\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_1\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_2\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_3\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_4\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"ingestService\": {\n      \"variableService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fieldService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"auxiliaryFileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"storageUseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"queue\": {},\n      \"factory\": {}\n    },\n    \"permissionService\": {\n      \"userService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authenticationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssigneeService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjectServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"workflowService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {},\n      \"groupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"session\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvRequestService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetVersionFilesServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"dvObjectService\": {\n      \"em\": {},\n      \"pidProviderFactoryBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"allHarvestedDataverseIds\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    },\n    \"dataverseFacetService\": {\n      \"em\": {},\n      \"dataverses\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"featuredDataverseService\": {\n      \"em\": {},\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"dataFileService\": {\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"embargoService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"storageUseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {}\n    },\n    \"templateService\": {\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {}\n    },\n    \"savedSearchService\": {\n      \"searchService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dsLinkingService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvLinkingService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"commandEngine\": {\n        \"value\": \"<Circular reference to #/components/schemas/EjbDataverseEngine detected>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"resultString\": \"string\",\n      \"em\": {}\n    },\n    \"fieldTypeInputLevels\": {\n      \"em\": {}\n    },\n    \"pidProviderFactory\": {\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjectService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"loader\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"pidProviderFactoryMap\": {\n        \"key_0\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_1\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_2\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"producer\": \"string\",\n      \"defaultPidGenerator\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"settings\": {\n      \"em\": {},\n      \"actionLogSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"configuredLanguages\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    },\n    \"guestbookService\": {\n      \"em\": {}\n    },\n    \"responses\": {\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {},\n      \"totalDownloadCount\": 2985\n    },\n    \"metadataBlockService\": {\n      \"em\": {}\n    },\n    \"datasetTypeService\": {\n      \"em\": {}\n    },\n    \"dvLinking\": {\n      \"em\": {},\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"dsLinking\": {\n      \"em\": {}\n    },\n    \"dsField\": {\n      \"em\": {},\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"cvocMap\": {\n        \"key_0\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_1\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_2\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"cvocMapByTermUri\": {\n        \"key_0\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"cvocFieldSet\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"oldHash\": \"string\"\n    },\n    \"explicitGroups\": {\n      \"roleAssigneeSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {},\n      \"provider\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"groups\": {\n      \"ipGroupsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"shibGroupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"explicitGroupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mailDomainGroupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"groupProviders\": {\n        \"key_0\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"ipGroupProvider\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"shibGroupProvider\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"explicitGroupProvider\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mailDomainGroupProvider\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssigneeSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"roleAssignees\": {\n      \"em\": {},\n      \"authSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"groupSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"explicitGroupSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseRoleService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"predefinedRoleAssignees\": {\n        \"key_0\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_1\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_2\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_3\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_4\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"userNotificationService\": {\n      \"mailService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {},\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"authentication\": {\n      \"authProvidersRegistrationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"builtinUserServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"actionLogSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userNotificationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"confirmEmailService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"passwordResetServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"passwordValidatorService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssigneeSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"gbRespSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetVersionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"explicitGroupService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"savedSearchService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"privateUrlService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {},\n      \"oAuth2Providers\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"authenticationProviderIds\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"authenticationProviders\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"orcidEnabled\": true,\n      \"adminUser\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"currentTimestamp\": {},\n      \"availableOidcProviders\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"orcidAuthenticationProvider\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"systemConfig\": {\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authenticationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"buildNumber\": \"string\",\n      \"version\": \"string\",\n      \"solrHostColonPort\": \"string\",\n      \"provCollectionEnabled\": false,\n      \"metricsCacheTimeoutMinutes\": 944,\n      \"minutesUntilConfirmEmailTokenExpires\": 8280,\n      \"dataverseSiteUrl\": \"string\",\n      \"pageURLWithQueryString\": \"string\",\n      \"guidesBaseUrl\": \"string\",\n      \"guidesLanguage\": \"string\",\n      \"guidesVersion\": \"string\",\n      \"metricsUrl\": \"string\",\n      \"zipDownloadLimit\": 470,\n      \"zipUploadFilesLimit\": 2692,\n      \"loginSessionTimeout\": 8649,\n      \"multipleUploadFilesLimit\": 8187,\n      \"guestbookResponsesPageDisplayLimit\": 1141,\n      \"uploadLogoSizeLimit\": 2123,\n      \"thumbnailSizeLimitImage\": 573,\n      \"thumbnailSizeLimitPDF\": 121,\n      \"thumbnailGenerationDisabledForImages\": true,\n      \"thumbnailGenerationDisabledForPDF\": false,\n      \"applicationTermsOfUse\": \"string\",\n      \"apiTermsOfUse\": \"string\",\n      \"applicationPrivacyPolicyUrl\": \"string\",\n      \"filesOnDatasetPageFromSolr\": false,\n      \"searchHighlightFragmentSize\": 2451,\n      \"tabularIngestSizeLimit\": 1401,\n      \"oAIServerEnabled\": true,\n      \"timerServer\": true,\n      \"footerCopyrightAndYear\": \"string\",\n      \"fileFixityChecksumAlgorithm\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"defaultAuthProvider\": \"string\",\n      \"nameOfInstallation\": \"string\",\n      \"devOAuthAccountType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"oAuth2CallbackUrl\": \"string\",\n      \"shibPassiveLoginEnabled\": true,\n      \"shibAttributeCharacterSetConversionEnabled\": true,\n      \"pVDictionaries\": \"string\",\n      \"pVGoodStrength\": 7065,\n      \"pVMinLength\": 3240,\n      \"pVMaxLength\": 825,\n      \"pVCharacterRules\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"pVNumberOfCharacteristics\": 7765,\n      \"pVNumberOfConsecutiveDigitsAllowed\": 6746,\n      \"publicInstall\": false,\n      \"rsyncUpload\": false,\n      \"globusUpload\": false,\n      \"webloaderUpload\": false,\n      \"hTTPUpload\": true,\n      \"rsyncOnly\": false,\n      \"rsyncDownload\": false,\n      \"hTTPDownload\": false,\n      \"globusDownload\": true,\n      \"globusFileDownload\": false,\n      \"globusBatchLookupSize\": 4900,\n      \"uploadMethodCount\": 6368,\n      \"allowCustomTerms\": true,\n      \"mDCLogPath\": \"string\",\n      \"datafileValidationOnPublishEnabled\": false,\n      \"externalDataverseValidationEnabled\": false,\n      \"externalDatasetValidationEnabled\": false,\n      \"dataverseValidationExecutable\": \"string\",\n      \"datasetValidationExecutable\": \"string\",\n      \"dataverseValidationFailureMsg\": \"string\",\n      \"dataverseUpdateValidationFailureMsg\": \"string\",\n      \"datasetValidationFailureMsg\": \"string\",\n      \"externalValidationAdminOverrideEnabled\": true,\n      \"datasetValidationSizeLimit\": 7328,\n      \"fileValidationSizeLimit\": 8530,\n      \"curationLabels\": {\n        \"key_0\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"storageQuotasEnforced\": true,\n      \"testStorageQuotaLimit\": 3816,\n      \"storingIngestedFilesWithHeaders\": true,\n      \"rateLimitsJson\": \"string\",\n      \"rateLimitingDefaultCapacityTiers\": \"string\",\n      \"contactFeedbackMessageSizeLimit\": 8887\n    },\n    \"privateUrlService\": {\n      \"em\": {},\n      \"datasetServiceBean\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"datasetVersionService\": {\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datafileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"indexService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {},\n      \"unarchivedDatasetVersions\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    },\n    \"dataCaptureModule\": {},\n    \"em\": {},\n    \"logSvc\": {\n      \"em\": {}\n    },\n    \"workflowService\": {\n      \"em\": {},\n      \"datasets\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dvObjects\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settings\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssignees\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userNotificationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"engine\": {\n        \"value\": \"<Circular reference to #/components/schemas/EjbDataverseEngine detected>\"\n      },\n      \"dvRequestService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"providers\": {\n        \"key_0\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key_1\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    \"fileDownloadService\": {\n      \"em\": {},\n      \"guestbookResponseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetVersionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datafileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"userNotificationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mailService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"session\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"commandEngine\": {\n        \"value\": \"<Circular reference to #/components/schemas/EjbDataverseEngine detected>\"\n      },\n      \"dvRequestService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileDownloadHelper\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mdcLogService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"confirmEmailService\": {\n      \"authenticationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mailService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataverseService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"em\": {}\n    },\n    \"storageUseService\": {\n      \"em\": {}\n    },\n    \"dataverseFeaturedItemServiceBean\": {\n      \"em\": {},\n      \"fileService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"datasetFieldsValidator\": {\n      \"datasetFieldService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"innerEngine\": {\n      \"ejbCtxt\": {}\n    },\n    \"cacheFactory\": {\n      \"rateLimitCache\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"manager\": {}\n    },\n    \"ejbCtxt\": {},\n    \"ctxt\": {\n      \"commandsCalled\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    },\n    \"context\": {\n      \"commandsCalled\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    }\n  },\n  \"dataverseRequestService\": {\n    \"dataverseSessionSvc\": {\n      \"user\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"permissionsService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"usersSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"logSvc\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"settingsWrapper\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"headerFragment\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"systemConfig\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"bannerMessageService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authenticationService\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"statusDismissed\": false,\n      \"dismissedMessages\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"debug\": true,\n      \"localeCode\": \"string\",\n      \"localeTitle\": \"string\"\n    },\n    \"request\": {},\n    \"dataverseRequest\": {\n      \"user\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"sourceAddress\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"invocationId\": \"string\",\n      \"httpServletRequest\": {},\n      \"authenticatedUser\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"wFInvocationId\": \"string\"\n    }\n  },\n  \"gbr\": {\n    \"id\": 4825,\n    \"guestbook\": {\n      \"id\": 4076,\n      \"dataverse\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"customQuestions\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"name\": \"string\",\n      \"enabled\": false,\n      \"nameRequired\": false,\n      \"emailRequired\": true,\n      \"institutionRequired\": true,\n      \"positionRequired\": true,\n      \"createTime\": \"2022-03-10\",\n      \"deletable\": false,\n      \"usageCount\": 5695,\n      \"usageCountDataverse\": 7475,\n      \"responseCount\": 7064,\n      \"responseCountDataverse\": 3594,\n      \"createDate\": \"string\",\n      \"requiredAccountInformation\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"optionalAccountInformation\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"requiredQuestionsList\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"optionalQuestionsList\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ]\n    },\n    \"dataFile\": {\n      \"contentType\": \"2DF*rO/rnyr=SEOsW\",\n      \"mergeable\": false,\n      \"id\": 9268,\n      \"publicationDate\": {},\n      \"releaseUser\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"createDate\": {},\n      \"modificationTime\": {},\n      \"indexTime\": {},\n      \"permissionModificationTime\": {},\n      \"permissionIndexTime\": {},\n      \"storageIdentifier\": \"string\",\n      \"dtype\": \"string\",\n      \"dataverseFeaturedItems\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"protocol\": \"string\",\n      \"authority\": \"string\",\n      \"separator\": \"string\",\n      \"globalIdCreateTime\": \"2022-03-10\",\n      \"identifier\": \"string\",\n      \"identifierRegistered\": false,\n      \"alternativePersistentIndentifiers\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"previewImageAvailable\": false,\n      \"storageQuota\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"previewImageFail\": true,\n      \"creator\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssignments\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"released\": true,\n      \"instanceofDataverse\": false,\n      \"instanceofDataset\": false,\n      \"instanceofDataFile\": true,\n      \"dataverseContext\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authorString\": \"string\",\n      \"yearPublishedCreated\": \"string\",\n      \"checksumType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"checksumValue\": \"string\",\n      \"rootDataFileId\": 5026,\n      \"previousDataFileId\": 5478,\n      \"filesize\": 5852,\n      \"restricted\": false,\n      \"provEntityName\": \"string\",\n      \"dataTables\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"auxiliaryFiles\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"ingestReports\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"ingestRequest\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataFileTags\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileMetadatas\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"guestbookResponses\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileAccessRequests\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileAccessRequesters\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"ingestStatus\": \"string\",\n      \"thumbnailForDataset\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"embargo\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"retention\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"deleted\": false,\n      \"markedAsDuplicate\": true,\n      \"duplicateFilename\": \"string\",\n      \"effectivelyPermissionRoot\": true,\n      \"dataTable\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"tags\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"tagLabels\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"tagLabelsAsJsonArrayBuilder\": {},\n      \"ingestReport\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"ingestReportMessage\": \"string\",\n      \"tabularData\": false,\n      \"originalFileFormat\": \"string\",\n      \"originalFileSize\": 3421,\n      \"originalFileName\": \"string\",\n      \"derivedOriginalFileName\": \"string\",\n      \"originalFormatLabel\": \"string\",\n      \"friendlyType\": \"string\",\n      \"owner\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"description\": \"string\",\n      \"draftFileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"latestFileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"latestPublishedFileMetadata\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"friendlySize\": \"string\",\n      \"originalChecksumType\": \"string\",\n      \"storageIO\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"shapefileType\": true,\n      \"image\": false,\n      \"filePackage\": true,\n      \"ingestScheduled\": false,\n      \"ingestInProgress\": true,\n      \"ingestProblem\": true,\n      \"asThumbnailForDataset\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"unf\": \"string\",\n      \"harvested\": false,\n      \"remoteArchiveURL\": \"string\",\n      \"harvestingDescription\": \"string\",\n      \"displayName\": \"string\",\n      \"directoryLabel\": \"string\",\n      \"currentName\": \"string\",\n      \"publicationDateFormattedYYYYMMDD\": \"string\",\n      \"createDateFormattedYYYYMMDD\": \"string\",\n      \"targetUrl\": \"string\",\n      \"deaccessioned\": false\n    },\n    \"dataset\": {\n      \"mergeable\": true,\n      \"id\": 3171,\n      \"publicationDate\": {},\n      \"releaseUser\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"createDate\": {},\n      \"modificationTime\": {},\n      \"indexTime\": {},\n      \"permissionModificationTime\": {},\n      \"permissionIndexTime\": {},\n      \"storageIdentifier\": \"string\",\n      \"dtype\": \"string\",\n      \"dataverseFeaturedItems\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"protocol\": \"string\",\n      \"authority\": \"string\",\n      \"separator\": \"string\",\n      \"globalIdCreateTime\": \"2022-03-10\",\n      \"identifier\": \"string\",\n      \"identifierRegistered\": true,\n      \"alternativePersistentIndentifiers\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"previewImageAvailable\": false,\n      \"storageQuota\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"previewImageFail\": true,\n      \"creator\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"roleAssignments\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"released\": true,\n      \"instanceofDataverse\": true,\n      \"instanceofDataset\": true,\n      \"instanceofDataFile\": false,\n      \"dataverseContext\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authorString\": \"string\",\n      \"yearPublishedCreated\": \"string\",\n      \"storageDriver\": \"string\",\n      \"metadataLanguage\": \"string\",\n      \"guestbookAtRequest\": false,\n      \"pidGeneratorSpecs\": \"string\",\n      \"pidGenerator\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"storageUse\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetFileCountLimit\": 4723,\n      \"externalLabelSetName\": \"string\",\n      \"owner\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"effectivelyPermissionRoot\": false,\n      \"effectiveStorageDriverId\": \"string\",\n      \"storageDriverId\": \"string\",\n      \"effectiveMetadataLanguage\": \"string\",\n      \"effectiveGuestbookEntryAtRequest\": true,\n      \"guestbookEntryAtRequest\": \"string\",\n      \"effectiveCurationLabelSetName\": \"string\",\n      \"curationLabelSetName\": \"string\",\n      \"pidGeneratorId\": \"string\",\n      \"effectivePidGenerator\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"effectiveDatasetFileCountLimit\": 9114,\n      \"files\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"lastExportTime\": \"2022-03-10\",\n      \"versions\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"datasetLocks\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"thumbnailFile\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetMetrics\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"datasetExternalCitations\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"useGenericThumbnail\": false,\n      \"datasetType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"guestbook\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetLinkingDataverses\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileAccessRequest\": true,\n      \"dataFileCategories\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"citationDateDatasetFieldType\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"embargoCitationDate\": {},\n      \"template\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"harvestedFrom\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"harvestIdentifier\": \"string\",\n      \"locks\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"locked\": true,\n      \"persistentURL\": \"string\",\n      \"deaccessioned\": false,\n      \"latestVersion\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"latestVersionForCopy\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"orCreateEditVersion\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"mostRecentMajorVersionReleaseDate\": \"2022-03-10\",\n      \"releasedVersion\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"categories\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileCategories\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"categoriesByName\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"categoryNames\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"alternativePersistentIdentifier\": \"string\",\n      \"protocolForFileStorage\": \"string\",\n      \"authorityForFileStorage\": \"string\",\n      \"identifierForFileStorage\": \"string\",\n      \"nextMajorVersionString\": \"string\",\n      \"nextMinorVersionString\": \"string\",\n      \"versionNumber\": 9693,\n      \"minorVersionNumber\": 5652,\n      \"citation\": \"string\",\n      \"publicationDateFormattedYYYYMMDD\": \"string\",\n      \"citationDate\": {},\n      \"citationDateFormattedYYYYMMDD\": \"string\",\n      \"harvested\": true,\n      \"localURL\": \"string\",\n      \"remoteArchiveURL\": \"string\",\n      \"harvestingDescription\": \"string\",\n      \"displayName\": \"string\",\n      \"currentName\": \"string\",\n      \"permissionRoot\": true,\n      \"targetUrl\": \"string\"\n    },\n    \"datasetVersion\": {\n      \"id\": 8793,\n      \"UNF\": \"string\",\n      \"version\": 226,\n      \"versionNumber\": 1365,\n      \"minorVersionNumber\": 8191,\n      \"deaccessionNote\": \"string\",\n      \"versionNote\": \"string\",\n      \"versionState\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"dataset\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"fileMetadatas\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"termsOfUseAndAccess\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"datasetFields\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"createTime\": \"2022-03-10\",\n      \"lastUpdateTime\": \"2022-03-10\",\n      \"releaseTime\": \"2022-03-10\",\n      \"archiveTime\": \"2022-03-10\",\n      \"archivalCopyLocation\": \"string\",\n      \"deaccessionLink\": \"string\",\n      \"contributorNames\": \"string\",\n      \"dataverseSiteUrl\": \"string\",\n      \"jsonLd\": \"string\",\n      \"datasetVersionUsers\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"workflowComments\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"curationStatuses\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"dvd\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"archivalStatus\": {},\n      \"uNF\": \"string\",\n      \"fileMetadatasSorted\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileMetadatasSortedByLabelAndFolder\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"inReview\": true,\n      \"archivalCopyLocationStatus\": \"string\",\n      \"archivalCopyLocationMessage\": \"string\",\n      \"deaccessionLinkAsURLString\": \"string\",\n      \"versionDate\": \"string\",\n      \"versionYear\": \"string\",\n      \"userDatasets\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"versionContributorIdentifiers\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"defaultVersionDifference\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"priorVersionState\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"friendlyVersionNumber\": \"string\",\n      \"released\": true,\n      \"published\": false,\n      \"draft\": false,\n      \"workingCopy\": false,\n      \"archived\": false,\n      \"deaccessioned\": false,\n      \"retiredCopy\": false,\n      \"minorUpdate\": false,\n      \"hasPackageFile\": false,\n      \"hasNonPackageFile\": true,\n      \"hasRestrictedFile\": false,\n      \"mostRecentlyReleasedVersion\": {\n        \"value\": \"<Circular reference to #/components/schemas/DatasetVersion detected>\"\n      },\n      \"largestMinorRelease\": {\n        \"value\": \"<Circular reference to #/components/schemas/DatasetVersion detected>\"\n      },\n      \"latestVersion\": false,\n      \"title\": \"string\",\n      \"productionDate\": \"string\",\n      \"description\": \"string\",\n      \"descriptions\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"descriptionPlainText\": \"string\",\n      \"descriptionsPlainTextTruncated\": \"string\",\n      \"descriptionHtmlEscaped\": \"string\",\n      \"datasetContacts\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"datasetProducers\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"datasetAuthors\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"funders\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"timePeriodsCovered\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"datesOfCollection\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"datasetAuthorNames\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"datasetSubjects\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"topicClassifications\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"kindOfData\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"languages\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"spatialCoverages\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"keywords\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"relatedMaterial\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"dataSource\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"geographicCoverage\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"relatedPublications\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"uniqueGrantAgencyValues\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"seriesTitles\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"datasetProducerNames\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"citation\": \"string\",\n      \"citationDate\": \"2022-03-10\",\n      \"distributionDate\": \"string\",\n      \"distributorName\": \"string\",\n      \"datasetDistributors\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"distributorNames\": \"string\",\n      \"authorsStr\": \"string\",\n      \"flatDatasetFields\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"semanticVersion\": \"string\",\n      \"valid\": false,\n      \"publicationDateAsString\": \"string\",\n      \"localeLastUpdateTime\": \"string\",\n      \"currentCurationStatus\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      }\n    },\n    \"authenticatedUser\": {\n      \"userIdentifier\": \"string\",\n      \"email\": \"string\",\n      \"lastName\": \"f\",\n      \"firstName\": \"w\",\n      \"id\": 5005,\n      \"affiliation\": \"string\",\n      \"position\": \"string\",\n      \"emailConfirmed\": {},\n      \"createdTime\": {},\n      \"lastLoginTime\": {},\n      \"lastApiUseTime\": {},\n      \"cart\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"superuser\": false,\n      \"deactivated\": false,\n      \"deactivatedTime\": {},\n      \"mutedEmails\": \"string\",\n      \"mutedNotifications\": \"string\",\n      \"mutedEmailsSet\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"mutedNotificationsSet\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"rateLimitTier\": 8544,\n      \"authenticatedOrcid\": \"string\",\n      \"shibIdentityProvider\": \"string\",\n      \"notifications\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"requests\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"datasetLocks\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"oAuth2TokenDatas\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"fileAccessRequests\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"roles\": \"string\",\n      \"authProviderId\": \"string\",\n      \"authProviderFactoryAlias\": \"string\",\n      \"authenticatedUserLookup\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"identifier\": \"string\",\n      \"userNotifications\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"userRequests\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"userRequestss\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"requestedDataFiles\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"displayInfo\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"authenticated\": true,\n      \"name\": \"string\",\n      \"sortByString\": \"string\"\n    },\n    \"fileAccessRequests\": [\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"dataFile\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"user\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"guestbookResponse\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"requestState\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"creationTime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"requester\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"state\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateLabel\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateCreated\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateGranted\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateRejected\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"dataFile\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"user\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"guestbookResponse\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"requestState\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"creationTime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"requester\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"state\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateLabel\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateCreated\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateGranted\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateRejected\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"customQuestionResponses\": [\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"guestbookResponse\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"customQuestion\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"response\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"responseSelectItems\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"guestbookResponse\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"customQuestion\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"response\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"responseSelectItems\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"institution\": \"string\",\n    \"position\": \"string\",\n    \"responseTime\": \"2022-03-10\",\n    \"sessionId\": \"string\",\n    \"eventType\": \"string\",\n    \"writeResponse\": true,\n    \"selectedFileIds\": \"string\",\n    \"fileFormat\": \"string\",\n    \"externalTool\": {\n      \"id\": 7008,\n      \"displayName\": \"string\",\n      \"toolName\": \"string\",\n      \"description\": \"string\",\n      \"externalToolTypes\": [\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      ],\n      \"scope\": {\n        \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n      },\n      \"toolUrl\": \"string\",\n      \"toolParameters\": \"string\",\n      \"contentType\": \"string\",\n      \"allowedApiCalls\": \"string\",\n      \"requirements\": \"string\",\n      \"exploreTool\": true,\n      \"queryTool\": true,\n      \"previewTool\": true,\n      \"descriptionLang\": \"string\",\n      \"displayNameLang\": \"string\"\n    },\n    \"responseDate\": \"string\",\n    \"customQuestionResponsesSorted\": [\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"guestbookResponse\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"customQuestion\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"response\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"responseSelectItems\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"guestbookResponse\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"customQuestion\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"response\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"responseSelectItems\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"fileAccessRequest\": [\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"dataFile\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"user\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"guestbookResponse\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"requestState\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"creationTime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"requester\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"state\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateLabel\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateCreated\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateGranted\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateRejected\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      {\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"dataFile\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"user\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"guestbookResponse\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"requestState\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"creationTime\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"requester\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"state\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateLabel\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateCreated\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateGranted\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"stateRejected\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ]\n  },\n  \"requestUriInfo\": {},\n  \"requestHttpHeaders\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1261a285-1b2d-4c95-acae-3618e21d01b3",
+          "name": "Access delete Auxiliary File With Version",
+          "request": {
+            "name": "Access delete Auxiliary File With Version",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":fileId",
+                "auxiliary",
+                ":formatTag",
+                ":formatVersion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "formatTag",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "formatVersion",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c05b073-bac4-4a97-8839-ddd231a260c1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "auxiliary",
+                    ":formatTag",
+                    ":formatVersion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "formatTag",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "formatVersion",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "794f9258-69cc-48fa-84d3-f818776d6f16",
+          "name": "Access list Datafile Metadata Aux By Origin",
+          "request": {
+            "name": "Access list Datafile Metadata Aux By Origin",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":fileId",
+                "auxiliary",
+                ":origin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "origin",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "18680f84-bd44-4a30-a27a-915c28ffeba7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "auxiliary",
+                    ":origin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "origin",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "967d3bc9-c8e0-45ec-8100-f6722afc491c",
+          "name": "Access tabular Datafile Metadata",
+          "request": {
+            "name": "Access tabular Datafile Metadata",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":fileId",
+                "metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "exclude",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fileMetadataId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9d3a2243-5515-4a6c-883d-09f8d83a5974",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "exclude",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fileMetadataId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "include",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f4e175d4-db59-42e4-803f-1cdb3b490026",
+          "name": "Access tabular Datafile Metadata DDI",
+          "request": {
+            "name": "Access tabular Datafile Metadata DDI",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":fileId",
+                "metadata",
+                "ddi"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "exclude",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fileMetadataId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "include",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a781ef54-4081-4d2b-9cd0-2a84bb072a4e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":fileId",
+                    "metadata",
+                    "ddi"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "exclude",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fileMetadataId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "include",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9391c0c4-4a4e-4b2d-be54-fc320355a130",
+          "name": "Access grant File Access",
+          "request": {
+            "name": "Access grant File Access",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":id",
+                "grantAccess",
+                ":identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "identifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "09d1b8d8-318d-4cc7-9cd4-035a2f255a4c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":id",
+                    "grantAccess",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e0359f7-0c6d-4a3d-b876-87720b4c3a57",
+          "name": "Access list File Access Requests",
+          "request": {
+            "name": "Access list File Access Requests",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":id",
+                "listRequests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "51773d9b-7dc7-410b-901d-bfe8be20d267",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":id",
+                    "listRequests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de8221e5-4291-409e-9ca8-64c9de17673a",
+          "name": "Access reject File Access",
+          "request": {
+            "name": "Access reject File Access",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":id",
+                "rejectAccess",
+                ":identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "identifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "22e367d2-1660-4304-9663-3aef214715f4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":id",
+                    "rejectAccess",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e28d0053-9008-4c2c-8a80-bc7900d5e3b9",
+          "name": "Access request File Access",
+          "request": {
+            "name": "Access request File Access",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":id",
+                "requestAccess"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5835411-2b91-41fc-b24e-200dec7d6e2e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":id",
+                    "requestAccess"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "29c77505-beb0-42c0-a0d2-da4ed396703e",
+          "name": "Access revoke File Access",
+          "request": {
+            "name": "Access revoke File Access",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":id",
+                "revokeAccess",
+                ":identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "identifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a43feb72-0c28-499f-9c26-bf4029793848",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":id",
+                    "revokeAccess",
+                    ":identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "identifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a7b88b1-ac4e-4022-a170-8eddde4469b0",
+          "name": "Access get User File Access Requested",
+          "request": {
+            "name": "Access get User File Access Requested",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":id",
+                "userFileAccessRequested"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82ec1dde-71e7-484d-be37-be5c06180630",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":id",
+                    "userFileAccessRequested"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "78a2ee38-5d25-4a62-ba42-9f935bccb901",
+          "name": "Access get User Permissions On File",
+          "request": {
+            "name": "Access get User Permissions On File",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafile",
+                ":id",
+                "userPermissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6f0e35fc-a84e-443c-87e4-663b8ef294f5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafile",
+                    ":id",
+                    "userPermissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8709f30d-3f83-4aa9-98d4-7c142b0f47c9",
+          "name": "Access post Download Datafiles",
+          "request": {
+            "name": "Access post Download Datafiles",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafiles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/plain"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "73c4e9a1-4bcf-4ce3-b56c-8fdfcda6caad",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafiles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ea34c7ec-2244-4400-8c06-fe53f828a607",
+          "name": "Access datafiles",
+          "request": {
+            "name": "Access datafiles",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "datafiles",
+                ":fileIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileIds",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b2703853-3422-4402-bc41-da14f6530646",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "datafiles",
+                    ":fileIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileIds",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e502ada-d58d-4854-a1b2-24a65064560c",
+          "name": "Access download All From Latest",
+          "request": {
+            "name": "Access download All From Latest",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "dataset",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f562b15-a77a-4a76-a5d0-b1e088c8960b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "dataset",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1d7e9875-0da9-4b43-848f-a0eb06d5d88c",
+          "name": "Access download All From Version",
+          "request": {
+            "name": "Access download All From Version",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "dataset",
+                ":id",
+                "versions",
+                ":versionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "gbrecs",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "versionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6b50d4a0-3996-4929-85c2-071ca657c5e1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "dataset",
+                    ":id",
+                    "versions",
+                    ":versionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "gbrecs",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7135d32-b347-4915-9eb4-5deef0da542e",
+          "name": "Access get Dataverse Feature Item Image",
+          "request": {
+            "name": "Access get Dataverse Feature Item Image",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "dataverseFeaturedItemImage",
+                ":itemId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "itemId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/png"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07d304f2-a886-4b4a-aa92-74c4f5feeead",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "dataverseFeaturedItemImage",
+                    ":itemId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "itemId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/png"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "image/png"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02dadc4b-993f-4931-9333-0a7d02cb8b8d",
+          "name": "Access ds Card Image",
+          "request": {
+            "name": "Access ds Card Image",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "dsCardImage",
+                ":versionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "versionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/png"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cb3ef542-8045-4dce-952f-4a40a24f6f4e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "dsCardImage",
+                    ":versionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "versionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/png"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "image/png"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c8caa9d-f0f6-486c-a7f5-3530f6f69179",
+          "name": "Access dv Card Image",
+          "request": {
+            "name": "Access dv Card Image",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "dvCardImage",
+                ":dataverseId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "dataverseId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/png"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "946f4cf4-f97b-4fc0-97b0-fbfd53fc04c6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "dvCardImage",
+                    ":dataverseId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "dataverseId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/png"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "image/png"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dadebf03-5136-4d06-8193-4b15357cc059",
+          "name": "Access file Card Image",
+          "request": {
+            "name": "Access file Card Image",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                "fileCardImage",
+                ":fileId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "fileId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/png"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca4b4e72-3860-44d4-b9d8-48fc9fa43731",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    "fileCardImage",
+                    ":fileId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "fileId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "image/png"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "image/png"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "45d30bdc-3ad7-4806-939f-114666eae653",
+          "name": "Access allow Access Request",
+          "request": {
+            "name": "Access allow Access Request",
+            "description": {},
+            "url": {
+              "path": [
+                "access",
+                ":id",
+                "allowAccessRequest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "be314f1f-ea4f-4713-92c8-450c4d09cb13",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "access",
+                    ":id",
+                    "allowAccessRequest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://rdr.kuleuven.be/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b5a5b843-53f0-4de0-bc8d-046fbf5086da",
+    "name": "KU Leuven Research Data Repository (RDR) Access API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.",
+      "type": "text/plain"
+    }
+  }
+}

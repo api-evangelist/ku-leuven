@@ -1,16 +1,29 @@
 ---
 aid: ku-leuven
 name: KU Leuven
+x-type: university
+x-category: Public Research University
 description: >-
-  KU Leuven (Katholieke Universiteit Leuven) is a research university in Leuven,
-  Belgium, founded in 1425 and ranked #45 in the QS World University Rankings
-  2025. It maintains a documented public developer footprint through its ICTS
-  Data Services, which expose REST APIs for person/who-is-who information,
-  curriculum information, organizational-chart data, research information,
-  educational offerings, and job vacancies, alongside an OAuth-protected
-  individual timetable API. KU Leuven also operates the Research Data Repository
-  (RDR), a Dataverse-based institutional repository whose REST API is publicly
-  reachable, and runs an active official GitHub organization.
+  KU Leuven (Katholieke Universiteit Leuven) is a Flemish public research university in Leuven,
+  Belgium, founded in 1425 and ranked in the QS world top 50. Re-profiled on 2026-08-19 with
+  operator attribution settled before anything was saved, it is one of the few universities in this
+  cohort whose machine-readable surface is genuinely its own: every host below resolves inside
+  KU Leuven's own 134.58.0.0/16 address space, and no Figshare, Elsevier Pure, Ex Libris or
+  Symplectic contract is attributed here. Its central programmable surface is the ICTS Data
+  Services gateway at dataservice.kuleuven.be — an unauthenticated OpenSearch query API over eight
+  public index families covering the staff directory, academic CVs, the organisational chart, the
+  programme guide, research projects, research teams, research infrastructure and job vacancies —
+  documented in Dutch at admin.kuleuven.be and confirmed live returning real records. It also runs
+  the Research Data Repository (RDR), a self-hosted Dataverse 6.7.1 installation at rdr.kuleuven.be
+  that serves its own OpenAPI publicly, mints DOIs as DataCite repository client BRVZ.RDR, and
+  exposes OAI-PMH; the Lirias institutional repository exposes a second OAI-PMH endpoint; and
+  idp.kuleuven.be serves SAML 2.0 Shibboleth metadata registered in the Belnet federation with
+  REFEDS SIRTFI and Research & Scholarship assurance. Honest caveats: the 36 RDR entries below are
+  tag-splits of ONE Dataverse deployment, and that contract is upstream open-source Dataverse's
+  work — KU Leuven operates the deployment and owns the data, it does not author the API. There is
+  no unified developer portal, no self-serve credential anywhere in the estate, no versioning on
+  the data services gateway, and the personal timetable API's production host does not resolve from
+  the public internet.
 type: Index
 accessModel:
   pricing: free
@@ -29,23 +42,35 @@ access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ku-leuven.png
 url: https://raw.githubusercontent.com/api-evangelist/ku-leuven/refs/heads/main/apis.yml
 tags:
-  - Education
-  - Higher Education
   - University
-  - Research Data
-  - Open Data
+  - Higher Education
+  - Education
   - Belgium
   - Europe
+  - Flanders
+  - Research Data
+  - Research Repository
+  - Open Data
+  - Course Catalog
+  - Identity Federation
+  - OAI-PMH
+  - Dataverse
+  - OpenSearch
+  - Public Research University
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-08-19'
 specificationVersion: '0.23'
 apis:
 - aid: ku-leuven:person
+  x-operator: institution
+  x-surface-class: OpenData
+  x-surface: ku-leuven-data-services
   name: KU Leuven Person Information API
   description: >-
     ICTS Data Services REST API exposing public personnel / who-is-who person information. An expanded
     intranet variant requires a service account.
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  baseURL: https://dataservice.kuleuven.be/employee
   tags:
   - Directory
   - People
@@ -54,11 +79,15 @@ apis:
   - type: Documentation
     url: https://admin.kuleuven.be/icts/services/dataservices/api/person
 - aid: ku-leuven:program
+  x-operator: institution
+  x-surface-class: CourseCatalog
+  x-surface: ku-leuven-data-services
   name: KU Leuven Educational Offering (Onderwijsaanbod) API
   description: >-
     ICTS Data Services REST API exposing public educational offering data, including programs (opleidingen)
     and course components.
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/program-opleiding
+  baseURL: https://dataservice.kuleuven.be/pg
   tags:
   - Courses
   - Catalog
@@ -67,11 +96,15 @@ apis:
   - type: Documentation
     url: https://admin.kuleuven.be/icts/services/dataservices/api/program-opleiding
 - aid: ku-leuven:organigram
+  x-operator: institution
+  x-surface-class: OpenData
+  x-surface: ku-leuven-data-services
   name: KU Leuven Organizational Chart (Organigram) API
   description: >-
     ICTS Data Services REST API exposing public organizational-structure information matching the institutional
     organizational chart. An expanded intranet variant is available via service account.
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/apiorganigraminformatie
+  baseURL: https://dataservice.kuleuven.be/organigram
   tags:
   - Organization
   - Directory
@@ -80,9 +113,13 @@ apis:
   - type: Documentation
     url: https://admin.kuleuven.be/icts/services/dataservices/apiorganigraminformatie
 - aid: ku-leuven:vacancies
+  x-operator: institution
+  x-surface-class: OpenData
+  x-surface: ku-leuven-data-services
   name: KU Leuven Vacancies (Vacatures) API
   description: ICTS Data Services REST API exposing public job vacancy / job posting data.
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/apivacatures
+  baseURL: https://dataservice.kuleuven.be/jobsite
   tags:
   - Jobs
   - Vacancies
@@ -91,6 +128,9 @@ apis:
   - type: Documentation
     url: https://admin.kuleuven.be/icts/services/dataservices/apivacatures
 - aid: ku-leuven:timetable
+  x-operator: institution
+  x-surface-class: CourseCatalog
+  x-surface: ku-leuven-timetable
   name: KU Leuven Individual Timetable (Uurrooster) API
   description: >-
     ICTS Data Services API exposing an individual's personal timetable. Protected by OAuth 2.0 (authorization
@@ -107,6 +147,9 @@ apis:
   - type: Authentication
     url: https://webwsq.aps.kuleuven.be/sap/bc/sec/oauth2/authorize/index.html
 - aid: ku-leuven:ku-leuven-access-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Access API
   description: The Access API from KU Leuven — 23 operation(s) for access.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -121,6 +164,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-addfilestodataset-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven addFilesToDataset API
   description: Uploads a set of files to a dataset
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -135,6 +181,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-addfiletodataset-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven addFileToDataset API
   description: Uploads a file for a dataset
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -149,6 +198,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-addglobusfilestodataset-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven addGlobusFilesToDataset API
   description: Uploads a Globus file for a dataset
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -163,6 +215,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-admin-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Admin API
   description: The Admin API from KU Leuven — 131 operation(s) for admin.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -177,6 +232,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-batch-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Batch API
   description: The Batch API from KU Leuven — 3 operation(s) for batch.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -191,6 +249,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-builtin-users-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Builtin Users API
   description: The Builtin Users API from KU Leuven — 4 operation(s) for builtin users.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -205,6 +266,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-datasetfields-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Datasetfields API
   description: The Datasetfields API from KU Leuven — 1 operation(s) for datasetfields.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -219,6 +283,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-datasets-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Datasets API
   description: The Datasets API from KU Leuven — 92 operation(s) for datasets.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -233,6 +300,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-datatags-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Datatags API
   description: The Datatags API from KU Leuven — 1 operation(s) for datatags.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -247,6 +317,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-dataversefeatureditems-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven DataverseFeaturedItems API
   description: >-
     The DataverseFeaturedItems API from KU Leuven — 1 operation(s) for dataversefeatureditems.
@@ -262,6 +335,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-dataverses-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Dataverses API
   description: The Dataverses API from KU Leuven — 39 operation(s) for dataverses.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -276,6 +352,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-edit-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Edit API
   description: The Edit API from KU Leuven — 1 operation(s) for edit.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -290,6 +369,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-externaltools-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven ExternalTools API
   description: The ExternalTools API from KU Leuven — 2 operation(s) for externaltools.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -304,6 +386,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-files-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Files API
   description: The Files API from KU Leuven — 20 operation(s) for files.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -318,6 +403,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-harvest-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Harvest API
   description: The Harvest API from KU Leuven — 7 operation(s) for harvest.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -332,6 +420,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-inbox-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Inbox API
   description: The Inbox API from KU Leuven — 1 operation(s) for inbox.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -346,6 +437,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-info-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Info API
   description: The Info API from KU Leuven — 49 operation(s) for info.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -360,6 +454,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-ingest-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Ingest API
   description: The Ingest API from KU Leuven — 1 operation(s) for ingest.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -374,6 +471,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-licenses-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Licenses API
   description: The Licenses API from KU Leuven — 6 operation(s) for licenses.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -388,6 +488,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-localcontexts-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Localcontexts API
   description: The Localcontexts API from KU Leuven — 2 operation(s) for localcontexts.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -402,6 +505,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-logout-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Logout API
   description: The Logout API from KU Leuven — 1 operation(s) for logout.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -416,6 +522,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-mail-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Mail API
   description: The Mail API from KU Leuven — 1 operation(s) for mail.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -430,6 +539,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-meta-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Meta API
   description: The Meta API from KU Leuven — 2 operation(s) for meta.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -444,6 +556,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-metadatablocks-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Metadatablocks API
   description: The Metadatablocks API from KU Leuven — 2 operation(s) for metadatablocks.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -458,6 +573,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-mydata-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Mydata API
   description: The Mydata API from KU Leuven — 1 operation(s) for mydata.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -472,6 +590,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-notifications-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Notifications API
   description: The Notifications API from KU Leuven — 6 operation(s) for notifications.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -486,6 +607,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-pids-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Pids API
   description: The Pids API from KU Leuven — 6 operation(s) for pids.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -500,6 +624,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-replacefilesindataset-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven replaceFilesInDataset API
   description: Replace a file to a dataset
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -514,6 +641,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-roles-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Roles API
   description: The Roles API from KU Leuven — 3 operation(s) for roles.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -528,6 +658,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-saveauxiliaryfilewithversion-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven saveAuxiliaryFileWithVersion API
   description: Save Auxiliary File With Version
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -542,6 +675,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-search-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Search API
   description: The Search API from KU Leuven — 2 operation(s) for search.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -556,6 +692,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-sendfeedback-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Sendfeedback API
   description: The Sendfeedback API from KU Leuven — 1 operation(s) for sendfeedback.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -570,6 +709,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-uploaddatasetlogo-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven uploadDatasetLogo API
   description: Uploads a logo for a dataset
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -584,6 +726,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-users-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Users API
   description: The Users API from KU Leuven — 10 operation(s) for users.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -598,6 +743,9 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-workflows-api
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
   name: KU Leuven Workflows API
   description: The Workflows API from KU Leuven — 1 operation(s) for workflows.
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
@@ -611,6 +759,219 @@ apis:
     url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:data-services
+  x-operator: institution
+  x-surface-class: OpenData
+  x-surface: ku-leuven-data-services
+  name: KU Leuven ICTS Data Services API (OpenSearch gateway)
+  description: >-
+    The institution's central programmable surface, operated by KU Leuven ICTS on its own host and
+    its own address space. dataservice.kuleuven.be fronts eight public OpenSearch index families —
+    employee (wie-is-wie staff directory), cv (academic CVs, carrying ORCID iDs), organigram
+    (organisational chart), pg/pg<year> (programme guide), onderzoeksproject, onderzoeksteams and
+    onderzoeksinfrastructuur (research database), and jobsite (vacancies) — each published in a
+    Dutch and an English index. Every index answered an unauthenticated GET /_search with HTTP 200
+    and real records on 2026-08-19: 2,264 organisational units, 5,026 programmes for 2025 and 2,543
+    for 2026, 740 research teams, 379 research infrastructure records, 132 open vacancies, and
+    directory and project indices capped at the 10,000-hit tracking limit. No API key, no
+    registration and no rate limit was observed; use is governed by the KU Leuven Data Service
+    terms of use. The OpenAPI registered here was derived from KU Leuven's own documentation pages
+    and verified against live responses — KU Leuven publishes no machine-readable description of
+    this surface itself. Consumer caveats: there is no version anywhere in the path, header or
+    media type; an unpublished index name returns an HTML 503 from the front proxy rather than a
+    404, so a typo is indistinguishable from an outage; the documentation is Dutch-first even for
+    the English indices; and the directory, CV and organigram indices publish staff names, work
+    addresses and work telephone numbers openly, which is deliberate who-is-who publication but is
+    personal data a consumer takes on obligations for.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices
+  baseURL: https://dataservice.kuleuven.be
+  tags:
+  - Open Data
+  - OpenSearch
+  - Directory
+  - Course Catalog
+  - Research Data
+  - Education
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-data-services-api-openapi.yml
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices
+  - type: TermsOfService
+    url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  - type: Support
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  - type: Authentication
+    url: authentication/ku-leuven-authentication.yml
+  - type: ErrorCatalog
+    url: errors/ku-leuven-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/ku-leuven-lifecycle.yml
+  - type: Vocabulary
+    url: vocabulary/ku-leuven-data-services-vocabulary.yml
+  - type: JSONSchema
+    url: json-schema/ku-leuven-data-services-search-response-schema.json
+- aid: ku-leuven:curriculum
+  x-operator: institution
+  x-surface-class: OpenData
+  x-surface: ku-leuven-data-services
+  name: KU Leuven Curriculum Information (Curriculuminformatie) API
+  description: >-
+    ICTS Data Services index of academic curriculum and CV records — discipline codes, research
+    topics and the researcher's ORCID iD in the `orcId` field. Confirmed live 2026-08-19. This is
+    the surface that carries ORCID through KU Leuven's own infrastructure.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/cv/apicurriculuminformatie
+  baseURL: https://dataservice.kuleuven.be/cv
+  tags:
+  - Research
+  - ORCID
+  - Directory
+  - Education
+  properties:
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices/cv/apicurriculuminformatie
+  - type: Conformance
+    url: conformance/ku-leuven-education-standards.yml
+- aid: ku-leuven:research-projects
+  x-operator: institution
+  x-surface-class: OpenData
+  x-surface: ku-leuven-data-services
+  name: KU Leuven Research Projects (Onderzoeksprojecten) API
+  description: >-
+    ICTS Data Services index over the KU Leuven research database, the richest surface in the
+    estate. Beyond free search it publishes three stored search templates — projectsbyou (by
+    organigram unit code), projectsbyuid (by one or more u-numbers) and projectsbyquery (free
+    text) — with documented from, size, startDate, endDate, sort and `all` parameters. Confirmed
+    live 2026-08-19. The physical index name returned on each hit was
+    onderzoeksproject_2025-04-09, meaning the data had not been rebuilt in over sixteen months.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksprojecten-api-elasticsearch-versie-6.x
+  baseURL: https://dataservice.kuleuven.be/onderzoeksproject
+  tags:
+  - Research
+  - Projects
+  - Open Data
+  - Education
+  properties:
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksprojecten-api-elasticsearch-versie-6.x
+  - type: Lifecycle
+    url: lifecycle/ku-leuven-lifecycle.yml
+- aid: ku-leuven:research-teams
+  x-operator: institution
+  x-surface-class: OpenData
+  x-surface: ku-leuven-data-services
+  name: KU Leuven Research Teams (Onderzoeksteams) API
+  description: >-
+    ICTS Data Services index of research groups, 740 records live on 2026-08-19, joined to projects
+    and to the organisational chart by unit code. Supports _search and _doc/{id} retrieval with
+    _source field selection.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksteams-api-elasticsearch-6.x
+  baseURL: https://dataservice.kuleuven.be/onderzoeksteams
+  tags:
+  - Research
+  - Organization
+  - Open Data
+  - Education
+  properties:
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksteams-api-elasticsearch-6.x
+- aid: ku-leuven:research-infrastructure
+  x-operator: institution
+  x-surface-class: ResearchComputing
+  x-surface: ku-leuven-data-services
+  name: KU Leuven Research Infrastructure (Onderzoeksinfrastructuur) API
+  description: >-
+    ICTS Data Services index of core facilities and shared research equipment, 379 records live on
+    2026-08-19. A machine-readable research-facility catalogue is an uncommon institutional surface
+    and one of the more genuinely reusable things KU Leuven publishes.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksinfrastructuur-elasticsearch-6.x
+  baseURL: https://dataservice.kuleuven.be/onderzoeksinfrastructuur
+  tags:
+  - Research
+  - Infrastructure
+  - Open Data
+  - Education
+  properties:
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksinfrastructuur-elasticsearch-6.x
+- aid: ku-leuven:rdr-oai-pmh
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-rdr
+  name: KU Leuven RDR OAI-PMH Harvesting Interface
+  description: >-
+    OAI-PMH 2.0 interface of the Research Data Repository, served from KU Leuven's own host.
+    Identify returned repositoryName "KU Leuven RDR Dataverse OAI Archive", adminEmail
+    rdm@kuleuven.be, earliestDatestamp 2025-03-25, deletedRecord transient, granularity to the
+    second, gzip and deflate compression. The set structure it serves is managed through the
+    /harvest/server/oaisets operations in the RDR contract.
+  humanURL: https://www.kuleuven.be/rdm/en/rdr
+  baseURL: https://rdr.kuleuven.be/oai
+  tags:
+  - OAI-PMH
+  - Research Repository
+  - Metadata
+  - Open Access
+  - Education
+  properties:
+  - type: Conformance
+    url: conformance/ku-leuven-education-standards.yml
+  - type: Example
+    url: examples/ku-leuven-rdr-oai-identify-example.xml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+- aid: ku-leuven:lirias-oai-pmh
+  x-operator: institution
+  x-surface-class: ResearchRepository
+  x-surface: ku-leuven-lirias
+  name: Lirias OAI-PMH Harvesting Interface
+  description: >-
+    Lirias is the institutional publication repository of the KU Leuven Association, running on
+    KU Leuven's own host and address space. Its OAI-PMH 2.0 Identify response returned
+    repositoryName "Lirias - The institutional repository of KU Leuven Association", adminEmail
+    lirias@kuleuven.be and earliestDatestamp 2025-02-10. This is a second institution-operated
+    harvesting surface, distinct from the RDR, and it was not previously catalogued.
+  humanURL: https://lirias.kuleuven.be
+  baseURL: https://lirias.kuleuven.be/oai
+  tags:
+  - OAI-PMH
+  - Research Repository
+  - Publications
+  - Metadata
+  - Education
+  properties:
+  - type: Conformance
+    url: conformance/ku-leuven-education-standards.yml
+- aid: ku-leuven:identity-federation
+  x-operator: institution
+  x-surface-class: IdentityFederation
+  x-surface: ku-leuven-idp
+  name: KU Leuven Shibboleth Identity Provider (SAML 2.0 metadata)
+  description: >-
+    KU Leuven serves its own SAML 2.0 federation metadata from idp.kuleuven.be, which resolves to
+    134.58.64.219 inside the university's own address space — institution-operated, not a hosted
+    IdP tenant. entityID urn:mace:kuleuven.be:kulassoc:kuleuven.be, registered by the Belnet
+    federation on 2012-03-27, asserting REFEDS SIRTFI and Research & Scholarship entity categories,
+    with Shibboleth mdui and shibmd extensions. This is machine-readable, institution-operated and
+    was absent from the previous profile entirely. It is not consumable by general developers —
+    relying parties must be registered service providers in Belnet or eduGAIN — but it is the
+    authentication contract behind every federated KU Leuven service, including the Shibboleth SP
+    in front of the ICTS pages.
+  humanURL: https://idp.kuleuven.be/idp/shibboleth
+  baseURL: https://idp.kuleuven.be/idp/
+  tags:
+  - Identity Federation
+  - SAML
+  - Shibboleth
+  - Belnet
+  - eduGAIN
+  - Authentication
+  - Education
+  properties:
+  - type: Authentication
+    url: authentication/ku-leuven-authentication.yml
+  - type: Conformance
+    url: conformance/ku-leuven-education-standards.yml
 common:
   - type: AgenticAccess
     url: agentic-access/ku-leuven-agentic-access.yml
@@ -622,7 +983,7 @@ common:
     url: https://www.kuleuven.be
   - type: DeveloperPortal
     url: https://admin.kuleuven.be/icts/services/dataservices
-  - type: GitHub
+  - type: GitHubOrganization
     url: https://github.com/kuleuven
   - type: LinkedIn
     url: https://www.linkedin.com/school/ku-leuven/
@@ -636,6 +997,158 @@ common:
     url: finops/ku-leuven-finops.yml
   - type: Review
     url: review.yml
+  - type: APIReference
+    url: https://rdr.kuleuven.be/openapi
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: OpenData
+    url: https://admin.kuleuven.be/icts/services/dataservices
+  - type: ResearchRepository
+    url: https://www.kuleuven.be/rdm/en/rdr
+  - type: ResearchRepository
+    url: https://lirias.kuleuven.be
+  - type: CourseCatalog
+    url: https://onderwijsaanbod.kuleuven.be
+  - type: IdentityFederation
+    url: https://idp.kuleuven.be/idp/shibboleth
+  - type: ResearchComputing
+    url: https://admin.kuleuven.be/icts/onderzoek/hpc
+  - type: LibraryCatalog
+    url: https://bib.kuleuven.be
+  - type: AIPolicy
+    url: https://www.kuleuven.be/english/genai
+  - type: TermsOfService
+    url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  - type: PrivacyPolicy
+    url: https://www.kuleuven.be/privacy
+  - type: Support
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  - type: Security
+    url: https://admin.kuleuven.be/icts/english/responsible-disclosure
+  - type: SecurityTxt
+    url: https://www.kuleuven.be/.well-known/security.txt
+  - type: Authentication
+    url: authentication/ku-leuven-authentication.yml
+  - type: Conformance
+    url: conformance/ku-leuven-education-standards.yml
+  - type: ErrorCatalog
+    url: errors/ku-leuven-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/ku-leuven-lifecycle.yml
+  - type: OAuthScopes
+    url: scopes/ku-leuven-scopes.yml
+  - type: Vocabulary
+    url: vocabulary/ku-leuven-vocabulary.yml
+  - type: Vocabulary
+    url: vocabulary/ku-leuven-data-services-vocabulary.yml
+  - type: JSONLD
+    url: json-ld/ku-leuven-context.jsonld
+  - type: JSONSchema
+    url: json-schema/ku-leuven-data-services-search-response-schema.json
+  - type: Rules
+    url: rules/ku-leuven-rules.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-coverage:
+  state: covered
+  reason: institution_operated_surfaces_verified
+  detail: >-
+    KU Leuven is a rare positive case in this cohort: it operates real machine-readable surfaces on
+    its own infrastructure, and every one of them was reached and read on 2026-08-19. The ICTS Data
+    Services gateway at dataservice.kuleuven.be answered unauthenticated searches across eight
+    public index families with real records; the self-hosted Dataverse 6.7.1 RDR serves its own
+    OpenAPI publicly (correcting the June 2026 review, which recorded it as restricted to KU Leuven
+    IPs); two OAI-PMH endpoints identified themselves; the Shibboleth IdP served signed SAML 2.0
+    metadata; and DataCite confirmed the RDR as repository client BRVZ.RDR. Nothing here is a
+    vendor's contract attributed to the institution, and no tenant relationship was found that
+    needed relabelling — the hosts all resolve inside KU Leuven's own 134.58.0.0/16 space. What is
+    genuinely absent is a developer program: no unified portal, no self-serve credential, no
+    published scopes, no versioning on the data services gateway, no changelog, deprecation policy
+    or status page, no llms.txt, and no machine-readable description authored by KU Leuven for its
+    own data services — the OpenAPI in this repository is derived by API Evangelist from KU Leuven's
+    Dutch documentation and verified against live responses. Two defects worth naming: an
+    unpublished index returns an HTML 503 rather than a 404, and security.txt carries a malformed,
+    expired Expires value of 2026-04-16.
+  evidence:
+  - url: https://dataservice.kuleuven.be/employee/_search?size=1
+    status: 200
+    note: Staff directory index, unauthenticated, real records, hit count capped at 10,000.
+  - url: https://dataservice.kuleuven.be/cv/_search?size=1
+    status: 200
+    note: Curriculum index; returned an ORCID iD in the orcId field.
+  - url: https://dataservice.kuleuven.be/organigram/_search?size=1
+    status: 200
+    note: 2,264 organisational units; publishes staff names and work phone numbers openly.
+  - url: https://dataservice.kuleuven.be/pg/_search?size=1
+    status: 200
+    note: Programme guide, 5,026 documents through the current-year alias (pg2025 snapshot).
+  - url: https://dataservice.kuleuven.be/pg2026/_search?size=1
+    status: 200
+    note: Next academic year addressable directly, 2,543 documents.
+  - url: https://dataservice.kuleuven.be/onderzoeksproject/_search?size=1
+    status: 200
+    note: Research projects; snapshot index dated 2025-04-09, over sixteen months stale.
+  - url: https://dataservice.kuleuven.be/onderzoeksteams/_search?size=1
+    status: 200
+    note: 740 research teams.
+  - url: https://dataservice.kuleuven.be/onderzoeksinfrastructuur/_search?size=1
+    status: 200
+    note: 379 research infrastructure records.
+  - url: https://dataservice.kuleuven.be/jobsite/_search?size=1
+    status: 200
+    note: 132 open vacancies.
+  - url: https://dataservice.kuleuven.be/
+    status: 503
+    note: Gateway root and any unpublished index name return an HTML 503, not a 404.
+  - url: https://dataservice.kuleuven.be/opleidingsonderdelen/_search
+    status: 503
+    note: Course-component API is documented as "in opbouw"; no index answers.
+  - url: https://rdr.kuleuven.be/openapi
+    status: 200
+    note: >-
+      Dataverse 6.7.1 description served publicly, 425 paths, info.title "Dataverse API" and no
+      servers block — the contract is upstream Dataverse's, the deployment is KU Leuven's.
+  - url: https://rdr.kuleuven.be/api/info/version
+    status: 200
+    note: Version 6.7.1 confirmed live.
+  - url: https://rdr.kuleuven.be/api/search?q=*&type=dataset&per_page=1
+    status: 200
+    note: 830 published datasets, first item doi:10.48804/SLMHLZ.
+  - url: https://rdr.kuleuven.be/oai?verb=Identify
+    status: 200
+    note: OAI-PMH 2.0, "KU Leuven RDR Dataverse OAI Archive".
+  - url: https://lirias.kuleuven.be/oai?verb=Identify
+    status: 200
+    note: OAI-PMH 2.0, Lirias institutional repository; previously uncatalogued.
+  - url: https://idp.kuleuven.be/idp/shibboleth
+    status: 200
+    note: >-
+      SAML 2.0 metadata, entityID urn:mace:kuleuven.be:kulassoc:kuleuven.be, Belnet registration
+      authority, REFEDS SIRTFI and R&S.
+  - url: https://api.datacite.org/clients/brvz.rdr
+    status: 200
+    note: DataCite repository client "KU Leuven RDR", prefix 10.48804, member since 2021.
+  - url: https://webws.aps.kuleuven.be
+    status: 0
+    note: Timetable OData production host does not resolve from the public internet.
+  - url: https://webwsq.aps.kuleuven.be/sap/opu/odata/sap/zc_ep_uurrooster_oauth_srv/$metadata
+    status: 403
+    note: Acceptance host reachable, refuses unauthenticated metadata reads.
+  - url: https://www.kuleuven.be/.well-known/security.txt
+    status: 200
+    note: Real security.txt with an Intigriti program, but Expires is malformed and expired.
+  - url: https://www.kuleuven.be/english/genai
+    status: 200
+    note: Institutional generative-AI policy; governance document, not an API artifact.
+  - url: https://onderwijsaanbod.kuleuven.be
+    status: 200
+    note: HTML programme guide fronting the same data the pg indices serve.
+  - url: https://api.github.com/orgs/kuleuven/repos
+    status: 200
+    note: >-
+      132 repositories, largely the ManGO iRODS research-data platform and Puppet modules; no
+      first-party OpenAPI, AsyncAPI or apis.json in the org.
+  - url: https://data.kuleuven.be
+    status: 0
+    note: No CKAN/Socrata open-data portal exists at the conventional hostname.

@@ -121,6 +121,10 @@ apis:
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/apivacatures
   baseURL: https://dataservice.kuleuven.be/jobsite
   tags:
+  - Job
+  - Vacancies
+  - Education
+  tags_raw:
   - Jobs
   - Vacancies
   - Education
@@ -137,6 +141,11 @@ apis:
     code grant) with SAML as a fallback; OAuth client credentials are issued by KU Leuven on request.
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/uurrooster
   tags:
+  - Timetable
+  - Schedule
+  - Authentication
+  - Education
+  tags_raw:
   - Timetable
   - Schedule
   - OAuth
@@ -394,6 +403,8 @@ apis:
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   baseURL: https://rdr.kuleuven.be/api
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -598,6 +609,8 @@ apis:
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   baseURL: https://rdr.kuleuven.be/api
   tags:
+  - Notification
+  tags_raw:
   - Notifications
   properties:
   - type: OpenAPI
@@ -665,7 +678,8 @@ apis:
   description: Save Auxiliary File With Version
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   baseURL: https://rdr.kuleuven.be/api
-  tags:
+  tags: []
+  tags_raw:
   - saveAuxiliaryFileWithVersion
   properties:
   - type: OpenAPI
@@ -716,7 +730,8 @@ apis:
   description: Uploads a logo for a dataset
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   baseURL: https://rdr.kuleuven.be/api
-  tags:
+  tags: []
+  tags_raw:
   - uploadDatasetLogo
   properties:
   - type: OpenAPI
@@ -734,6 +749,8 @@ apis:
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   baseURL: https://rdr.kuleuven.be/api
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
@@ -847,6 +864,11 @@ apis:
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksprojecten-api-elasticsearch-versie-6.x
   baseURL: https://dataservice.kuleuven.be/onderzoeksproject
   tags:
+  - Research
+  - Project
+  - Open Data
+  - Education
+  tags_raw:
   - Research
   - Projects
   - Open Data

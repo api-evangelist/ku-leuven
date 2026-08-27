@@ -776,67 +776,15 @@ apis:
     url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
-- aid: ku-leuven:data-services
-  x-operator: institution
-  x-surface-class: OpenData
-  x-surface: ku-leuven-data-services
-  name: KU Leuven ICTS Data Services API (OpenSearch gateway)
-  description: >-
-    The institution's central programmable surface, operated by KU Leuven ICTS on its own host and
-    its own address space. dataservice.kuleuven.be fronts eight public OpenSearch index families —
-    employee (wie-is-wie staff directory), cv (academic CVs, carrying ORCID iDs), organigram
-    (organisational chart), pg/pg<year> (programme guide), onderzoeksproject, onderzoeksteams and
-    onderzoeksinfrastructuur (research database), and jobsite (vacancies) — each published in a
-    Dutch and an English index. Every index answered an unauthenticated GET /_search with HTTP 200
-    and real records on 2026-08-19: 2,264 organisational units, 5,026 programmes for 2025 and 2,543
-    for 2026, 740 research teams, 379 research infrastructure records, 132 open vacancies, and
-    directory and project indices capped at the 10,000-hit tracking limit. No API key, no
-    registration and no rate limit was observed; use is governed by the KU Leuven Data Service
-    terms of use. The OpenAPI registered here was derived from KU Leuven's own documentation pages
-    and verified against live responses — KU Leuven publishes no machine-readable description of
-    this surface itself. Consumer caveats: there is no version anywhere in the path, header or
-    media type; an unpublished index name returns an HTML 503 from the front proxy rather than a
-    404, so a typo is indistinguishable from an outage; the documentation is Dutch-first even for
-    the English indices; and the directory, CV and organigram indices publish staff names, work
-    addresses and work telephone numbers openly, which is deliberate who-is-who publication but is
-    personal data a consumer takes on obligations for.
-  humanURL: https://admin.kuleuven.be/icts/services/dataservices
-  baseURL: https://dataservice.kuleuven.be
-  tags:
-  - Open Data
-  - OpenSearch
-  - Directory
-  - Course Catalog
-  - Research Data
-  - Education
-  properties:
-  - type: OpenAPI
-    url: openapi/ku-leuven-data-services-api-openapi.yml
-  - type: Documentation
-    url: https://admin.kuleuven.be/icts/services/dataservices
-  - type: TermsOfService
-    url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
-  - type: Support
-    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
-  - type: Authentication
-    url: authentication/ku-leuven-authentication.yml
-  - type: ErrorCatalog
-    url: errors/ku-leuven-error-codes.yml
-  - type: Lifecycle
-    url: lifecycle/ku-leuven-lifecycle.yml
-  - type: Vocabulary
-    url: vocabulary/ku-leuven-data-services-vocabulary.yml
-  - type: JSONSchema
-    url: json-schema/ku-leuven-data-services-search-response-schema.json
 - aid: ku-leuven:curriculum
   x-operator: institution
   x-surface-class: OpenData
   x-surface: ku-leuven-data-services
   name: KU Leuven Curriculum Information (Curriculuminformatie) API
   description: >-
-    ICTS Data Services index of academic curriculum and CV records — discipline codes, research
-    topics and the researcher's ORCID iD in the `orcId` field. Confirmed live 2026-08-19. This is
-    the surface that carries ORCID through KU Leuven's own infrastructure.
+    ICTS Data Services index of academic curriculum and CV records — discipline codes, research topics
+    and the researcher's ORCID iD in the `orcId` field. Confirmed live 2026-08-19. This is the surface
+    that carries ORCID through KU Leuven's own infrastructure.
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/cv/apicurriculuminformatie
   baseURL: https://dataservice.kuleuven.be/cv
   tags:
@@ -855,13 +803,14 @@ apis:
   x-surface: ku-leuven-data-services
   name: KU Leuven Research Projects (Onderzoeksprojecten) API
   description: >-
-    ICTS Data Services index over the KU Leuven research database, the richest surface in the
-    estate. Beyond free search it publishes three stored search templates — projectsbyou (by
-    organigram unit code), projectsbyuid (by one or more u-numbers) and projectsbyquery (free
-    text) — with documented from, size, startDate, endDate, sort and `all` parameters. Confirmed
-    live 2026-08-19. The physical index name returned on each hit was
-    onderzoeksproject_2025-04-09, meaning the data had not been rebuilt in over sixteen months.
-  humanURL: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksprojecten-api-elasticsearch-versie-6.x
+    ICTS Data Services index over the KU Leuven research database, the richest surface in the estate.
+    Beyond free search it publishes three stored search templates — projectsbyou (by organigram unit code),
+    projectsbyuid (by one or more u-numbers) and projectsbyquery (free text) — with documented from, size,
+    startDate, endDate, sort and `all` parameters. Confirmed live 2026-08-19. The physical index name
+    returned on each hit was onderzoeksproject_2025-04-09, meaning the data had not been rebuilt in over
+    sixteen months.
+  humanURL: >-
+    https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksprojecten-api-elasticsearch-versie-6.x
   baseURL: https://dataservice.kuleuven.be/onderzoeksproject
   tags:
   - Research
@@ -875,7 +824,8 @@ apis:
   - Education
   properties:
   - type: Documentation
-    url: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksprojecten-api-elasticsearch-versie-6.x
+    url: >-
+      https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksprojecten-api-elasticsearch-versie-6.x
   - type: Lifecycle
     url: lifecycle/ku-leuven-lifecycle.yml
 - aid: ku-leuven:research-teams
@@ -884,10 +834,11 @@ apis:
   x-surface: ku-leuven-data-services
   name: KU Leuven Research Teams (Onderzoeksteams) API
   description: >-
-    ICTS Data Services index of research groups, 740 records live on 2026-08-19, joined to projects
-    and to the organisational chart by unit code. Supports _search and _doc/{id} retrieval with
-    _source field selection.
-  humanURL: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksteams-api-elasticsearch-6.x
+    ICTS Data Services index of research groups, 740 records live on 2026-08-19, joined to projects and
+    to the organisational chart by unit code. Supports _search and _doc/{id} retrieval with _source field
+    selection.
+  humanURL: >-
+    https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksteams-api-elasticsearch-6.x
   baseURL: https://dataservice.kuleuven.be/onderzoeksteams
   tags:
   - Research
@@ -896,17 +847,19 @@ apis:
   - Education
   properties:
   - type: Documentation
-    url: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksteams-api-elasticsearch-6.x
+    url: >-
+      https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksteams-api-elasticsearch-6.x
 - aid: ku-leuven:research-infrastructure
   x-operator: institution
   x-surface-class: ResearchComputing
   x-surface: ku-leuven-data-services
   name: KU Leuven Research Infrastructure (Onderzoeksinfrastructuur) API
   description: >-
-    ICTS Data Services index of core facilities and shared research equipment, 379 records live on
-    2026-08-19. A machine-readable research-facility catalogue is an uncommon institutional surface
-    and one of the more genuinely reusable things KU Leuven publishes.
-  humanURL: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksinfrastructuur-elasticsearch-6.x
+    ICTS Data Services index of core facilities and shared research equipment, 379 records live on 2026-08-19.
+    A machine-readable research-facility catalogue is an uncommon institutional surface and one of the
+    more genuinely reusable things KU Leuven publishes.
+  humanURL: >-
+    https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksinfrastructuur-elasticsearch-6.x
   baseURL: https://dataservice.kuleuven.be/onderzoeksinfrastructuur
   tags:
   - Research
@@ -915,18 +868,18 @@ apis:
   - Education
   properties:
   - type: Documentation
-    url: https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksinfrastructuur-elasticsearch-6.x
+    url: >-
+      https://admin.kuleuven.be/icts/services/dataservices/onderzoeksdatabank/onderzoeksinfrastructuur-elasticsearch-6.x
 - aid: ku-leuven:rdr-oai-pmh
   x-operator: institution
   x-surface-class: ResearchRepository
   x-surface: ku-leuven-rdr
   name: KU Leuven RDR OAI-PMH Harvesting Interface
   description: >-
-    OAI-PMH 2.0 interface of the Research Data Repository, served from KU Leuven's own host.
-    Identify returned repositoryName "KU Leuven RDR Dataverse OAI Archive", adminEmail
-    rdm@kuleuven.be, earliestDatestamp 2025-03-25, deletedRecord transient, granularity to the
-    second, gzip and deflate compression. The set structure it serves is managed through the
-    /harvest/server/oaisets operations in the RDR contract.
+    OAI-PMH 2.0 interface of the Research Data Repository, served from KU Leuven's own host. Identify
+    returned repositoryName "KU Leuven RDR Dataverse OAI Archive", adminEmail rdm@kuleuven.be, earliestDatestamp
+    2025-03-25, deletedRecord transient, granularity to the second, gzip and deflate compression. The
+    set structure it serves is managed through the /harvest/server/oaisets operations in the RDR contract.
   humanURL: https://www.kuleuven.be/rdm/en/rdr
   baseURL: https://rdr.kuleuven.be/oai
   tags:
@@ -948,11 +901,11 @@ apis:
   x-surface: ku-leuven-lirias
   name: Lirias OAI-PMH Harvesting Interface
   description: >-
-    Lirias is the institutional publication repository of the KU Leuven Association, running on
-    KU Leuven's own host and address space. Its OAI-PMH 2.0 Identify response returned
-    repositoryName "Lirias - The institutional repository of KU Leuven Association", adminEmail
-    lirias@kuleuven.be and earliestDatestamp 2025-02-10. This is a second institution-operated
-    harvesting surface, distinct from the RDR, and it was not previously catalogued.
+    Lirias is the institutional publication repository of the KU Leuven Association, running on KU Leuven's
+    own host and address space. Its OAI-PMH 2.0 Identify response returned repositoryName "Lirias - The
+    institutional repository of KU Leuven Association", adminEmail lirias@kuleuven.be and earliestDatestamp
+    2025-02-10. This is a second institution-operated harvesting surface, distinct from the RDR, and it
+    was not previously catalogued.
   humanURL: https://lirias.kuleuven.be
   baseURL: https://lirias.kuleuven.be/oai
   tags:
@@ -970,15 +923,14 @@ apis:
   x-surface: ku-leuven-idp
   name: KU Leuven Shibboleth Identity Provider (SAML 2.0 metadata)
   description: >-
-    KU Leuven serves its own SAML 2.0 federation metadata from idp.kuleuven.be, which resolves to
-    134.58.64.219 inside the university's own address space — institution-operated, not a hosted
-    IdP tenant. entityID urn:mace:kuleuven.be:kulassoc:kuleuven.be, registered by the Belnet
-    federation on 2012-03-27, asserting REFEDS SIRTFI and Research & Scholarship entity categories,
-    with Shibboleth mdui and shibmd extensions. This is machine-readable, institution-operated and
-    was absent from the previous profile entirely. It is not consumable by general developers —
-    relying parties must be registered service providers in Belnet or eduGAIN — but it is the
-    authentication contract behind every federated KU Leuven service, including the Shibboleth SP
-    in front of the ICTS pages.
+    KU Leuven serves its own SAML 2.0 federation metadata from idp.kuleuven.be, which resolves to 134.58.64.219
+    inside the university's own address space — institution-operated, not a hosted IdP tenant. entityID
+    urn:mace:kuleuven.be:kulassoc:kuleuven.be, registered by the Belnet federation on 2012-03-27, asserting
+    REFEDS SIRTFI and Research & Scholarship entity categories, with Shibboleth mdui and shibmd extensions.
+    This is machine-readable, institution-operated and was absent from the previous profile entirely.
+    It is not consumable by general developers — relying parties must be registered service providers
+    in Belnet or eduGAIN — but it is the authentication contract behind every federated KU Leuven service,
+    including the Shibboleth SP in front of the ICTS pages.
   humanURL: https://idp.kuleuven.be/idp/shibboleth
   baseURL: https://idp.kuleuven.be/idp/
   tags:
@@ -994,6 +946,214 @@ apis:
     url: authentication/ku-leuven-authentication.yml
   - type: Conformance
     url: conformance/ku-leuven-education-standards.yml
+- aid: ku-leuven:ku-leuven-curriculum-api
+  name: KU Leuven Curriculum API
+  description: Academic curriculum and CV information, including ORCID identifiers.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  baseURL: https://dataservice.kuleuven.be/employee
+  tags:
+  - Curriculum
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-curriculum-api-openapi.yml
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices
+  - type: TermsOfService
+    url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  - type: Support
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  - type: Authentication
+    url: authentication/ku-leuven-authentication.yml
+  - type: ErrorCatalog
+    url: errors/ku-leuven-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/ku-leuven-lifecycle.yml
+  - type: Vocabulary
+    url: vocabulary/ku-leuven-data-services-vocabulary.yml
+  - type: JSONSchema
+    url: json-schema/ku-leuven-data-services-search-response-schema.json
+- aid: ku-leuven:ku-leuven-organigram-api
+  name: KU Leuven Organigram API
+  description: Institutional organisational chart units.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  baseURL: https://dataservice.kuleuven.be/employee
+  tags:
+  - Organigram
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-organigram-api-openapi.yml
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices
+  - type: TermsOfService
+    url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  - type: Support
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  - type: Authentication
+    url: authentication/ku-leuven-authentication.yml
+  - type: ErrorCatalog
+    url: errors/ku-leuven-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/ku-leuven-lifecycle.yml
+  - type: Vocabulary
+    url: vocabulary/ku-leuven-data-services-vocabulary.yml
+  - type: JSONSchema
+    url: json-schema/ku-leuven-data-services-search-response-schema.json
+- aid: ku-leuven:ku-leuven-person-api
+  name: KU Leuven Person API
+  description: Public staff / who-is-who person information (wie-is-wie).
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  baseURL: https://dataservice.kuleuven.be/employee
+  tags:
+  - Person
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-person-api-openapi.yml
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices
+  - type: TermsOfService
+    url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  - type: Support
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  - type: Authentication
+    url: authentication/ku-leuven-authentication.yml
+  - type: ErrorCatalog
+    url: errors/ku-leuven-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/ku-leuven-lifecycle.yml
+  - type: Vocabulary
+    url: vocabulary/ku-leuven-data-services-vocabulary.yml
+  - type: JSONSchema
+    url: json-schema/ku-leuven-data-services-search-response-schema.json
+- aid: ku-leuven:ku-leuven-programs-api
+  name: KU Leuven Programs API
+  description: Educational offering — degree programmes in the programme guide (onderwijsaanbod).
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  baseURL: https://dataservice.kuleuven.be/employee
+  tags:
+  - Programs
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-programs-api-openapi.yml
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices
+  - type: TermsOfService
+    url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  - type: Support
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  - type: Authentication
+    url: authentication/ku-leuven-authentication.yml
+  - type: ErrorCatalog
+    url: errors/ku-leuven-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/ku-leuven-lifecycle.yml
+  - type: Vocabulary
+    url: vocabulary/ku-leuven-data-services-vocabulary.yml
+  - type: JSONSchema
+    url: json-schema/ku-leuven-data-services-search-response-schema.json
+- aid: ku-leuven:ku-leuven-researchinfrastructure-api
+  name: KU Leuven Research Infrastructure API
+  description: Research infrastructure and core facilities from the research database.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  baseURL: https://dataservice.kuleuven.be/employee
+  tags:
+  - ResearchInfrastructure
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-researchinfrastructure-api-openapi.yml
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices
+  - type: TermsOfService
+    url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  - type: Support
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  - type: Authentication
+    url: authentication/ku-leuven-authentication.yml
+  - type: ErrorCatalog
+    url: errors/ku-leuven-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/ku-leuven-lifecycle.yml
+  - type: Vocabulary
+    url: vocabulary/ku-leuven-data-services-vocabulary.yml
+  - type: JSONSchema
+    url: json-schema/ku-leuven-data-services-search-response-schema.json
+- aid: ku-leuven:ku-leuven-researchprojects-api
+  name: KU Leuven Research Projects API
+  description: Research projects from the KU Leuven research database (onderzoeksdatabank).
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  baseURL: https://dataservice.kuleuven.be/employee
+  tags:
+  - ResearchProjects
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-researchprojects-api-openapi.yml
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices
+  - type: TermsOfService
+    url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  - type: Support
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  - type: Authentication
+    url: authentication/ku-leuven-authentication.yml
+  - type: ErrorCatalog
+    url: errors/ku-leuven-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/ku-leuven-lifecycle.yml
+  - type: Vocabulary
+    url: vocabulary/ku-leuven-data-services-vocabulary.yml
+  - type: JSONSchema
+    url: json-schema/ku-leuven-data-services-search-response-schema.json
+- aid: ku-leuven:ku-leuven-researchteams-api
+  name: KU Leuven Research Teams API
+  description: Research teams / groups from the research database.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  baseURL: https://dataservice.kuleuven.be/employee
+  tags:
+  - ResearchTeams
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-researchteams-api-openapi.yml
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices
+  - type: TermsOfService
+    url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  - type: Support
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  - type: Authentication
+    url: authentication/ku-leuven-authentication.yml
+  - type: ErrorCatalog
+    url: errors/ku-leuven-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/ku-leuven-lifecycle.yml
+  - type: Vocabulary
+    url: vocabulary/ku-leuven-data-services-vocabulary.yml
+  - type: JSONSchema
+    url: json-schema/ku-leuven-data-services-search-response-schema.json
+- aid: ku-leuven:ku-leuven-vacancies-api
+  name: KU Leuven Vacancies API
+  description: Public job vacancies published on the KU Leuven job site.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  baseURL: https://dataservice.kuleuven.be/employee
+  tags:
+  - Vacancies
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-vacancies-api-openapi.yml
+  - type: Documentation
+    url: https://admin.kuleuven.be/icts/services/dataservices
+  - type: TermsOfService
+    url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  - type: Support
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  - type: Authentication
+    url: authentication/ku-leuven-authentication.yml
+  - type: ErrorCatalog
+    url: errors/ku-leuven-error-codes.yml
+  - type: Lifecycle
+    url: lifecycle/ku-leuven-lifecycle.yml
+  - type: Vocabulary
+    url: vocabulary/ku-leuven-data-services-vocabulary.yml
+  - type: JSONSchema
+    url: json-schema/ku-leuven-data-services-search-response-schema.json
 common:
   - type: AgenticAccess
     url: agentic-access/ku-leuven-agentic-access.yml

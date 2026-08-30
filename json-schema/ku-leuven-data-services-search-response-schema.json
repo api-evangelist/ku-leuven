@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://dataservice.kuleuven.be/schemas/search-response.json",
+  "title": "KU Leuven ICTS Data Services Search Response",
+  "description": "Response envelope returned by GET/POST /<index>/_search on the KU Leuven ICTS Data Services gateway at dataservice.kuleuven.be. Derived from live unauthenticated responses captured on 2026-08-19 across the employee, cv, organigram, pg, onderzoeksproject, onderzoeksteams, onderzoeksinfrastructuur and jobsite indices. Provenance: generated 2026-08-19, method derived, source https://dataservice.kuleuven.be live responses plus https://admin.kuleuven.be/icts/services/dataservices documentation.",
+  "type": "object",
+  "required": ["took", "timed_out", "_shards", "hits"],
+  "properties": {
+    "took": { "type": "integer", "description": "Query time in milliseconds." },
+    "timed_out": { "type": "boolean" },
+    "_shards": {
+      "type": "object",
+      "properties": {
+        "total": { "type": "integer" },
+        "successful": { "type": "integer" },
+        "skipped": { "type": "integer" },
+        "failed": { "type": "integer" }
+      }
+    },
+    "hits": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "object",
+          "properties": {
+            "value": { "type": "integer" },
+            "relation": { "type": "string", "enum": ["eq", "gte"], "description": "'gte' indicates the count was capped at the tracking limit." }
+          }
+        },
+        "max_score": { "type": ["number", "null"] },
+        "hits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "_index": { "type": "string", "description": "Physical snapshot index name, e.g. pg2025_2026-07-09_11h33m04s326. The embedded timestamp is the rebuild date of the data." },
+              "_id": { "type": "string" },
+              "_score": { "type": ["number", "null"] },
+              "_source": { "type": "object", "description": "The document. Field sets differ per index; the employee, cv and organigram indices publish personal directory data." }
+            }
+          }
+        }
+      }
+    },
+    "aggregations": { "type": "object", "description": "Present only when the request supplied an aggs clause." }
+  }
+}

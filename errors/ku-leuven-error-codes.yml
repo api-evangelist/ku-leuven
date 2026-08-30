@@ -1,0 +1,57 @@
+generated: '2026-08-19'
+method: probed
+source: >-
+  Error responses captured live from KU Leuven-operated hosts on 2026-08-19 by issuing deliberately
+  malformed and not-found requests, plus the error envelope declared by the RDR's own OpenAPI.
+name: KU Leuven — error responses
+operator: institution
+surfaces:
+- surface: ICTS Data Services query gateway
+  base_url: https://dataservice.kuleuven.be
+  errors:
+  - status: 400
+    trigger: POST /pg/_search with an unknown query clause
+    media_type: application/json
+    body: >-
+      {"error":{"root_cause":[{"type":"parsing_exception","reason":"unknown query [bogus_query]",
+      "line":1,"col":25}],"type":"parsing_exception","reason":"unknown query [bogus_query]",
+      "line":1,"col":25,"caused_by":{"type":"named_object_not_found_exception",
+      "reason":"[1:25] unknown field [bogus_query]"}},"status":400}
+    note: >-
+      OpenSearch error envelope passed through verbatim. It leaks the engine's exception class
+      names and the internal parse position; there is no KU Leuven error vocabulary layered on top.
+    verified: '2026-08-19'
+  - status: 404
+    trigger: GET /employee/_doc/{id} for an identifier that does not exist
+    media_type: application/json
+    body: '{"_index":"employee_2026-07-08_12h33m04s211","_id":"doesnotexist999","found":false}'
+    note: >-
+      Not-found is signalled by `found:false` rather than by an error object, and the response
+      discloses the physical snapshot index name.
+    verified: '2026-08-19'
+  - status: 503
+    trigger: GET / on the gateway root, or a request naming an index that is not published
+    media_type: text/html
+    body: '<html><body><b>Http/1.1 Service Unavailable</b></body> </html>'
+    note: >-
+      Unpublished index names return an HTML 503 from the front proxy rather than a JSON 404, so an
+      unknown index is indistinguishable from an outage. Observed for the gateway root and for the
+      index names `opleidingsonderdelen` and `oo`.
+    verified: '2026-08-19'
+- surface: Research Data Repository (RDR)
+  base_url: https://rdr.kuleuven.be/api
+  errors:
+  - status: '2xx/4xx envelope'
+    trigger: Every Dataverse API response
+    media_type: application/json
+    body: '{"status":"OK|ERROR","data":{...},"message":"..."}'
+    note: >-
+      Dataverse wraps both success and failure in a status envelope; failures carry
+      status "ERROR" and a message string. Documented upstream rather than by KU Leuven.
+    source: https://rdr.kuleuven.be/openapi
+observations:
+- No RFC 7807 / RFC 9457 problem+json is used on any KU Leuven surface.
+- No error catalogue, error code list or rate-limit error is published anywhere in the estate.
+- >-
+  The 503-for-unknown-index behaviour on dataservice.kuleuven.be is the one finding a consumer
+  needs: it makes a typo look like downtime.

@@ -1,0 +1,31 @@
+generated: '2026-08-19'
+method: probed
+source: >-
+  Attempted discovery of a published authorization-scope model across every KU Leuven-operated
+  surface on 2026-08-19: the ICTS Data Services documentation, the RDR API documentation and its
+  live OpenAPI at https://rdr.kuleuven.be/openapi, and the SAP OData timetable documentation.
+name: KU Leuven — authorization scopes
+operator: institution
+scopes: []
+finding: none_published
+detail: >-
+  No OAuth scope, no API-key scope and no permission string is published for any KU Leuven surface.
+  The public ICTS Data Services indices need no authorization at all. The RDR uses Dataverse's role
+  model rather than scopes — access is decided by role assignment (Dataset Creator and the roles
+  managed under /roles and /admin), not by a scope granted to a client. The timetable API documents
+  an OAuth authorization-code grant but publishes no scope names, and client credentials are issued
+  by KU Leuven case by case.
+evidence:
+- url: https://rdr.kuleuven.be/openapi
+  status: 200
+  note: >-
+    Live Dataverse 6.7.1 description, 425 paths, no securitySchemes with an oauth2 flow and no
+    scope enumeration.
+- url: https://admin.kuleuven.be/icts/services/dataservices/api/uurrooster
+  status: 200
+  note: Documents the OAuth authorization endpoint but names no scopes.
+- url: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  status: 200
+  note: Terms of use govern the public indices in place of an authorization model.
+related:
+  role_model: openapi/ku-leuven-roles-api-openapi.yml

@@ -1,0 +1,29 @@
+{
+  "x-provenance": {
+    "generated": "2026-08-19",
+    "method": "probed",
+    "source": "Live response to POST https://dataservice.kuleuven.be/pg/_search with body {\"query\":{\"bogus_query\":{}}} on 2026-08-19. Captured verbatim.",
+    "status": 400
+  },
+  "response": {
+    "error": {
+      "root_cause": [
+        {
+          "type": "parsing_exception",
+          "reason": "unknown query [bogus_query]",
+          "line": 1,
+          "col": 25
+        }
+      ],
+      "type": "parsing_exception",
+      "reason": "unknown query [bogus_query]",
+      "line": 1,
+      "col": 25,
+      "caused_by": {
+        "type": "named_object_not_found_exception",
+        "reason": "[1:25] unknown field [bogus_query]"
+      }
+    },
+    "status": 400
+  }
+}

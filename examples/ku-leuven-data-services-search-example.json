@@ -1,0 +1,36 @@
+{
+  "x-provenance": {
+    "generated": "2026-08-19",
+    "method": "probed",
+    "source": "Live unauthenticated response from GET https://dataservice.kuleuven.be/pg/_search?size=1&_source=title,qualificationId,qualificationDegreeLevel,institution,credits on 2026-08-19. Captured verbatim; contains no personal data.",
+    "status": 200
+  },
+  "response": {
+    "took": 2,
+    "timed_out": false,
+    "_shards": {
+      "total": 2,
+      "successful": 2,
+      "skipped": 0,
+      "failed": 0
+    },
+    "hits": {
+      "total": {
+        "value": 5026,
+        "relation": "eq"
+      },
+      "max_score": 1.0,
+      "hits": [
+        {
+          "_index": "pg2025_2026-07-09_11h33m04s326",
+          "_id": "12987294",
+          "_score": 1.0,
+          "_source": {
+            "institution": "51181998",
+            "qualificationId": "12987294"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,199 @@
+openapi: 3.2.0
+info:
+  title: KU Leuven ICTS Data Services Research Projects API
+  description: Institution-operated read API for KU Leuven's public reference data, run by KU Leuven ICTS and documented at https://admin.kuleuven.be/icts/services/dataservices. The gateway at dataservice.kuleuven.be exposes an OpenSearch/Elasticsearch query surface over eight public indices — staff directory (wie-is-wie), academic CVs, organisational chart, educational offering (programme guide), research projects, research teams, research infrastructure and job vacancies — each published in a Dutch and an English index. Reads are unauthenticated and were confirmed live on 2026-08-19; the underlying data is governed by the KU Leuven Data Service terms of use.
+  version: '2026-08-19'
+  contact:
+    name: KU Leuven ICTS Data Services
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  termsOfService: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  x-operator: institution
+  x-provenance:
+    generated: '2026-08-19'
+    method: derived
+    source: Derived from KU Leuven ICTS Data Services documentation pages (admin.kuleuven.be/icts/services/dataservices/*) and confirmed against live unauthenticated responses from https://dataservice.kuleuven.be on 2026-08-19. No endpoint, parameter or field appears here that is not documented by KU Leuven or observed in a live response.
+servers:
+- url: https://dataservice.kuleuven.be
+  description: KU Leuven ICTS Data Services production query gateway
+tags:
+- name: ResearchProjects
+  description: Research projects from the KU Leuven research database (onderzoeksdatabank).
+paths:
+  /onderzoeksproject/_search:
+    get:
+      summary: Search the Dutch-language research project index
+      operationId: onderzoeksproject_search_get
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags:
+      - ResearchProjects
+      x-verified: '2026-08-19'
+  /onderzoeksproject-en/_search:
+    get:
+      summary: Search the English-language research project index
+      operationId: onderzoeksproject_en_search_get
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags:
+      - ResearchProjects
+  /onderzoeksproject/_search/template:
+    post:
+      summary: Run a stored search template against the research project index
+      description: 'KU Leuven publishes three stored templates: `projectsbyou` (all projects of an organisational unit, parameter `ou`), `projectsbyuid` (all projects of one or more persons, parameter `uid`, comma-separated) and `projectsbyquery` (free-text, parameter `query`). Optional parameters documented by ICTS: `from`, `size`, `startDate`, `endDate`, `sortstartdate`, `sortenddate`, `sortstartandenddate`, `all`.'
+      operationId: onderzoeksproject_search_template
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchTemplateRequest'
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags:
+      - ResearchProjects
+components:
+  schemas:
+    SearchTemplateRequest:
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          type: string
+          description: Stored template identifier.
+          enum:
+          - projectsbyou
+          - projectsbyuid
+          - projectsbyquery
+        params:
+          type: object
+          description: Template parameters plus the documented optional parameters.
+          properties:
+            ou:
+              type: string
+              description: Organisational unit code from the organigram index.
+            uid:
+              type: string
+              description: One or more KU Leuven u-numbers, comma-separated.
+            query:
+              type: string
+            from:
+              type: integer
+            size:
+              type: integer
+            startDate:
+              type: string
+              description: Lower bound, formatted dd/MM/yyyy or yyyy.
+            endDate:
+              type: string
+              description: Upper bound, formatted dd/MM/yyyy or yyyy.
+            sortstartdate:
+              type: boolean
+            sortenddate:
+              type: boolean
+            sortstartandenddate:
+              type: boolean
+            all:
+              type: boolean
+              description: Return every available attribute rather than the default subset.
+    SearchResponse:
+      type: object
+      description: Standard OpenSearch search response envelope, as returned live on 2026-08-19.
+      properties:
+        took:
+          type: integer
+        timed_out:
+          type: boolean
+        _shards:
+          type: object
+          properties:
+            total:
+              type: integer
+            successful:
+              type: integer
+            skipped:
+              type: integer
+            failed:
+              type: integer
+        hits:
+          type: object
+          properties:
+            total:
+              type: object
+              properties:
+                value:
+                  type: integer
+                relation:
+                  type: string
+                  enum:
+                  - eq
+                  - gte
+            max_score:
+              type:
+              - number
+              - 'null'
+            hits:
+              type: array
+              items:
+                $ref: '#/components/schemas/Hit'
+        aggregations:
+          type: object
+          description: Present when the request supplied `aggs`.
+    SearchRequest:
+      type: object
+      description: OpenSearch query document as documented by KU Leuven ICTS.
+      properties:
+        query:
+          type: object
+          description: Query clause, e.g. `match_all` or `query_string`.
+        aggs:
+          type: object
+          description: Aggregations, previously described by ICTS as filters or facets.
+        _source:
+          type: array
+          description: Field list to return (ICTS documents this as returnFields).
+          items:
+            type: string
+        from:
+          type: integer
+          description: Start position for pagination.
+        size:
+          type: integer
+          description: Number of hits to return. Default 10.
+          default: 10
+    Hit:
+      type: object
+      properties:
+        _index:
+          type: string
+          description: Physical index name. Snapshot indices carry a build timestamp, e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
+        _id:
+          type: string
+        _score:
+          type:
+          - number
+          - 'null'
+        _source:
+          type: object
+          description: The document. Field sets differ per index.

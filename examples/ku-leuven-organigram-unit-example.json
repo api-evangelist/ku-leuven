@@ -1,0 +1,42 @@
+{
+  "x-provenance": {
+    "generated": "2026-08-19",
+    "method": "derived",
+    "source": "Structure of a live document from GET https://dataservice.kuleuven.be/organigram-en/_doc/{id} (HTTP 200, 2026-08-19). The KU Leuven organigram index publishes named staff, work addresses and work telephone numbers as public who-is-who data. Every personal value below has been replaced with a placeholder under the API Evangelist enrichment PII guardrail; only the shape and the non-personal unit fields are real.",
+    "status": 200,
+    "redacted": true
+  },
+  "response": {
+    "_index": "organigram-en",
+    "_id": "50000138",
+    "found": true,
+    "_source": {
+      "id": "50000138",
+      "description": "Library, Philosophy",
+      "shortDescription": "B_Wijsbeg.",
+      "descriptionMedium": "Bibliotheek Wijsbegeerte",
+      "regionalParentId": "50000130",
+      "globalParentId": "50000130",
+      "name": "<redacted: head of unit name>",
+      "uid": "<redacted: u-number>",
+      "function": "faculty librarian",
+      "street": "Kardinaal Mercierplein",
+      "housenr": "2",
+      "busnr": "3200",
+      "city": "Leuven",
+      "postalCode": "3000",
+      "phone": "<redacted: work telephone>",
+      "classification": "03",
+      "persons": [
+        {
+          "id": "50000138",
+          "pernr": "<redacted: personnel number>",
+          "name": "<redacted: staff name>",
+          "type": "ATP",
+          "longType": "Administrative and technical staff",
+          "uid": "<redacted: u-number>"
+        }
+      ]
+    }
+  }
+}

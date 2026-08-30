@@ -1,0 +1,87 @@
+generated: '2026-08-19'
+method: probed
+source: >-
+  Live probes of KU Leuven-operated hosts on 2026-08-19, read against the ICTS Data Services
+  documentation (admin.kuleuven.be/icts/services/dataservices/*), the RDR API documentation
+  (www.kuleuven.be/rdm/en/rdr/api-documentation) and the contracts in openapi/.
+name: KU Leuven — authentication across institution-operated surfaces
+operator: institution
+surfaces:
+- surface: ICTS Data Services query gateway
+  base_url: https://dataservice.kuleuven.be
+  operator: institution
+  auth: none
+  detail: >-
+    Public read. Eight index families answered unauthenticated GET /_search on 2026-08-19 with
+    HTTP 200 and real records. No API key, token, referer or origin restriction was observed;
+    the gateway returns Access-Control headers permitting cross-origin browser use.
+  evidence:
+  - url: https://dataservice.kuleuven.be/pg/_search?size=1
+    status: 200
+  - url: https://dataservice.kuleuven.be/jobsite/_search?size=1
+    status: 200
+  governance: >-
+    Use is governed by the KU Leuven Data Service terms of use at
+    https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html; expanded
+    intranet variants of the person and organigram services require a service account requested
+    through https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag.
+- surface: Research Data Repository (RDR)
+  base_url: https://rdr.kuleuven.be/api
+  operator: institution
+  auth: api_key
+  detail: >-
+    Dataverse 6.7.1 self-hosted by KU Leuven. Public /info and /search operations answer
+    unauthenticated. Write operations require an X-Dataverse-key API token; account provisioning
+    additionally requires a registered ORCID and the Dataset Creator role, so the token is not
+    self-serve.
+  token_header: X-Dataverse-key
+  evidence:
+  - url: https://rdr.kuleuven.be/api/info/version
+    status: 200
+  - url: https://rdr.kuleuven.be/api/search?q=*&type=dataset&per_page=1
+    status: 200
+- surface: Individual timetable (SAP OData)
+  base_url: https://webws.aps.kuleuven.be/sap/opu/odata/sap/zc_ep_uurrooster_oauth_srv/
+  operator: institution
+  auth: oauth2
+  flow: authorization_code
+  detail: >-
+    OAuth 2.0 authorization-code grant with SAML as a documented fallback. Client credentials are
+    issued by KU Leuven on request; there is no self-service registration. The production host did
+    not resolve from outside the network on 2026-08-19 and the acceptance host returned 403, so the
+    flow could not be exercised and no contract is recorded for it.
+  authorization_url: https://webwsq.aps.kuleuven.be/sap/bc/sec/oauth2/authorize/index.html
+  evidence:
+  - url: https://webws.aps.kuleuven.be
+    status: 0
+    note: DNS did not resolve from a public network.
+  - url: https://webwsq.aps.kuleuven.be/sap/opu/odata/sap/zc_ep_uurrooster_oauth_srv/$metadata
+    status: 403
+    note: Acceptance host reachable but refuses unauthenticated metadata reads.
+- surface: Identity provider
+  base_url: https://idp.kuleuven.be/idp/shibboleth
+  operator: institution
+  auth: saml2
+  detail: >-
+    Shibboleth IdP, entityID urn:mace:kuleuven.be:kulassoc:kuleuven.be, registered by the Belnet
+    federation and asserting REFEDS SIRTFI and Research & Scholarship entity categories. The
+    metadata document itself is public and machine-readable; it is the authentication contract for
+    every federated KU Leuven service.
+  evidence:
+  - url: https://idp.kuleuven.be/idp/shibboleth
+    status: 200
+- surface: OAI-PMH harvesting
+  base_url: https://rdr.kuleuven.be/oai
+  operator: institution
+  auth: none
+  detail: Public harvesting interface; likewise https://lirias.kuleuven.be/oai.
+  evidence:
+  - url: https://rdr.kuleuven.be/oai?verb=Identify
+    status: 200
+  - url: https://lirias.kuleuven.be/oai?verb=Identify
+    status: 200
+summary: >-
+  KU Leuven's public programmable surface is overwhelmingly unauthenticated read. The only
+  credentialed surfaces are the RDR write path (institution-issued API token gated on ORCID and a
+  role) and the personal timetable (OAuth authorization code, credentials issued on request). No
+  self-serve developer key exists anywhere in the estate.

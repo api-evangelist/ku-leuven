@@ -1,0 +1,89 @@
+generated: '2026-08-19'
+method: probed
+source: >-
+  Version and freshness signals read directly out of live responses from KU Leuven-operated hosts
+  on 2026-08-19, plus the versioning statements on the ICTS Data Services documentation pages.
+name: KU Leuven — lifecycle, versioning and data freshness
+operator: institution
+surfaces:
+- surface: ICTS Data Services query gateway
+  base_url: https://dataservice.kuleuven.be
+  versioning: >-
+    No API version is carried in the path, in a header or in a media type. The documentation pages
+    are versioned informally against the search engine instead — three of them are titled for
+    "Elasticsearch 6.x" while the person, curriculum, programme and vacancy pages now describe an
+    OpenSearch query surface, so the engine has moved under a documentation set that has not
+    entirely followed.
+  data_freshness:
+    method: >-
+      Each index is rebuilt as a timestamped snapshot and aliased; the physical index name is
+      returned on every hit, which makes the rebuild date directly observable.
+    observed:
+    - index: employee
+      snapshot: employee_2026-07-08_12h33m04s211
+    - index: cv
+      snapshot: cv_2026-03-30_13h25m52s955
+    - index: jobsite
+      snapshot: jobsite_2026-03-27_09h47m20s484
+    - index: pg
+      snapshot: pg2025_2026-07-09_11h33m04s326
+    - index: onderzoeksproject
+      snapshot: onderzoeksproject_2025-04-09_10h59m03s946
+    note: >-
+      Rebuild cadence is irregular and undocumented. As of 2026-08-19 the research project index
+      had not been rebuilt in over sixteen months, while the staff directory was six weeks old.
+      No freshness guarantee, changelog or deprecation notice is published.
+  scheduled_change:
+    what: Academic-year rollover of the programme guide indices
+    when: 15 July each year
+    detail: >-
+      `pg` aliases the current academic year; year-specific indices remain addressable as
+      `pg<year>`. Both pg2025 (5,026 documents through the alias) and pg2026 (2,543 documents)
+      answered on 2026-08-19, so prior years stay retrievable after rollover.
+    source: https://admin.kuleuven.be/icts/services/dataservices/onderwijsaanbod/apiopleidingen
+  announced_but_incomplete:
+  - what: Course-component (opleidingsonderdelen) API
+    status: in_progress
+    detail: >-
+      ICTS publishes a page titled "API opleidingsonderdelen in opbouw" (under construction) and
+      the document-retrieval section of the programme API is annotated "IN OPBOUW". No index name
+      is published and the obvious candidates return 503.
+    source: https://admin.kuleuven.be/icts/services/dataservices/onderwijsaanbod/api-opleidingsonderdelen-in-opbouw
+- surface: Research Data Repository (RDR)
+  base_url: https://rdr.kuleuven.be/api
+  versioning: >-
+    Versioned with the upstream Dataverse release. GET /api/info/version returned 6.7.1 live on
+    2026-08-19, and the self-served description at https://rdr.kuleuven.be/openapi declares the same
+    version across 425 paths. Dataset records are themselves versioned (DRAFT / RELEASED / ARCHIVED /
+    DEACCESSIONED) through the DatasetVersion model.
+  data_freshness:
+    detail: >-
+      Live catalogue, 830 published datasets on 2026-08-19; the OAI-PMH interface reports an
+      earliest datestamp of 2025-03-25.
+  note: >-
+    The contract is upstream open-source Dataverse's and moves on Dataverse's release cadence, not
+    KU Leuven's. KU Leuven operates the deployment and owns the data; it does not author the API.
+  provenance_correction: >-
+    The live description at https://rdr.kuleuven.be/openapi declares info.title "Dataverse API",
+    info.description "Open source research data repository software." and no servers block. The
+    copy held in this repository as openapi/_original/ku-leuven-rdr.yaml was retitled to
+    "KU Leuven Research Data Repository (RDR) API" and given a servers entry at harvest time, so it
+    is not byte-pristine against upstream. The retitling is accurate about the deployment but must
+    not be read as KU Leuven authoring the contract; re-fetch the URL above for the true original.
+- surface: Lirias institutional repository
+  base_url: https://lirias.kuleuven.be/oai
+  data_freshness:
+    detail: OAI-PMH earliest datestamp 2025-02-10T14:00:00Z.
+- surface: Identity provider
+  base_url: https://idp.kuleuven.be/idp/shibboleth
+  versioning: >-
+    SAML 2.0 metadata, registered with the Belnet federation on 2012-03-27 and maintained since;
+    federation metadata refresh is the change channel.
+observations:
+- No deprecation policy, sunset header, changelog or status page was found for any surface.
+- >-
+  The one genuinely good lifecycle signal in the estate is accidental: the snapshot index names on
+  dataservice.kuleuven.be tell a consumer exactly how stale each dataset is.
+- >-
+  security.txt at https://www.kuleuven.be/.well-known/security.txt carries an Expires value of
+  2026-04-16, which is both malformed and in the past.

@@ -1,0 +1,85 @@
+generated: '2026-08-19'
+method: derived
+source: >-
+  Derived from the KU Leuven ICTS Data Services documentation pages at
+  https://admin.kuleuven.be/icts/services/dataservices and from live index responses captured on
+  2026-08-19. KU Leuven documents this surface in Dutch; the English terms below are the ones the
+  institution itself uses on its English pages and in its `-en` indices.
+vocabulary:
+  name: KU Leuven ICTS Data Services Vocabulary
+  description: >-
+    The Dutch-first vocabulary a consumer needs to use dataservice.kuleuven.be. Index names,
+    identifier types and query terms are Dutch even where an English index exists, so the
+    vocabulary is a real barrier to entry for a non-Dutch-speaking consumer.
+  terms:
+  - term: dataservice
+    dutch: Data Service
+    definition: >-
+      The KU Leuven ICTS query gateway at dataservice.kuleuven.be, fronting OpenSearch indices of
+      public institutional reference data.
+  - term: wie-is-wie
+    english: who-is-who
+    index: employee / employee-en
+    definition: The public staff directory. Personal directory data published deliberately by KU Leuven.
+  - term: curriculuminformatie
+    english: curriculum information
+    index: cv / cv-en
+    definition: >-
+      Academic CV records — discipline codes, research topics and the researcher's ORCID iD
+      (field `orcId`).
+  - term: organigram
+    english: organisational chart
+    index: organigram / organigram-en
+    definition: >-
+      Organisational units and their hierarchy. The unit code (field `id`, e.g. 50000138) is the
+      `ou` parameter of the research project search templates, making it the join key of the estate.
+  - term: onderwijsaanbod
+    english: educational offering / programme guide
+    index: pg, pg<year>
+    definition: >-
+      Degree programmes for an academic year. `pg` aliases the current year; the year rolls over
+      on 15 July.
+  - term: opleiding
+    english: degree programme
+    definition: A programme in the programme guide, identified by `qualificationId`.
+  - term: opleidingsonderdeel
+    english: course unit / course component
+    definition: >-
+      A single course within a programme. ICTS lists an API for these as "in opbouw" (under
+      construction); no index answered on 2026-08-19.
+  - term: onderzoeksdatabank
+    english: research database
+    definition: The source system behind the project, team and infrastructure indices.
+  - term: onderzoeksproject
+    english: research project
+    index: onderzoeksproject / onderzoeksproject-en
+    definition: A funded research project, searchable free-text or through three stored templates.
+  - term: onderzoeksteam
+    english: research team / research group
+    index: onderzoeksteams / onderzoeksteams-en
+    definition: A research group, joined to projects and to the organigram by unit code.
+  - term: onderzoeksinfrastructuur
+    english: research infrastructure
+    index: onderzoeksinfrastructuur / onderzoeksinfrastructuur-en
+    definition: Core facilities and shared research equipment.
+  - term: vacature
+    english: vacancy
+    index: jobsite / jobsite-en
+    definition: A published job opening.
+  - term: u-nummer
+    english: u-number
+    definition: >-
+      The KU Leuven person identifier, formatted u0000000. Used as the `uid` parameter of the
+      projectsbyuid search template and carried on directory and CV records.
+  - term: pernr
+    english: personnel number
+    definition: SAP personnel number carried on organigram person entries.
+  - term: projectsbyou / projectsbyuid / projectsbyquery
+    definition: >-
+      The three stored search templates published for the research project index, addressed at
+      /onderzoeksproject/_search/template.
+  - term: gebruiksvoorwaarden
+    english: terms of use
+    definition: >-
+      The KU Leuven Data Service terms governing reuse of every public index, at
+      https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html.

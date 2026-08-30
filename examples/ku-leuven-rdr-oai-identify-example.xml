@@ -1,0 +1,6 @@
+<!--
+  generated: 2026-08-19
+  method: probed
+  source: GET https://rdr.kuleuven.be/oai?verb=Identify (HTTP 200, 2026-08-19), captured verbatim.
+-->
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>2026-08-19T22:09:42Z</responseDate><request verb="Identify">https://rdr.kuleuven.be/oai</request><Identify><repositoryName>KU Leuven RDR Dataverse OAI Archive</repositoryName><baseURL>https://rdr.kuleuven.be/oai</baseURL><protocolVersion>2.0</protocolVersion><adminEmail>rdm@kuleuven.be</adminEmail><earliestDatestamp>2025-03-25T01:00:06Z</earliestDatestamp><deletedRecord>transient</deletedRecord><granularity>YYYY-MM-DDThh:mm:ssZ</granularity><compression>gzip</compression><compression>deflate</compression></Identify></OAI-PMH>

@@ -1,0 +1,155 @@
+generated: '2026-08-19'
+method: probed
+source: >-
+  Live probes of KU Leuven-operated hosts (rdr.kuleuven.be, lirias.kuleuven.be, idp.kuleuven.be,
+  dataservice.kuleuven.be) plus the DataCite member API, cross-read against the contracts held in
+  this repository. Every hit below names the exact contract location or the exact URL and status
+  code it was measured from. Reward-only: standards with no evidence are recorded as not_found,
+  never inferred from prose.
+name: KU Leuven — education regime domain standard conformance
+regime: education
+operator: institution
+standards:
+- standard: oai-pmh
+  status: conformant
+  scope: Two institution-operated OAI-PMH 2.0 endpoints, plus OAI set management in the contract.
+  evidence:
+  - type: live
+    url: https://rdr.kuleuven.be/oai?verb=Identify
+    status: 200
+    detail: >-
+      OAI-PMH 2.0 Identify response, repositoryName "KU Leuven RDR Dataverse OAI Archive",
+      baseURL https://rdr.kuleuven.be/oai, adminEmail rdm@kuleuven.be,
+      earliestDatestamp 2025-03-25T01:00:06Z, deletedRecord transient, granularity YYYY-MM-DDThh:mm:ssZ.
+    verified: '2026-08-19'
+  - type: live
+    url: https://lirias.kuleuven.be/oai?verb=Identify
+    status: 200
+    detail: >-
+      OAI-PMH 2.0 Identify response, repositoryName "Lirias - The institutional repository of
+      KU Leuven Association", baseURL https://lirias.kuleuven.be/oai, adminEmail lirias@kuleuven.be,
+      earliestDatestamp 2025-02-10T14:00:00Z.
+    verified: '2026-08-19'
+  - type: contract
+    location: openapi/ku-leuven-harvest-api-openapi.yml
+    detail: >-
+      Paths /harvest/server/oaisets, /harvest/server/oaisets/add,
+      /harvest/server/oaisets/{specname} and /harvest/server/oaisets/{specname}/datasets manage the
+      OAI sets this installation serves; /harvest/clients configures OAI harvesting of other repositories.
+- standard: datacite
+  status: conformant
+  scope: KU Leuven RDR is a registered DataCite repository minting DOIs under its own prefix.
+  evidence:
+  - type: live
+    url: https://api.datacite.org/clients/brvz.rdr
+    status: 200
+    detail: >-
+      DataCite repository client BRVZ.RDR, name "KU Leuven RDR", url https://rdr.kuleuven.be/,
+      member year 2021.
+    verified: '2026-08-19'
+  - type: live
+    url: https://api.datacite.org/prefixes/10.48804
+    status: 200
+    detail: Prefix 10.48804 allocated 2020-07-23 and bound to client brvz.rdr.
+    verified: '2026-08-19'
+  - type: live
+    url: https://rdr.kuleuven.be/api/search?q=*&type=dataset&per_page=1
+    status: 200
+    detail: >-
+      830 published datasets; first item carries global_id doi:10.48804/SLMHLZ resolving via
+      https://doi.org/10.48804/SLMHLZ.
+    verified: '2026-08-19'
+  - type: contract
+    location: openapi/ku-leuven-pids-api-openapi.yml
+    detail: >-
+      Persistent-identifier operations /pids, /pids/providers, /pids/{id}/reserve,
+      /pids/{id}/delete, /pids/unreserved. Dataset records carry protocol/authority/identifier
+      (json-schema/ku-leuven-dataset-schema.json).
+- standard: shibboleth
+  status: conformant
+  scope: Institution-operated Shibboleth Identity Provider registered in the Belnet R&E federation.
+  evidence:
+  - type: live
+    url: https://idp.kuleuven.be/idp/shibboleth
+    status: 200
+    detail: >-
+      SAML 2.0 EntityDescriptor, entityID urn:mace:kuleuven.be:kulassoc:kuleuven.be, with
+      shibmd (urn:mace:shibboleth:metadata:1.0) scope extensions. Machine-readable metadata
+      served directly by KU Leuven.
+    verified: '2026-08-19'
+  - type: live
+    url: https://admin.kuleuven.be/webcms/Shibboleth.sso/Login?target=https://admin.kuleuven.be/icts/services/dataservices
+    status: 302
+    detail: >-
+      Shibboleth service-provider session initiator in front of the ICTS Data Services pages;
+      redirects into the federation login flow. Called without a target it returns 500, so the
+      target parameter is required.
+    verified: '2026-08-19'
+- standard: saml
+  status: conformant
+  scope: SAML 2.0 metadata, registered by the Belnet federation and carrying REFEDS assurance categories.
+  evidence:
+  - type: live
+    url: https://idp.kuleuven.be/idp/shibboleth
+    status: 200
+    detail: >-
+      mdrpi:RegistrationInfo registrationAuthority http://federation.belnet.be/, registrationInstant
+      2012-03-27T12:00:00Z; entity attributes assert https://refeds.org/sirtfi and
+      http://refeds.org/category/research-and-scholarship.
+    verified: '2026-08-19'
+- standard: orcid
+  status: conformant
+  scope: ORCID iDs are carried on researcher records and required to create datasets in the RDR.
+  evidence:
+  - type: contract
+    location: openapi/_original/ku-leuven-rdr.yaml
+    detail: >-
+      Operation Admin_isOrcidEnabled at /admin/isOrcid; schema fields authenticatedOrcid, orcid and
+      orcidForDisplay on the authenticated-user model.
+  - type: contract
+    location: openapi/ku-leuven-data-services-api-openapi.yml
+    detail: >-
+      CurriculumDocument.orcId on the cv index, pattern-constrained to the ORCID iD form.
+  - type: live
+    url: https://dataservice.kuleuven.be/cv/_search?size=1
+    status: 200
+    detail: Live cv document returned an orcId value in the ORCID iD format.
+    verified: '2026-08-19'
+  - type: documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+    detail: RDR write access requires an API token, a registered ORCID and the Dataset Creator role.
+- standard: scim
+  status: not_found
+  detail: >-
+    No SCIM 2.0 endpoint or schema found on any KU Leuven-operated host. Directory data is published
+    read-only through the ICTS Data Services OpenSearch indices instead.
+- standard: lti
+  status: not_found
+  detail: >-
+    No LTI tool or platform registration surface found in any contract in this repository. A
+    case-insensitive substring grep matched only unrelated words; there are no word-boundary matches.
+- standard: oneroster
+  status: not_found
+  detail: No OneRoster endpoint or payload found. Course and programme data is served through the pg indices.
+- standard: ed-fi
+  status: not_found
+  detail: Not applicable to a Belgian institution; no Ed-Fi surface found.
+- standard: caliper
+  status: not_found
+  detail: No Caliper Analytics event surface found on any KU Leuven-operated host.
+- standard: qti
+  status: not_found
+  detail: No QTI assessment interchange surface found.
+- standard: crossref
+  status: not_found
+  detail: >-
+    No Crossref deposit or member surface found under KU Leuven's own hosts; the RDR mints DOIs
+    through DataCite, not Crossref.
+summary:
+  conformant: 5
+  not_found: 7
+  note: >-
+    Five of the twelve education-regime standards are met, and all five are met by surfaces KU Leuven
+    itself operates — two OAI-PMH endpoints, a DataCite repository client, a Shibboleth/SAML identity
+    provider, and ORCID identifiers carried through both the repository and the directory. None of the
+    five depends on a vendor-hosted platform.

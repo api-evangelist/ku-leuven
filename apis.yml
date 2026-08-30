@@ -1016,6 +1016,8 @@ apis:
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
   baseURL: https://dataservice.kuleuven.be/employee
   tags:
+  - Persons
+  tags_raw:
   - Person
   properties:
   - type: OpenAPI
@@ -1068,6 +1070,8 @@ apis:
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
   baseURL: https://dataservice.kuleuven.be/employee
   tags:
+  - Research Infrastructure
+  tags_raw:
   - ResearchInfrastructure
   properties:
   - type: OpenAPI

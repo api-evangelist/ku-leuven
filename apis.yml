@@ -389,23 +389,6 @@ apis:
     url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
-- aid: ku-leuven:ku-leuven-externaltools-api
-  x-operator: institution
-  x-surface-class: ResearchRepository
-  x-surface: ku-leuven-rdr
-  name: KU Leuven ExternalTools API
-  description: The ExternalTools API from KU Leuven — 2 operation(s) for externaltools.
-  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
-  baseURL: https://rdr.kuleuven.be/api
-  tags:
-  - ExternalTools
-  properties:
-  - type: OpenAPI
-    url: openapi/ku-leuven-externaltools-api-openapi.yml
-  - type: Documentation
-    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
-  - type: Documentation
-    url: https://guides.dataverse.org/en/latest/api/index.html
 - aid: ku-leuven:ku-leuven-files-api
   x-operator: institution
   x-surface-class: ResearchRepository
@@ -713,23 +696,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/ku-leuven-search-api-openapi.yml
-  - type: Documentation
-    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
-  - type: Documentation
-    url: https://guides.dataverse.org/en/latest/api/index.html
-- aid: ku-leuven:ku-leuven-sendfeedback-api
-  x-operator: institution
-  x-surface-class: ResearchRepository
-  x-surface: ku-leuven-rdr
-  name: KU Leuven Sendfeedback API
-  description: The Sendfeedback API from KU Leuven — 1 operation(s) for sendfeedback.
-  humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
-  baseURL: https://rdr.kuleuven.be/api
-  tags:
-  - Sendfeedback
-  properties:
-  - type: OpenAPI
-    url: openapi/ku-leuven-sendfeedback-api-openapi.yml
   - type: Documentation
     url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   - type: Documentation
@@ -1170,6 +1136,34 @@ apis:
     url: vocabulary/ku-leuven-data-services-vocabulary.yml
   - type: JSONSchema
     url: json-schema/ku-leuven-data-services-search-response-schema.json
+- aid: ku-leuven:ku-leuven-external-tools-api
+  name: KU Leuven External Tools API
+  description: The External Tools API from KU Leuven — 2 operation(s) for external tools.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  baseURL: https://dataservice.kuleuven.be/employee
+  tags:
+  - External Tools
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-external-tools-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
+- aid: ku-leuven:ku-leuven-send-feedback-api
+  name: KU Leuven Send Feedback API
+  description: The Send Feedback API from KU Leuven — 1 operation(s) for send feedback.
+  humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
+  baseURL: https://dataservice.kuleuven.be/employee
+  tags:
+  - Send Feedback
+  properties:
+  - type: OpenAPI
+    url: openapi/ku-leuven-send-feedback-api-openapi.yml
+  - type: Documentation
+    url: https://www.kuleuven.be/rdm/en/rdr/api-documentation
+  - type: Documentation
+    url: https://guides.dataverse.org/en/latest/api/index.html
 common:
   - type: AgenticAccess
     url: agentic-access/ku-leuven-agentic-access.yml

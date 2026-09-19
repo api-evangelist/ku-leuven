@@ -1156,6 +1156,8 @@ apis:
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
   baseURL: https://dataservice.kuleuven.be/employee
   tags:
+  - Sendfeedback
+  tags_raw:
   - Send Feedback
   properties:
   - type: OpenAPI

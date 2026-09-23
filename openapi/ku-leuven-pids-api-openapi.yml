@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Pids API
+  title: KU Leuven Research Data Repository (RDR) Pids API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -22,6 +22,8 @@ paths:
           description: OK
       tags:
       - Pids
+      summary: Pids get pid
+      x-summary-source: derived
   /pids/providers:
     get:
       operationId: Pids_getPidProviders
@@ -30,6 +32,8 @@ paths:
           description: OK
       tags:
       - Pids
+      summary: Pids get pid providers
+      x-summary-source: derived
   /pids/providers/{persistentId}:
     get:
       operationId: Pids_getPidProviderId
@@ -45,6 +49,8 @@ paths:
           description: OK
       tags:
       - Pids
+      summary: Pids get pid provider id
+      x-summary-source: derived
   /pids/unreserved:
     get:
       operationId: Pids_getUnreserved
@@ -58,6 +64,8 @@ paths:
           description: OK
       tags:
       - Pids
+      summary: Pids get unreserved
+      x-summary-source: derived
   /pids/{id}/delete:
     delete:
       operationId: Pids_deletePid
@@ -72,6 +80,8 @@ paths:
           description: OK
       tags:
       - Pids
+      summary: Pids delete pid
+      x-summary-source: derived
   /pids/{id}/reserve:
     post:
       operationId: Pids_reservePid
@@ -86,3 +96,5 @@ paths:
           description: OK
       tags:
       - Pids
+      summary: Pids reserve pid
+      x-summary-source: derived

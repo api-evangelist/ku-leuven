@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Batch API
+  title: KU Leuven Research Data Repository (RDR) Batch API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -34,6 +34,8 @@ paths:
           description: OK
       tags:
       - Batch
+      summary: Batch import harvest
+      x-summary-source: derived
   /batch/import:
     get:
       operationId: BatchImport_getImport
@@ -59,6 +61,8 @@ paths:
           description: OK
       tags:
       - Batch
+      summary: Batch import get import
+      x-summary-source: derived
     post:
       operationId: BatchImport_postImport
       parameters:
@@ -75,6 +79,8 @@ paths:
           description: OK
       tags:
       - Batch
+      summary: Batch import post import
+      x-summary-source: derived
   /batch/jobs/import/datasets/files/{identifier}:
     post:
       operationId: FileRecordJobResource_getFilesystemImport
@@ -103,3 +109,5 @@ paths:
           description: OK
       tags:
       - Batch
+      summary: File record job resource get filesystem import
+      x-summary-source: derived

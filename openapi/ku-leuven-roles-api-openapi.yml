@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Roles API
+  title: KU Leuven Research Data Repository (RDR) Roles API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -22,6 +22,8 @@ paths:
           description: OK
       tags:
       - Roles
+      summary: Roles create new role
+      x-summary-source: derived
   /roles/userSelectable:
     get:
       operationId: Roles_getUserSelectableRoles
@@ -30,6 +32,8 @@ paths:
           description: OK
       tags:
       - Roles
+      summary: Roles get user selectable roles
+      x-summary-source: derived
   /roles/{id}:
     get:
       operationId: Roles_viewRole
@@ -44,6 +48,8 @@ paths:
           description: OK
       tags:
       - Roles
+      summary: Roles view role
+      x-summary-source: derived
     delete:
       operationId: Roles_deleteRole
       parameters:
@@ -57,3 +63,5 @@ paths:
           description: OK
       tags:
       - Roles
+      summary: Roles delete role
+      x-summary-source: derived

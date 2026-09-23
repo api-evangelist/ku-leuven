@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Builtin Users API
+  title: KU Leuven Research Data Repository (RDR) Builtin Users API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -30,6 +30,8 @@ paths:
           description: OK
       tags:
       - Builtin Users
+      summary: Builtin users save
+      x-summary-source: derived
   /builtin-users/{password}/{key}:
     post:
       operationId: BuiltinUsers_create
@@ -49,6 +51,8 @@ paths:
           description: OK
       tags:
       - Builtin Users
+      summary: Builtin users create
+      x-summary-source: derived
   /builtin-users/{password}/{key}/{sendEmailNotification}:
     post:
       operationId: BuiltinUsers_createWithNotification
@@ -73,6 +77,8 @@ paths:
           description: OK
       tags:
       - Builtin Users
+      summary: Builtin users create with notification
+      x-summary-source: derived
   /builtin-users/{username}/api-token:
     get:
       operationId: BuiltinUsers_getApiToken
@@ -91,3 +97,5 @@ paths:
           description: OK
       tags:
       - Builtin Users
+      summary: Builtin users get api token
+      x-summary-source: derived

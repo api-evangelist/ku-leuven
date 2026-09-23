@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Dataverses API
+  title: KU Leuven Research Data Repository (RDR) Dataverses API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -17,6 +17,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses add root
+      x-summary-source: derived
   /dataverses/{dataverseId}/featuredItems:
     put:
       operationId: Dataverses_updateFeaturedItems
@@ -39,6 +41,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses update featured items
+      x-summary-source: derived
   /dataverses/{identifier}:
     get:
       operationId: Dataverses_getDataverse
@@ -61,6 +65,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get dataverse
+      x-summary-source: derived
     put:
       operationId: Dataverses_updateDataverse
       parameters:
@@ -74,6 +80,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses update dataverse
+      x-summary-source: derived
     post:
       operationId: Dataverses_addDataverse
       parameters:
@@ -87,6 +95,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses add dataverse
+      x-summary-source: derived
     delete:
       operationId: Dataverses_deleteDataverse
       parameters:
@@ -100,6 +110,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses delete dataverse
+      x-summary-source: derived
   /dataverses/{identifier}/actions/:publish:
     post:
       operationId: Dataverses_publishDataverse
@@ -114,6 +126,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses publish dataverse
+      x-summary-source: derived
   /dataverses/{identifier}/assignments:
     get:
       operationId: Dataverses_listAssignments
@@ -128,6 +142,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses list assignments
+      x-summary-source: derived
     post:
       operationId: Dataverses_createAssignment
       parameters:
@@ -145,6 +161,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses create assignment
+      x-summary-source: derived
   /dataverses/{identifier}/assignments/{id}:
     delete:
       operationId: Dataverses_deleteAssignment
@@ -165,6 +183,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses delete assignment
+      x-summary-source: derived
   /dataverses/{identifier}/attribute/{attribute}:
     put:
       operationId: Dataverses_updateAttribute
@@ -188,6 +208,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses update attribute
+      x-summary-source: derived
   /dataverses/{identifier}/contents:
     get:
       operationId: Dataverses_listContent
@@ -202,6 +224,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses list content
+      x-summary-source: derived
   /dataverses/{identifier}/datasetSchema:
     get:
       operationId: Dataverses_getDatasetSchema
@@ -216,6 +240,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get dataset schema
+      x-summary-source: derived
   /dataverses/{identifier}/datasets:
     post:
       operationId: Dataverses_createDataset
@@ -245,6 +271,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses create dataset
+      x-summary-source: derived
   /dataverses/{identifier}/datasets/:import:
     post:
       operationId: Dataverses_importDataset
@@ -267,6 +295,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses import dataset
+      x-summary-source: derived
   /dataverses/{identifier}/datasets/:importddi:
     post:
       operationId: Dataverses_importDatasetDdi
@@ -289,6 +319,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses import dataset ddi
+      x-summary-source: derived
   /dataverses/{identifier}/datasets/:startmigration:
     post:
       operationId: Dataverses_recreateDataset
@@ -311,6 +343,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses recreate dataset
+      x-summary-source: derived
   /dataverses/{identifier}/defaultContributorRole/{roleAlias}:
     put:
       operationId: Dataverses_updateDefaultContributorRole
@@ -330,6 +364,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses update default contributor role
+      x-summary-source: derived
   /dataverses/{identifier}/facets:
     get:
       operationId: Dataverses_listFacets
@@ -348,6 +384,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses list facets
+      x-summary-source: derived
     post:
       operationId: Dataverses_setFacets
       parameters:
@@ -361,6 +399,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses set facets
+      x-summary-source: derived
   /dataverses/{identifier}/featured:
     get:
       operationId: Dataverses_getFeaturedDataverses
@@ -375,6 +415,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get featured dataverses
+      x-summary-source: derived
     post:
       operationId: Dataverses_setFeaturedDataverses
       parameters:
@@ -388,6 +430,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses set featured dataverses
+      x-summary-source: derived
     delete:
       operationId: Dataverses_deleteFeaturedCollections
       parameters:
@@ -401,6 +445,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses delete featured collections
+      x-summary-source: derived
   /dataverses/{identifier}/featuredItems:
     get:
       operationId: Dataverses_listFeaturedItems
@@ -415,6 +461,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses list featured items
+      x-summary-source: derived
     post:
       operationId: Dataverses_createFeaturedItem
       parameters:
@@ -433,6 +481,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses create featured item
+      x-summary-source: derived
     delete:
       operationId: Dataverses_deleteFeaturedItems
       parameters:
@@ -446,6 +496,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses delete featured items
+      x-summary-source: derived
   /dataverses/{identifier}/groups:
     get:
       operationId: Dataverses_listGroups
@@ -464,6 +516,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses list groups
+      x-summary-source: derived
     post:
       operationId: Dataverses_createExplicitGroup
       parameters:
@@ -477,6 +531,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses create explicit group
+      x-summary-source: derived
   /dataverses/{identifier}/groups/{aliasInOwner}:
     get:
       operationId: Dataverses_getGroupByOwnerAndAliasInOwner
@@ -496,6 +552,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get group by owner and alias in owner
+      x-summary-source: derived
     put:
       operationId: Dataverses_updateGroup
       parameters:
@@ -514,6 +572,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses update group
+      x-summary-source: derived
     delete:
       operationId: Dataverses_deleteGroup
       parameters:
@@ -532,6 +592,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses delete group
+      x-summary-source: derived
   /dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees:
     post:
       operationId: Dataverses_addRoleAssingees
@@ -558,6 +620,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses add role assingees
+      x-summary-source: derived
   /dataverses/{identifier}/groups/{aliasInOwner}/roleAssignees/{roleAssigneeIdentifier}:
     put:
       operationId: Dataverses_addRoleAssingee
@@ -583,6 +647,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses add role assingee
+      x-summary-source: derived
     delete:
       operationId: Dataverses_deleteRoleAssingee
       parameters:
@@ -607,6 +673,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses delete role assingee
+      x-summary-source: derived
   /dataverses/{identifier}/guestbookResponses:
     get:
       operationId: Dataverses_getGuestbookResponsesByDataverse
@@ -626,6 +694,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get guestbook responses by dataverse
+      x-summary-source: derived
   /dataverses/{identifier}/inputLevels:
     get:
       operationId: Dataverses_getInputLevels
@@ -640,6 +710,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get input levels
+      x-summary-source: derived
     put:
       operationId: Dataverses_updateInputLevels
       parameters:
@@ -653,6 +725,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses update input levels
+      x-summary-source: derived
   /dataverses/{identifier}/links:
     get:
       operationId: Dataverses_listLinks
@@ -667,6 +741,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses list links
+      x-summary-source: derived
   /dataverses/{identifier}/metadatablockfacets:
     get:
       operationId: Dataverses_listMetadataBlockFacets
@@ -681,6 +757,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses list metadata block facets
+      x-summary-source: derived
     post:
       operationId: Dataverses_setMetadataBlockFacets
       parameters:
@@ -701,6 +779,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses set metadata block facets
+      x-summary-source: derived
   /dataverses/{identifier}/metadatablockfacets/isRoot:
     post:
       operationId: Dataverses_updateMetadataBlockFacetsRoot
@@ -720,6 +800,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses update metadata block facets root
+      x-summary-source: derived
   /dataverses/{identifier}/metadatablocks:
     get:
       operationId: Dataverses_listMetadataBlocks
@@ -746,6 +828,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses list metadata blocks
+      x-summary-source: derived
     post:
       operationId: Dataverses_setMetadataBlocks
       parameters:
@@ -759,6 +843,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses set metadata blocks
+      x-summary-source: derived
   /dataverses/{identifier}/metadatablocks/:isRoot:
     get:
       operationId: Dataverses_getMetadataRoot_legacy
@@ -773,6 +859,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get metadata root legacy
+      x-summary-source: derived
     post:
       operationId: Dataverses_setMetadataRoot_legacy
       parameters:
@@ -791,6 +879,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses set metadata root legacy
+      x-summary-source: derived
   /dataverses/{identifier}/metadatablocks/isRoot:
     get:
       operationId: Dataverses_getMetadataRoot
@@ -805,6 +895,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get metadata root
+      x-summary-source: derived
     put:
       operationId: Dataverses_setMetadataRoot
       parameters:
@@ -823,6 +915,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses set metadata root
+      x-summary-source: derived
   /dataverses/{identifier}/roles:
     get:
       operationId: Dataverses_listRoles
@@ -837,6 +931,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses list roles
+      x-summary-source: derived
     post:
       operationId: Dataverses_createRole
       parameters:
@@ -850,6 +946,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses create role
+      x-summary-source: derived
   /dataverses/{identifier}/storage/quota:
     get:
       operationId: Dataverses_getCollectionQuota
@@ -864,6 +962,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get collection quota
+      x-summary-source: derived
     delete:
       operationId: Dataverses_deleteCollectionQuota
       parameters:
@@ -877,6 +977,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses delete collection quota
+      x-summary-source: derived
   /dataverses/{identifier}/storage/quota/{bytesAllocated}:
     post:
       operationId: Dataverses_setCollectionQuota
@@ -897,6 +999,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses set collection quota
+      x-summary-source: derived
   /dataverses/{identifier}/storage/use:
     get:
       operationId: Dataverses_getCollectionStorageUse
@@ -911,6 +1015,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get collection storage use
+      x-summary-source: derived
   /dataverses/{identifier}/storagesize:
     get:
       operationId: Dataverses_getStorageSize
@@ -929,6 +1035,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get storage size
+      x-summary-source: derived
   /dataverses/{identifier}/userPermissions:
     get:
       operationId: Dataverses_getUserPermissionsOnDataverse
@@ -943,6 +1051,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses get user permissions on dataverse
+      x-summary-source: derived
   /dataverses/{identifier}/validateDatasetJson:
     post:
       operationId: Dataverses_validateDatasetJson
@@ -962,6 +1072,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses validate dataset json
+      x-summary-source: derived
   /dataverses/{id}/move/{targetDataverseAlias}:
     post:
       operationId: Dataverses_moveDataverse
@@ -985,6 +1097,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses move dataverse
+      x-summary-source: derived
   /dataverses/{linkedDataverseAlias}/link/{linkingDataverseAlias}:
     put:
       operationId: Dataverses_linkDataverse
@@ -1004,6 +1118,8 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses link dataverse
+      x-summary-source: derived
   /dataverses/{linkingDataverseId}/deleteLink/{linkedDataverseId}:
     delete:
       operationId: Dataverses_deleteDataverseLinkingDataverse
@@ -1023,3 +1139,5 @@ paths:
           description: OK
       tags:
       - Dataverses
+      summary: Dataverses delete dataverse linking dataverse
+      x-summary-source: derived

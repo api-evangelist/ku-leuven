@@ -1,13 +1,13 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access ExternalTools API
+  title: KU Leuven Research Data Repository (RDR) External Tools API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
 - url: https://rdr.kuleuven.be/api
   description: KU Leuven Research Data Repository (RDR) production API
 tags:
-- name: ExternalTools
+- name: External Tools
 paths:
   /externalTools:
     get:
@@ -16,14 +16,18 @@ paths:
         '200':
           description: OK
       tags:
-      - ExternalTools
+      - External Tools
+      summary: External tools api get external tools
+      x-summary-source: derived
     post:
       operationId: ExternalToolsApi_addExternalTool
       responses:
         '200':
           description: OK
       tags:
-      - ExternalTools
+      - External Tools
+      summary: External tools api add external tool
+      x-summary-source: derived
   /externalTools/{id}:
     get:
       operationId: ExternalToolsApi_getExternalTool
@@ -38,7 +42,9 @@ paths:
         '200':
           description: OK
       tags:
-      - ExternalTools
+      - External Tools
+      summary: External tools api get external tool
+      x-summary-source: derived
     delete:
       operationId: ExternalToolsApi_deleteExternalTool
       parameters:
@@ -52,4 +58,6 @@ paths:
         '200':
           description: OK
       tags:
-      - ExternalTools
+      - External Tools
+      summary: External tools api delete external tool
+      x-summary-source: derived

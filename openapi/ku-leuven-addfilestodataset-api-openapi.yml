@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access addFilesToDataset API
+  title: KU Leuven Research Data Repository (RDR) Add Files To…
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -15,7 +15,6 @@ paths:
       tags:
       - addFilesToDataset
       summary: Uploads a set of files to a dataset
-      description: Uploads a set of files to a dataset
       operationId: Datasets_addFilesToDataset
       parameters:
       - name: id

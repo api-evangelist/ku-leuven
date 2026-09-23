@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: KU Leuven ICTS Data Services Programs API
-  description: Institution-operated read API for KU Leuven's public reference data, run by KU Leuven ICTS and documented at https://admin.kuleuven.be/icts/services/dataservices. The gateway at dataservice.kuleuven.be exposes an OpenSearch/Elasticsearch query surface over eight public indices — staff directory (wie-is-wie), academic CVs, organisational chart, educational offering (programme guide), research projects, research teams, research infrastructure and job vacancies — each published in a Dutch and an English index. Reads are unauthenticated and were confirmed live on 2026-08-19; the underlying data is governed by the KU Leuven Data Service terms of use.
+  description: Institution-operated read API for KU Leuven's public reference data, run by KU Leuven ICTS and documented at https://admin.kuleuven.be/icts/services/dataservices.
   version: '2026-08-19'
   contact:
     name: KU Leuven ICTS Data Services
@@ -22,7 +22,7 @@ paths:
   /pg/_search:
     get:
       summary: Search the current-academic-year programme guide index
-      description: '`pg` aliases the current academic year. Year-specific indices are addressable directly as `pg<year>` (for example `pg2025`); the academic year rolls over on 15 July.'
+      description: '`pg` aliases the current academic year. Year-specific indices are addressable directly as `pg` (for example `pg2025`); the academic year rolls over on 15 July.'
       operationId: pg_search_get
       requestBody:
         required: false
@@ -83,20 +83,22 @@ paths:
       tags:
       - Programs
 components:
-  responses:
-    QueryError:
-      description: Malformed query document.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    DocumentNotFound:
-      description: No document with that identifier in the index.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/DocumentResponse'
   schemas:
+    Hit:
+      type: object
+      properties:
+        _index:
+          type: string
+          description: Physical index name. Snapshot indices carry a build timestamp, e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
+        _id:
+          type: string
+        _score:
+          type:
+          - number
+          - 'null'
+        _source:
+          type: object
+          description: The document. Field sets differ per index.
     SearchRequest:
       type: object
       description: OpenSearch query document as documented by KU Leuven ICTS.
@@ -162,33 +164,6 @@ components:
         aggregations:
           type: object
           description: Present when the request supplied `aggs`.
-    DocumentResponse:
-      type: object
-      description: Single-document response from `_doc/{id}`.
-      properties:
-        _index:
-          type: string
-        _id:
-          type: string
-        found:
-          type: boolean
-        _source:
-          type: object
-    Hit:
-      type: object
-      properties:
-        _index:
-          type: string
-          description: Physical index name. Snapshot indices carry a build timestamp, e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
-        _id:
-          type: string
-        _score:
-          type:
-          - number
-          - 'null'
-        _source:
-          type: object
-          description: The document. Field sets differ per index.
     ErrorResponse:
       type: object
       description: OpenSearch error envelope, captured live from a malformed query on 2026-08-19.
@@ -217,14 +192,19 @@ components:
               type: object
         status:
           type: integer
+    DocumentResponse:
+      type: object
+      description: Single-document response from `_doc/{id}`.
+      properties:
+        _index:
+          type: string
+        _id:
+          type: string
+        found:
+          type: boolean
+        _source:
+          type: object
   parameters:
-    SourceFields:
-      name: _source
-      in: query
-      required: false
-      description: Comma-separated list of fields to return.
-      schema:
-        type: string
     DocId:
       name: id
       in: path
@@ -232,3 +212,23 @@ components:
       description: Document identifier within the index.
       schema:
         type: string
+    SourceFields:
+      name: _source
+      in: query
+      required: false
+      description: Comma-separated list of fields to return.
+      schema:
+        type: string
+  responses:
+    DocumentNotFound:
+      description: No document with that identifier in the index.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DocumentResponse'
+    QueryError:
+      description: Malformed query document.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

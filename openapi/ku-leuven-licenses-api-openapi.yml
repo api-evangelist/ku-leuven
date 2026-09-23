@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Licenses API
+  title: KU Leuven Research Data Repository (RDR) Licenses API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -17,6 +17,8 @@ paths:
           description: OK
       tags:
       - Licenses
+      summary: Licenses get licenses
+      x-summary-source: derived
     post:
       operationId: Licenses_addLicense
       responses:
@@ -24,6 +26,8 @@ paths:
           description: OK
       tags:
       - Licenses
+      summary: Licenses add license
+      x-summary-source: derived
   /licenses/default:
     get:
       operationId: Licenses_getDefault
@@ -32,6 +36,8 @@ paths:
           description: OK
       tags:
       - Licenses
+      summary: Licenses get default
+      x-summary-source: derived
   /licenses/default/{id}:
     put:
       operationId: Licenses_setDefault
@@ -47,6 +53,8 @@ paths:
           description: OK
       tags:
       - Licenses
+      summary: Licenses set default
+      x-summary-source: derived
   /licenses/{id}:
     get:
       operationId: Licenses_getLicenseById
@@ -62,6 +70,8 @@ paths:
           description: OK
       tags:
       - Licenses
+      summary: Licenses get license by id
+      x-summary-source: derived
     delete:
       operationId: Licenses_deleteLicenseById
       parameters:
@@ -76,6 +86,8 @@ paths:
           description: OK
       tags:
       - Licenses
+      summary: Licenses delete license by id
+      x-summary-source: derived
   /licenses/{id}/:active/{activeState}:
     put:
       operationId: Licenses_setActiveState
@@ -96,6 +108,8 @@ paths:
           description: OK
       tags:
       - Licenses
+      summary: Licenses set active state
+      x-summary-source: derived
   /licenses/{id}/:sortOrder/{sortOrder}:
     put:
       operationId: Licenses_setSortOrder
@@ -117,3 +131,5 @@ paths:
           description: OK
       tags:
       - Licenses
+      summary: Licenses set sort order
+      x-summary-source: derived

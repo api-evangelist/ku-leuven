@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Datasets API
+  title: KU Leuven Research Data Repository (RDR) Datasets API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -17,6 +17,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get dataset types
+      x-summary-source: derived
     post:
       operationId: Datasets_addDatasetType
       responses:
@@ -24,6 +26,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets add dataset type
+      x-summary-source: derived
   /datasets/datasetTypes/{idOrName}:
     get:
       operationId: Datasets_getDatasetTypes
@@ -38,6 +42,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get dataset types
+      x-summary-source: derived
     put:
       operationId: Datasets_updateDatasetTypeLinksWithMetadataBlocks
       parameters:
@@ -51,6 +57,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets update dataset type links with metadata blocks
+      x-summary-source: derived
   /datasets/datasetTypes/{idOrName}/licenses:
     put:
       operationId: Datasets_updateDatasetTypeWithLicenses
@@ -65,6 +73,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets update dataset type with licenses
+      x-summary-source: derived
   /datasets/datasetTypes/{id}:
     delete:
       operationId: Datasets_deleteDatasetType
@@ -79,6 +89,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete dataset type
+      x-summary-source: derived
   /datasets/export:
     get:
       operationId: Datasets_exportDataset
@@ -100,6 +112,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets export dataset
+      x-summary-source: derived
   /datasets/listCurationStates:
     get:
       operationId: Datasets_getCurationStates
@@ -114,6 +128,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get curation states
+      x-summary-source: derived
   /datasets/locks:
     get:
       operationId: Datasets_listLocks
@@ -131,6 +147,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets list locks
+      x-summary-source: derived
   /datasets/modifyRegistrationAll:
     post:
       operationId: Datasets_updateDatasetTargetURLAll
@@ -139,6 +157,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets update dataset target URL all
+      x-summary-source: derived
   /datasets/modifyRegistrationPIDMetadataAll:
     post:
       operationId: Datasets_updateDatasetPIDMetadataAll
@@ -147,6 +167,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets update dataset PID metadata all
+      x-summary-source: derived
   /datasets/mpupload:
     put:
       operationId: Datasets_completeMPUpload
@@ -168,6 +190,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets complete MP upload
+      x-summary-source: derived
     delete:
       operationId: Datasets_abortMPUpload
       parameters:
@@ -188,6 +212,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets abort MP upload
+      x-summary-source: derived
   /datasets/previewUrlDatasetVersion/{previewUrlToken}:
     get:
       operationId: Datasets_getPreviewUrlDatasetVersion
@@ -206,6 +232,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get preview url dataset version
+      x-summary-source: derived
   /datasets/previewUrlDatasetVersion/{previewUrlToken}/citation:
     get:
       operationId: Datasets_getPreviewUrlDatasetVersionCitation
@@ -220,6 +248,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get preview url dataset version citation
+      x-summary-source: derived
   /datasets/privateUrlDatasetVersion/{privateUrlToken}:
     get:
       operationId: Datasets_getPrivateUrlDatasetVersion
@@ -238,6 +268,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get private url dataset version
+      x-summary-source: derived
   /datasets/privateUrlDatasetVersion/{privateUrlToken}/citation:
     get:
       operationId: Datasets_getPrivateUrlDatasetVersionCitation
@@ -252,6 +284,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get private url dataset version citation
+      x-summary-source: derived
   /datasets/summaryFieldNames:
     get:
       operationId: Datasets_getDatasetSummaryFieldNames
@@ -260,6 +294,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get dataset summary field names
+      x-summary-source: derived
   /datasets/{datasetId}/deleteLink/{linkedDataverseId}:
     delete:
       operationId: Datasets_deleteDatasetLinkingDataverse
@@ -279,6 +315,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete dataset linking dataverse
+      x-summary-source: derived
   /datasets/{identifier}/allowedCurationLabels:
     get:
       operationId: Datasets_getAllowedCurationLabels
@@ -293,6 +331,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get allowed curation labels
+      x-summary-source: derived
   /datasets/{identifier}/assignments:
     get:
       operationId: Datasets_getAssignments
@@ -307,6 +347,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get assignments
+      x-summary-source: derived
     post:
       operationId: Datasets_createAssignment
       parameters:
@@ -324,6 +366,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets create assignment
+      x-summary-source: derived
   /datasets/{identifier}/assignments/{id}:
     delete:
       operationId: Datasets_deleteAssignment
@@ -344,6 +388,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete assignment
+      x-summary-source: derived
   /datasets/{identifier}/curationLabelSet:
     get:
       operationId: Datasets_getCurationLabelSet
@@ -358,6 +404,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get curation label set
+      x-summary-source: derived
     put:
       operationId: Datasets_setCurationLabelSet
       parameters:
@@ -375,6 +423,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets set curation label set
+      x-summary-source: derived
     delete:
       operationId: Datasets_resetCurationLabelSet
       parameters:
@@ -388,6 +438,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets reset curation label set
+      x-summary-source: derived
   /datasets/{identifier}/dataCaptureModule/checksumValidation:
     post:
       operationId: Datasets_receiveChecksumValidationResults
@@ -402,6 +454,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets receive checksum validation results
+      x-summary-source: derived
   /datasets/{identifier}/dataCaptureModule/rsync:
     get:
       operationId: Datasets_getRsync
@@ -417,6 +471,8 @@ paths:
       deprecated: true
       tags:
       - Datasets
+      summary: Datasets get rsync
+      x-summary-source: derived
   /datasets/{identifier}/guestbookEntryAtRequest:
     get:
       operationId: Datasets_getGuestbookEntryOption
@@ -431,6 +487,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get guestbook entry option
+      x-summary-source: derived
     put:
       operationId: Datasets_setguestbookEntryAtRequest
       parameters:
@@ -444,6 +502,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets setguestbook entry at request
+      x-summary-source: derived
     delete:
       operationId: Datasets_resetGuestbookEntryAtRequest
       parameters:
@@ -457,6 +517,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets reset guestbook entry at request
+      x-summary-source: derived
   /datasets/{identifier}/lock/{type}:
     post:
       operationId: Datasets_lockDataset
@@ -476,6 +538,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets lock dataset
+      x-summary-source: derived
   /datasets/{identifier}/locks:
     get:
       operationId: Datasets_getLocksForDataset
@@ -494,6 +558,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get locks for dataset
+      x-summary-source: derived
     delete:
       operationId: Datasets_deleteLocks
       parameters:
@@ -511,6 +577,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete locks
+      x-summary-source: derived
   /datasets/{identifier}/pidGenerator:
     get:
       operationId: Datasets_getPidGenerator
@@ -525,6 +593,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get pid generator
+      x-summary-source: derived
     put:
       operationId: Datasets_setPidGenerator
       parameters:
@@ -538,6 +608,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets set pid generator
+      x-summary-source: derived
     delete:
       operationId: Datasets_resetPidGenerator
       parameters:
@@ -551,6 +623,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets reset pid generator
+      x-summary-source: derived
   /datasets/{identifier}/pidReconcile:
     put:
       operationId: Datasets_reconcilePid
@@ -565,6 +639,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets reconcile pid
+      x-summary-source: derived
   /datasets/{identifier}/storageDriver:
     get:
       operationId: Datasets_getFileStore
@@ -579,6 +655,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get file store
+      x-summary-source: derived
     put:
       operationId: Datasets_setFileStore
       parameters:
@@ -592,6 +670,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets set file store
+      x-summary-source: derived
     delete:
       operationId: Datasets_resetFileStore
       parameters:
@@ -605,6 +685,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets reset file store
+      x-summary-source: derived
   /datasets/{identifier}/storagesize:
     get:
       operationId: Datasets_getStorageSize
@@ -623,6 +705,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get storage size
+      x-summary-source: derived
   /datasets/{identifier}/timestamps:
     get:
       operationId: Datasets_getTimestamps
@@ -637,6 +721,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get timestamps
+      x-summary-source: derived
   /datasets/{identifier}/versions/{versionId}/downloadsize:
     get:
       operationId: Datasets_getDownloadSize
@@ -684,6 +770,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get download size
+      x-summary-source: derived
   /datasets/{id}:
     get:
       operationId: Datasets_getDataset
@@ -702,6 +790,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get dataset
+      x-summary-source: derived
     delete:
       operationId: Datasets_deleteDataset
       parameters:
@@ -715,6 +805,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete dataset
+      x-summary-source: derived
   /datasets/{id}/actions/:publish:
     get:
       operationId: Datasets_publishDataseUsingGetDeprecated
@@ -734,6 +826,8 @@ paths:
       deprecated: true
       tags:
       - Datasets
+      summary: Datasets publish datase using get deprecated
+      x-summary-source: derived
     post:
       operationId: Datasets_publishDataset
       parameters:
@@ -755,6 +849,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets publish dataset
+      x-summary-source: derived
   /datasets/{id}/actions/:releasemigrated:
     post:
       operationId: Datasets_publishMigratedDataset
@@ -782,6 +878,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets publish migrated dataset
+      x-summary-source: derived
   /datasets/{id}/citationdate:
     put:
       operationId: Datasets_setCitationDate
@@ -796,6 +894,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets set citation date
+      x-summary-source: derived
     delete:
       operationId: Datasets_useDefaultCitationDate
       parameters:
@@ -809,6 +909,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets use default citation date
+      x-summary-source: derived
   /datasets/{id}/cleanStorage:
     get:
       operationId: Datasets_cleanStorage
@@ -827,6 +929,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets clean storage
+      x-summary-source: derived
   /datasets/{id}/curationStatus:
     get:
       operationId: Datasets_getCurationStatus
@@ -845,6 +949,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get curation status
+      x-summary-source: derived
     put:
       operationId: Datasets_setCurationStatus
       parameters:
@@ -862,6 +968,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets set curation status
+      x-summary-source: derived
     delete:
       operationId: Datasets_deleteCurationStatus
       parameters:
@@ -875,6 +983,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete curation status
+      x-summary-source: derived
   /datasets/{id}/deleteFiles:
     put:
       operationId: Datasets_deleteDatasetFiles
@@ -894,6 +1004,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete dataset files
+      x-summary-source: derived
   /datasets/{id}/deleteMetadata:
     put:
       operationId: Datasets_deleteVersionMetadata
@@ -908,6 +1020,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete version metadata
+      x-summary-source: derived
   /datasets/{id}/destroy:
     delete:
       operationId: Datasets_destroyDataset
@@ -922,6 +1036,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets destroy dataset
+      x-summary-source: derived
   /datasets/{id}/dirindex:
     get:
       operationId: Datasets_getFileAccessFolderView
@@ -948,6 +1064,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get file access folder view
+      x-summary-source: derived
   /datasets/{id}/download/count:
     get:
       operationId: Datasets_getDownloadCountByDatasetId
@@ -966,6 +1084,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get download count by dataset id
+      x-summary-source: derived
   /datasets/{id}/editMetadata:
     put:
       operationId: Datasets_editVersionMetadata
@@ -989,6 +1109,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets edit version metadata
+      x-summary-source: derived
   /datasets/{id}/files/actions/:set-embargo:
     post:
       operationId: Datasets_createFileEmbargo
@@ -1003,6 +1125,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets create file embargo
+      x-summary-source: derived
   /datasets/{id}/files/actions/:set-retention:
     post:
       operationId: Datasets_createFileRetention
@@ -1017,6 +1141,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets create file retention
+      x-summary-source: derived
   /datasets/{id}/files/actions/:unset-embargo:
     post:
       operationId: Datasets_removeFileEmbargo
@@ -1031,6 +1157,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets remove file embargo
+      x-summary-source: derived
   /datasets/{id}/files/actions/:unset-retention:
     post:
       operationId: Datasets_removeFileRetention
@@ -1045,6 +1173,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets remove file retention
+      x-summary-source: derived
   /datasets/{id}/files/metadata:
     post:
       operationId: Datasets_updateMultipleFileMetadata
@@ -1064,6 +1194,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets update multiple file metadata
+      x-summary-source: derived
   /datasets/{id}/files/uploadlimit:
     delete:
       operationId: Datasets_deleteDatasetFilesLimits
@@ -1078,6 +1210,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete dataset files limits
+      x-summary-source: derived
   /datasets/{id}/files/uploadlimit/{limit}:
     post:
       operationId: Datasets_updateDatasetFilesLimits
@@ -1098,6 +1232,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets update dataset files limits
+      x-summary-source: derived
   /datasets/{id}/globusDownloadParameters:
     get:
       operationId: Datasets_getGlobusDownloadParams
@@ -1120,6 +1256,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get globus download params
+      x-summary-source: derived
   /datasets/{id}/globusUploadParameters:
     get:
       operationId: Datasets_getGlobusUploadParams
@@ -1138,6 +1276,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get globus upload params
+      x-summary-source: derived
   /datasets/{id}/links:
     get:
       operationId: Datasets_getLinks
@@ -1152,6 +1292,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get links
+      x-summary-source: derived
   /datasets/{id}/logo:
     get:
       operationId: Datasets_getDatasetLogo
@@ -1166,6 +1308,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get dataset logo
+      x-summary-source: derived
   /datasets/{id}/makeDataCount/citations:
     get:
       operationId: Datasets_getMakeDataCountCitations
@@ -1180,6 +1324,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get make data count citations
+      x-summary-source: derived
   /datasets/{id}/makeDataCount/{metric}:
     get:
       operationId: Datasets_getMakeDataCountMetricCurrentMonth
@@ -1203,6 +1349,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get make data count metric current month
+      x-summary-source: derived
   /datasets/{id}/makeDataCount/{metric}/{yyyymm}:
     get:
       operationId: Datasets_getMakeDataCountMetric
@@ -1231,6 +1379,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get make data count metric
+      x-summary-source: derived
   /datasets/{id}/metadata:
     get:
       operationId: Datasets_getJsonLDMetadata
@@ -1245,6 +1395,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get json LD metadata
+      x-summary-source: derived
     put:
       operationId: Datasets_updateVersionMetadata
       parameters:
@@ -1271,6 +1423,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets update version metadata
+      x-summary-source: derived
   /datasets/{id}/metadata/delete:
     put:
       operationId: Datasets_deleteMetadata
@@ -1293,6 +1447,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete metadata
+      x-summary-source: derived
   /datasets/{id}/modifyRegistration:
     post:
       operationId: Datasets_updateDatasetTargetURL
@@ -1307,6 +1463,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets update dataset target URL
+      x-summary-source: derived
   /datasets/{id}/modifyRegistrationMetadata:
     post:
       operationId: Datasets_updateDatasetPIDMetadata
@@ -1321,6 +1479,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets update dataset PID metadata
+      x-summary-source: derived
   /datasets/{id}/monitorGlobusDownload:
     post:
       operationId: Datasets_monitorGlobusDownload
@@ -1340,6 +1500,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets monitor globus download
+      x-summary-source: derived
   /datasets/{id}/move/{targetDataverseAlias}:
     post:
       operationId: Datasets_moveDataset
@@ -1363,6 +1525,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets move dataset
+      x-summary-source: derived
   /datasets/{id}/previewUrl:
     get:
       operationId: Datasets_getPreviewUrlData
@@ -1377,6 +1541,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get preview url data
+      x-summary-source: derived
     post:
       operationId: Datasets_createPreviewUrl
       parameters:
@@ -1395,6 +1561,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets create preview url
+      x-summary-source: derived
     delete:
       operationId: Datasets_deletePreviewUrl
       parameters:
@@ -1408,6 +1576,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete preview url
+      x-summary-source: derived
   /datasets/{id}/privateUrl:
     get:
       operationId: Datasets_getPrivateUrlData
@@ -1423,6 +1593,8 @@ paths:
       deprecated: true
       tags:
       - Datasets
+      summary: Datasets get private url data
+      x-summary-source: derived
     post:
       operationId: Datasets_createPrivateUrl
       parameters:
@@ -1442,6 +1614,8 @@ paths:
       deprecated: true
       tags:
       - Datasets
+      summary: Datasets create private url
+      x-summary-source: derived
     delete:
       operationId: Datasets_deletePrivateUrl
       parameters:
@@ -1456,6 +1630,8 @@ paths:
       deprecated: true
       tags:
       - Datasets
+      summary: Datasets delete private url
+      x-summary-source: derived
   /datasets/{id}/requestGlobusDownload:
     post:
       operationId: Datasets_requestGlobusDownload
@@ -1479,6 +1655,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets request globus download
+      x-summary-source: derived
   /datasets/{id}/requestGlobusUploadPaths:
     post:
       operationId: Datasets_requestGlobusUpload
@@ -1498,6 +1676,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets request globus upload
+      x-summary-source: derived
   /datasets/{id}/returnToAuthor:
     post:
       operationId: Datasets_returnToAuthor
@@ -1512,6 +1692,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets return to author
+      x-summary-source: derived
   /datasets/{id}/submitForReview:
     post:
       operationId: Datasets_submitForReview
@@ -1526,6 +1708,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets submit for review
+      x-summary-source: derived
   /datasets/{id}/thumbnail:
     get:
       operationId: Datasets_getDatasetThumbnail
@@ -1540,6 +1724,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get dataset thumbnail
+      x-summary-source: derived
     delete:
       operationId: Datasets_removeDatasetLogo
       parameters:
@@ -1553,6 +1739,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets remove dataset logo
+      x-summary-source: derived
   /datasets/{id}/thumbnail/candidates:
     get:
       operationId: Datasets_getDatasetThumbnailCandidates
@@ -1567,6 +1755,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get dataset thumbnail candidates
+      x-summary-source: derived
   /datasets/{id}/thumbnail/{dataFileId}:
     post:
       operationId: Datasets_setDataFileAsThumbnail
@@ -1587,6 +1777,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets set data file as thumbnail
+      x-summary-source: derived
   /datasets/{id}/uploadurls:
     get:
       operationId: Datasets_getMPUploadUrls
@@ -1606,6 +1798,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get MP upload urls
+      x-summary-source: derived
   /datasets/{id}/userPermissions:
     get:
       operationId: Datasets_getUserPermissionsOnDataset
@@ -1620,6 +1814,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get user permissions on dataset
+      x-summary-source: derived
   /datasets/{id}/versions:
     get:
       operationId: Datasets_listVersions
@@ -1652,6 +1848,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets list versions
+      x-summary-source: derived
   /datasets/{id}/versions/compareSummary:
     get:
       operationId: Datasets_getCompareVersionsSummary
@@ -1666,6 +1864,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get compare versions summary
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId1}/compare/{versionId2}:
     get:
       operationId: Datasets_getCompareVersions
@@ -1694,6 +1894,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get compare versions
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId}:
     get:
       operationId: Datasets_getVersion
@@ -1729,6 +1931,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get version
+      x-summary-source: derived
     put:
       operationId: Datasets_updateDraftVersion
       parameters:
@@ -1752,6 +1956,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets update draft version
+      x-summary-source: derived
     delete:
       operationId: Datasets_deleteDraftVersion
       parameters:
@@ -1770,6 +1976,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete draft version
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId}/canDownloadAtLeastOneFile:
     get:
       operationId: Datasets_getCanDownloadAtLeastOneFile
@@ -1793,6 +2001,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get can download at least one file
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId}/citation:
     get:
       operationId: Datasets_getDatasetVersionInternalCitation
@@ -1816,6 +2026,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get dataset version internal citation
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId}/citation/{format}:
     get:
       operationId: Datasets_getDatasetVersionCitation
@@ -1844,6 +2056,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get dataset version citation
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId}/customlicense:
     get:
       operationId: Datasets_getCustomTermsTab
@@ -1863,6 +2077,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get custom terms tab
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId}/deaccession:
     post:
       operationId: Datasets_deaccessionDataset
@@ -1882,6 +2098,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets deaccession dataset
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId}/files:
     get:
       operationId: Datasets_getVersionFiles
@@ -1939,6 +2157,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get version files
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId}/files/counts:
     get:
       operationId: Datasets_getVersionFileCounts
@@ -1982,6 +2202,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get version file counts
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId}/linkset:
     get:
       operationId: Datasets_getLinkset
@@ -2001,6 +2223,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get linkset
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId}/metadata:
     get:
       operationId: Datasets_getVersionJsonLDMetadata
@@ -2020,6 +2244,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get version json LD metadata
+      x-summary-source: derived
   /datasets/{id}/versions/{versionId}/versionNote:
     get:
       operationId: Datasets_getVersionCreationNote
@@ -2039,6 +2265,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get version creation note
+      x-summary-source: derived
     put:
       operationId: Datasets_addVersionNote
       parameters:
@@ -2057,6 +2285,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets add version note
+      x-summary-source: derived
     delete:
       operationId: Datasets_deleteVersionNote
       parameters:
@@ -2075,6 +2305,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete version note
+      x-summary-source: derived
   /datasets/{id}/versions/{versionNumber}/metadata/{block}:
     get:
       operationId: Datasets_getVersionMetadataBlock
@@ -2099,6 +2331,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get version metadata block
+      x-summary-source: derived
   /datasets/{id}/versions/{version}/toolparams/{tid}:
     get:
       operationId: Datasets_getExternalToolDVParams
@@ -2128,6 +2362,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get external tool DV params
+      x-summary-source: derived
   /datasets/{id}/{version}/archivalStatus:
     get:
       operationId: Datasets_getDatasetVersionArchivalStatus
@@ -2147,6 +2383,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets get dataset version archival status
+      x-summary-source: derived
     put:
       operationId: Datasets_setDatasetVersionArchivalStatus
       parameters:
@@ -2170,6 +2408,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets set dataset version archival status
+      x-summary-source: derived
     delete:
       operationId: Datasets_deleteDatasetVersionArchivalStatus
       parameters:
@@ -2188,6 +2428,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets delete dataset version archival status
+      x-summary-source: derived
   /datasets/{linkedDatasetId}/link/{linkingDataverseAlias}:
     put:
       operationId: Datasets_linkDataset
@@ -2207,6 +2449,8 @@ paths:
           description: OK
       tags:
       - Datasets
+      summary: Datasets link dataset
+      x-summary-source: derived
 components:
   schemas:
     Reason:

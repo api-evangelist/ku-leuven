@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Notifications API
+  title: KU Leuven Research Data Repository (RDR) Notifications API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -17,6 +17,8 @@ paths:
           description: OK
       tags:
       - Notifications
+      summary: Notifications get all notifications for user
+      x-summary-source: derived
   /notifications/mutedEmails:
     get:
       operationId: Notifications_getMutedEmailsForUser
@@ -25,6 +27,8 @@ paths:
           description: OK
       tags:
       - Notifications
+      summary: Notifications get muted emails for user
+      x-summary-source: derived
   /notifications/mutedEmails/{typeName}:
     put:
       operationId: Notifications_muteEmailsForUser
@@ -39,6 +43,8 @@ paths:
           description: OK
       tags:
       - Notifications
+      summary: Notifications mute emails for user
+      x-summary-source: derived
     delete:
       operationId: Notifications_unmuteEmailsForUser
       parameters:
@@ -52,6 +58,8 @@ paths:
           description: OK
       tags:
       - Notifications
+      summary: Notifications unmute emails for user
+      x-summary-source: derived
   /notifications/mutedNotifications:
     get:
       operationId: Notifications_getMutedNotificationsForUser
@@ -60,6 +68,8 @@ paths:
           description: OK
       tags:
       - Notifications
+      summary: Notifications get muted notifications for user
+      x-summary-source: derived
   /notifications/mutedNotifications/{typeName}:
     put:
       operationId: Notifications_muteNotificationsForUser
@@ -74,6 +84,8 @@ paths:
           description: OK
       tags:
       - Notifications
+      summary: Notifications mute notifications for user
+      x-summary-source: derived
     delete:
       operationId: Notifications_unmuteNotificationsForUser
       parameters:
@@ -87,6 +99,8 @@ paths:
           description: OK
       tags:
       - Notifications
+      summary: Notifications unmute notifications for user
+      x-summary-source: derived
   /notifications/{id}:
     delete:
       operationId: Notifications_deleteNotificationForUser
@@ -102,3 +116,5 @@ paths:
           description: OK
       tags:
       - Notifications
+      summary: Notifications delete notification for user
+      x-summary-source: derived

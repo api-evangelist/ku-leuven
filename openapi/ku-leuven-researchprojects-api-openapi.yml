@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: KU Leuven ICTS Data Services Research Projects API
-  description: Institution-operated read API for KU Leuven's public reference data, run by KU Leuven ICTS and documented at https://admin.kuleuven.be/icts/services/dataservices. The gateway at dataservice.kuleuven.be exposes an OpenSearch/Elasticsearch query surface over eight public indices — staff directory (wie-is-wie), academic CVs, organisational chart, educational offering (programme guide), research projects, research teams, research infrastructure and job vacancies — each published in a Dutch and an English index. Reads are unauthenticated and were confirmed live on 2026-08-19; the underlying data is governed by the KU Leuven Data Service terms of use.
+  description: Institution-operated read API for KU Leuven's public reference data, run by KU Leuven ICTS and documented at https://admin.kuleuven.be/icts/services/dataservices.
   version: '2026-08-19'
   contact:
     name: KU Leuven ICTS Data Services
@@ -117,6 +117,43 @@ components:
             all:
               type: boolean
               description: Return every available attribute rather than the default subset.
+    Hit:
+      type: object
+      properties:
+        _index:
+          type: string
+          description: Physical index name. Snapshot indices carry a build timestamp, e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
+        _id:
+          type: string
+        _score:
+          type:
+          - number
+          - 'null'
+        _source:
+          type: object
+          description: The document. Field sets differ per index.
+    SearchRequest:
+      type: object
+      description: OpenSearch query document as documented by KU Leuven ICTS.
+      properties:
+        query:
+          type: object
+          description: Query clause, e.g. `match_all` or `query_string`.
+        aggs:
+          type: object
+          description: Aggregations, previously described by ICTS as filters or facets.
+        _source:
+          type: array
+          description: Field list to return (ICTS documents this as returnFields).
+          items:
+            type: string
+        from:
+          type: integer
+          description: Start position for pagination.
+        size:
+          type: integer
+          description: Number of hits to return. Default 10.
+          default: 10
     SearchResponse:
       type: object
       description: Standard OpenSearch search response envelope, as returned live on 2026-08-19.
@@ -160,40 +197,3 @@ components:
         aggregations:
           type: object
           description: Present when the request supplied `aggs`.
-    SearchRequest:
-      type: object
-      description: OpenSearch query document as documented by KU Leuven ICTS.
-      properties:
-        query:
-          type: object
-          description: Query clause, e.g. `match_all` or `query_string`.
-        aggs:
-          type: object
-          description: Aggregations, previously described by ICTS as filters or facets.
-        _source:
-          type: array
-          description: Field list to return (ICTS documents this as returnFields).
-          items:
-            type: string
-        from:
-          type: integer
-          description: Start position for pagination.
-        size:
-          type: integer
-          description: Number of hits to return. Default 10.
-          default: 10
-    Hit:
-      type: object
-      properties:
-        _index:
-          type: string
-          description: Physical index name. Snapshot indices carry a build timestamp, e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
-        _id:
-          type: string
-        _score:
-          type:
-          - number
-          - 'null'
-        _source:
-          type: object
-          description: The document. Field sets differ per index.

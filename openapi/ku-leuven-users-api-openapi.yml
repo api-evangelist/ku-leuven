@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Users API
+  title: KU Leuven Research Data Repository (RDR) Users API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -17,6 +17,8 @@ paths:
           description: OK
       tags:
       - Users
+      summary: Users get authenticated user by token
+      x-summary-source: derived
   /users/register:
     post:
       operationId: Users_registerOIDCUser
@@ -25,6 +27,8 @@ paths:
           description: OK
       tags:
       - Users
+      summary: Users register OIDC user
+      x-summary-source: derived
   /users/token:
     get:
       operationId: Users_getTokenExpirationDate
@@ -33,6 +37,8 @@ paths:
           description: OK
       tags:
       - Users
+      summary: Users get token expiration date
+      x-summary-source: derived
     delete:
       operationId: Users_deleteToken
       responses:
@@ -40,6 +46,8 @@ paths:
           description: OK
       tags:
       - Users
+      summary: Users delete token
+      x-summary-source: derived
   /users/token/recreate:
     post:
       operationId: Users_recreateToken
@@ -53,6 +61,8 @@ paths:
           description: OK
       tags:
       - Users
+      summary: Users recreate token
+      x-summary-source: derived
   /users/{consumedIdentifier}/mergeIntoUser/{baseIdentifier}:
     post:
       operationId: Users_mergeInAuthenticatedUser
@@ -72,6 +82,8 @@ paths:
           description: OK
       tags:
       - Users
+      summary: Users merge in authenticated user
+      x-summary-source: derived
   /users/{identifier}/allowedCollections/{permission}:
     get:
       operationId: Users_getUserPermittedCollections
@@ -91,6 +103,8 @@ paths:
           description: OK
       tags:
       - Users
+      summary: Users get user permitted collections
+      x-summary-source: derived
   /users/{identifier}/changeIdentifier/{newIdentifier}:
     post:
       operationId: Users_changeAuthenticatedUserIdentifier
@@ -110,6 +124,8 @@ paths:
           description: OK
       tags:
       - Users
+      summary: Users change authenticated user identifier
+      x-summary-source: derived
   /users/{identifier}/removeRoles:
     post:
       operationId: Users_removeUserRoles
@@ -124,6 +140,8 @@ paths:
           description: OK
       tags:
       - Users
+      summary: Users remove user roles
+      x-summary-source: derived
   /users/{identifier}/traces:
     get:
       operationId: Users_getTraces
@@ -138,6 +156,8 @@ paths:
           description: OK
       tags:
       - Users
+      summary: Users get traces
+      x-summary-source: derived
   /users/{identifier}/traces/{element}:
     get:
       operationId: Users_getTracesElement
@@ -157,3 +177,5 @@ paths:
           description: OK
       tags:
       - Users
+      summary: Users get traces element
+      x-summary-source: derived

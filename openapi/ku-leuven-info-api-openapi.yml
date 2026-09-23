@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Info API
+  title: KU Leuven Research Data Repository (RDR) Info API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -17,6 +17,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get accounts all time
+      x-summary-source: derived
   /info/metrics/accounts/monthly:
     get:
       operationId: Metrics_getAccountsTimeSeries
@@ -25,6 +27,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get accounts time series
+      x-summary-source: derived
   /info/metrics/accounts/pastDays/{days}:
     get:
       operationId: Metrics_getAccountsPastDays
@@ -40,6 +44,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get accounts past days
+      x-summary-source: derived
   /info/metrics/accounts/toMonth/{yyyymm}:
     get:
       operationId: Metrics_getAccountsToMonth
@@ -54,6 +60,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get accounts to month
+      x-summary-source: derived
   /info/metrics/datasets:
     get:
       operationId: Metrics_getDatasetsAllTime
@@ -71,6 +79,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get datasets all time
+      x-summary-source: derived
   /info/metrics/datasets/bySubject:
     get:
       operationId: Metrics_getDatasetsBySubject
@@ -88,6 +98,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get datasets by subject
+      x-summary-source: derived
   /info/metrics/datasets/bySubject/toMonth/{yyyymm}:
     get:
       operationId: Metrics_getDatasetsBySubjectToMonth
@@ -110,6 +122,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get datasets by subject to month
+      x-summary-source: derived
   /info/metrics/datasets/monthly:
     get:
       operationId: Metrics_getDatasetsTimeSeriest
@@ -127,6 +141,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get datasets time seriest
+      x-summary-source: derived
   /info/metrics/datasets/pastDays/{days}:
     get:
       operationId: Metrics_getDatasetsPastDays
@@ -150,6 +166,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get datasets past days
+      x-summary-source: derived
   /info/metrics/datasets/toMonth/{yyyymm}:
     get:
       operationId: Metrics_getDatasetsToMonth
@@ -172,6 +190,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get datasets to month
+      x-summary-source: derived
   /info/metrics/dataverses:
     get:
       operationId: Metrics_getDataversesAllTime
@@ -185,6 +205,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get dataverses all time
+      x-summary-source: derived
   /info/metrics/dataverses/byCategory:
     get:
       operationId: Metrics_getDataversesByCategory
@@ -198,6 +220,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get dataverses by category
+      x-summary-source: derived
   /info/metrics/dataverses/bySubject:
     get:
       operationId: Metrics_getDataversesBySubject
@@ -211,6 +235,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get dataverses by subject
+      x-summary-source: derived
   /info/metrics/dataverses/monthly:
     get:
       operationId: Metrics_getDataversesTimeSeries
@@ -224,6 +250,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get dataverses time series
+      x-summary-source: derived
   /info/metrics/dataverses/pastDays/{days}:
     get:
       operationId: Metrics_getDataversesPastDays
@@ -243,6 +271,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get dataverses past days
+      x-summary-source: derived
   /info/metrics/dataverses/toMonth/{yyyymm}:
     get:
       operationId: Metrics_getDataversesToMonth
@@ -261,6 +291,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get dataverses to month
+      x-summary-source: derived
   /info/metrics/downloads:
     get:
       operationId: Metrics_getDownloadsAllTime
@@ -274,6 +306,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get downloads all time
+      x-summary-source: derived
   /info/metrics/downloads/monthly:
     get:
       operationId: Metrics_getDownloadsTimeSeries
@@ -287,6 +321,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get downloads time series
+      x-summary-source: derived
   /info/metrics/downloads/pastDays/{days}:
     get:
       operationId: Metrics_getDownloadsPastDays
@@ -306,6 +342,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get downloads past days
+      x-summary-source: derived
   /info/metrics/downloads/toMonth/{yyyymm}:
     get:
       operationId: Metrics_getDownloadsToMonth
@@ -324,6 +362,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get downloads to month
+      x-summary-source: derived
   /info/metrics/filedownloads:
     get:
       operationId: Metrics_getFileDownloadsAllTime
@@ -337,6 +377,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get file downloads all time
+      x-summary-source: derived
   /info/metrics/filedownloads/monthly:
     get:
       operationId: Metrics_getFileDownloadsTimeSeries
@@ -350,6 +392,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get file downloads time series
+      x-summary-source: derived
   /info/metrics/filedownloads/toMonth/{yyyymm}:
     get:
       operationId: Metrics_getFileDownloadsToMonth
@@ -368,6 +412,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get file downloads to month
+      x-summary-source: derived
   /info/metrics/files:
     get:
       operationId: Metrics_getFilesAllTime
@@ -381,6 +427,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get files all time
+      x-summary-source: derived
   /info/metrics/files/byType:
     get:
       operationId: Metrics_getFilesByType
@@ -394,6 +442,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get files by type
+      x-summary-source: derived
   /info/metrics/files/byType/monthly:
     get:
       operationId: Metrics_getFilesByTypeTimeSeries
@@ -407,6 +457,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get files by type time series
+      x-summary-source: derived
   /info/metrics/files/monthly:
     get:
       operationId: Metrics_getFilesTimeSeries
@@ -420,6 +472,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get files time series
+      x-summary-source: derived
   /info/metrics/files/pastDays/{days}:
     get:
       operationId: Metrics_getFilesPastDays
@@ -439,6 +493,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get files past days
+      x-summary-source: derived
   /info/metrics/files/toMonth/{yyyymm}:
     get:
       operationId: Metrics_getFilesToMonth
@@ -457,6 +513,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get files to month
+      x-summary-source: derived
   /info/metrics/makeDataCount/{metric}:
     get:
       operationId: Metrics_getMakeDataCountMetricCurrentMonth
@@ -479,6 +537,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get make data count metric current month
+      x-summary-source: derived
   /info/metrics/makeDataCount/{metric}/monthly:
     get:
       operationId: Metrics_getMakeDataCountMetricTimeSeries
@@ -501,6 +561,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get make data count metric time series
+      x-summary-source: derived
   /info/metrics/makeDataCount/{metric}/toMonth/{yyyymm}:
     get:
       operationId: Metrics_getMakeDataCountMetricToMonth
@@ -528,6 +590,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get make data count metric to month
+      x-summary-source: derived
   /info/metrics/tree:
     get:
       operationId: Metrics_getDataversesTree
@@ -541,6 +605,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get dataverses tree
+      x-summary-source: derived
   /info/metrics/tree/toMonth/{yyyymm}:
     get:
       operationId: Metrics_getDataversesTreeToMonth
@@ -559,6 +625,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get dataverses tree to month
+      x-summary-source: derived
   /info/metrics/uniquedownloads:
     get:
       operationId: Metrics_getUniqueDownloadsAllTime
@@ -572,6 +640,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get unique downloads all time
+      x-summary-source: derived
   /info/metrics/uniquedownloads/monthly:
     get:
       operationId: Metrics_getUniqueDownloadsTimeSeries
@@ -585,6 +655,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get unique downloads time series
+      x-summary-source: derived
   /info/metrics/uniquedownloads/toMonth/{yyyymm}:
     get:
       operationId: Metrics_getUniqueDownloadsToMonth
@@ -603,6 +675,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get unique downloads to month
+      x-summary-source: derived
   /info/metrics/uniquefiledownloads:
     get:
       operationId: Metrics_getUniqueFileDownloadsAllTime
@@ -616,6 +690,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get unique file downloads all time
+      x-summary-source: derived
   /info/metrics/uniquefiledownloads/monthly:
     get:
       operationId: Metrics_getUniqueFileDownloadsTimeSeries
@@ -629,6 +705,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get unique file downloads time series
+      x-summary-source: derived
   /info/metrics/uniquefiledownloads/toMonth/{yyyymm}:
     get:
       operationId: Metrics_getUniqueFileDownloadsToMonth
@@ -647,6 +725,8 @@ paths:
           description: OK
       tags:
       - Info
+      summary: Metrics get unique file downloads to month
+      x-summary-source: derived
   /info/apiTermsOfUse:
     get:
       tags:
@@ -655,6 +735,8 @@ paths:
       responses:
         '200':
           description: OK
+      summary: Info get terms of use
+      x-summary-source: derived
   /info/applicationTermsOfUse:
     get:
       tags:
@@ -671,6 +753,8 @@ paths:
       responses:
         '200':
           description: Application Terms of Use (General Terms of Use) that must be agreed to at signup.
+      summary: Info get application terms of use
+      x-summary-source: derived
   /info/exportFormats:
     get:
       tags:
@@ -679,6 +763,8 @@ paths:
       responses:
         '200':
           description: OK
+      summary: Info get export formats
+      x-summary-source: derived
   /info/server:
     get:
       tags:
@@ -687,6 +773,8 @@ paths:
       responses:
         '200':
           description: OK
+      summary: Info get server
+      x-summary-source: derived
   /info/settings/:DatasetPublishPopupCustomText:
     get:
       tags:
@@ -695,6 +783,8 @@ paths:
       responses:
         '200':
           description: OK
+      summary: Info get dataset publish popup custom text
+      x-summary-source: derived
   /info/settings/:MaxEmbargoDurationInMonths:
     get:
       tags:
@@ -703,6 +793,8 @@ paths:
       responses:
         '200':
           description: OK
+      summary: Info get max embargo duration in months
+      x-summary-source: derived
   /info/settings/incompleteMetadataViaApi:
     get:
       tags:
@@ -711,12 +803,13 @@ paths:
       responses:
         '200':
           description: OK
+      summary: Info get allows incomplete metadata
+      x-summary-source: derived
   /info/version:
     get:
       tags:
       - Info
       summary: Get version and build information
-      description: Get version and build information
       operationId: Info_getInfo
       responses:
         '200':
@@ -729,3 +822,5 @@ paths:
       responses:
         '200':
           description: OK
+      summary: Info get zip download limit
+      x-summary-source: derived

@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Admin API
+  title: KU Leuven Research Data Repository (RDR) Admin API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -31,6 +31,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin archive all unarchived dataset versions
+      x-summary-source: derived
   /admin/assignee/{idtf}:
     get:
       operationId: Admin_findRoleAssignee
@@ -45,6 +47,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin find role assignee
+      x-summary-source: derived
   /admin/assignments/assignees/{raIdtf}:
     get:
       operationId: Admin_getAssignmentsFor
@@ -60,6 +64,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get assignments for
+      x-summary-source: derived
   /admin/authenticatedUsers:
     get:
       operationId: Admin_listAuthenticatedUsers
@@ -69,6 +75,8 @@ paths:
       deprecated: true
       tags:
       - Admin
+      summary: Admin list authenticated users
+      x-summary-source: derived
     post:
       operationId: Admin_createAuthenicatedUser
       responses:
@@ -76,6 +84,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin create authenicated user
+      x-summary-source: derived
   /admin/authenticatedUsers/convert/builtin2oauth:
     put:
       operationId: Admin_builtin2oauth
@@ -84,6 +94,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin builtin2oauth
+      x-summary-source: derived
   /admin/authenticatedUsers/convert/builtin2shib:
     put:
       operationId: Admin_builtin2shib
@@ -92,6 +104,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin builtin2shib
+      x-summary-source: derived
   /admin/authenticatedUsers/id/{id}:
     delete:
       operationId: Admin_deleteAuthenticatedUserById
@@ -107,6 +121,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin delete authenticated user by id
+      x-summary-source: derived
   /admin/authenticatedUsers/id/{id}/convertRemoteToBuiltIn:
     put:
       operationId: Admin_convertOAuthUserToBuiltin
@@ -122,6 +138,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin convert OAuth user to builtin
+      x-summary-source: derived
   /admin/authenticatedUsers/id/{id}/convertShibToBuiltIn:
     put:
       operationId: Admin_convertShibUserToBuiltin
@@ -138,6 +156,8 @@ paths:
       deprecated: true
       tags:
       - Admin
+      summary: Admin convert shib user to builtin
+      x-summary-source: derived
   /admin/authenticatedUsers/id/{id}/deactivate:
     post:
       operationId: Admin_deactivateAuthenticatedUserById
@@ -153,6 +173,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin deactivate authenticated user by id
+      x-summary-source: derived
   /admin/authenticatedUsers/{identifier}:
     get:
       operationId: Admin_getAuthenticatedUserByIdentifier
@@ -167,6 +189,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get authenticated user by identifier
+      x-summary-source: derived
     delete:
       operationId: Admin_deleteAuthenticatedUser
       parameters:
@@ -180,6 +204,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin delete authenticated user
+      x-summary-source: derived
   /admin/authenticatedUsers/{identifier}/deactivate:
     post:
       operationId: Admin_deactivateAuthenticatedUser
@@ -194,6 +220,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin deactivate authenticated user
+      x-summary-source: derived
   /admin/authenticationProviderFactories:
     get:
       operationId: Admin_listAuthProviderFactories
@@ -202,6 +230,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin list auth provider factories
+      x-summary-source: derived
   /admin/authenticationProviders:
     get:
       operationId: Admin_listAuthProviders
@@ -210,6 +240,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin list auth providers
+      x-summary-source: derived
     post:
       operationId: Admin_addProvider
       responses:
@@ -217,6 +249,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin add provider
+      x-summary-source: derived
   /admin/authenticationProviders/{id}:
     get:
       operationId: Admin_showProvider
@@ -231,6 +265,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin show provider
+      x-summary-source: derived
     delete:
       operationId: Admin_deleteAuthenticationProvider
       parameters:
@@ -244,6 +280,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin delete authentication provider
+      x-summary-source: derived
   /admin/authenticationProviders/{id}/:enabled:
     post:
       operationId: Admin_enableAuthenticationProvider_deprecated
@@ -258,6 +296,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin enable authentication provider deprecated
+      x-summary-source: derived
   /admin/authenticationProviders/{id}/enabled:
     get:
       operationId: Admin_checkAuthenticationProviderEnabled
@@ -272,6 +312,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin check authentication provider enabled
+      x-summary-source: derived
     put:
       operationId: Admin_enableAuthenticationProvider
       parameters:
@@ -285,6 +327,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin enable authentication provider
+      x-summary-source: derived
   /admin/bannerMessage:
     get:
       operationId: Admin_getBannerMessages
@@ -293,6 +337,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get banner messages
+      x-summary-source: derived
     post:
       operationId: Admin_addBannerMessage
       responses:
@@ -300,6 +346,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin add banner message
+      x-summary-source: derived
   /admin/bannerMessage/{id}:
     delete:
       operationId: Admin_deleteBannerMessage
@@ -315,6 +363,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin delete banner message
+      x-summary-source: derived
   /admin/bannerMessage/{id}/deactivate:
     put:
       operationId: Admin_deactivateBannerMessage
@@ -330,6 +380,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin deactivate banner message
+      x-summary-source: derived
   /admin/batch/jobs:
     get:
       operationId: BatchJobResource_listBatchJobs
@@ -338,6 +390,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Batch job resource list batch jobs
+      x-summary-source: derived
   /admin/batch/jobs/name/{jobName}:
     get:
       operationId: BatchJobResource_listBatchJobsByName
@@ -352,6 +406,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Batch job resource list batch jobs by name
+      x-summary-source: derived
   /admin/batch/jobs/{jobId}:
     get:
       operationId: BatchJobResource_listBatchJobById
@@ -366,6 +422,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Batch job resource list batch job by id
+      x-summary-source: derived
   /admin/clearMetricsCache:
     delete:
       operationId: Admin_clearMetricsCache
@@ -374,6 +432,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin clear metrics cache
+      x-summary-source: derived
   /admin/clearMetricsCache/{name}:
     delete:
       operationId: Admin_clearMetricsCacheByName
@@ -388,6 +448,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin clear metrics cache by name
+      x-summary-source: derived
   /admin/clearThumbnailFailureFlag:
     delete:
       operationId: Admin_clearThumbnailFailureFlag
@@ -396,6 +458,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin clear thumbnail failure flag
+      x-summary-source: derived
   /admin/clearThumbnailFailureFlag/{id}:
     delete:
       operationId: Admin_clearThumbnailFailureFlagByDatafile
@@ -410,6 +474,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin clear thumbnail failure flag by datafile
+      x-summary-source: derived
   /admin/computeDataFileHashValue/{fileId}/algorithm/{alg}:
     post:
       operationId: Admin_computeDataFileHashValue
@@ -429,6 +495,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin compute data file hash value
+      x-summary-source: derived
   /admin/confirmEmail/{userId}:
     get:
       operationId: Admin_getConfirmEmailToken
@@ -444,6 +512,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get confirm email token
+      x-summary-source: derived
     post:
       operationId: Admin_startConfirmEmailProcess
       parameters:
@@ -458,6 +528,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin start confirm email process
+      x-summary-source: derived
   /admin/convertUserFromBcryptToSha1:
     post:
       operationId: Admin_convertUserFromBcryptToSha1
@@ -466,6 +538,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin convert user from bcrypt to sha1
+      x-summary-source: derived
   /admin/datafiles/auditFiles:
     get:
       operationId: Admin_getAuditFiles
@@ -489,6 +563,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get audit files
+      x-summary-source: derived
   /admin/datafiles/integrity/fixmissingoriginalsizes:
     get:
       operationId: Admin_fixMissingOriginalSizes
@@ -503,6 +579,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin fix missing original sizes
+      x-summary-source: derived
   /admin/datafiles/integrity/fixmissingoriginaltypes:
     get:
       operationId: Admin_fixMissingOriginalTypes
@@ -511,6 +589,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin fix missing original types
+      x-summary-source: derived
   /admin/datasetfield:
     get:
       operationId: DatasetFieldServiceApi_getAll
@@ -519,6 +599,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Dataset field service api get all
+      x-summary-source: derived
   /admin/datasetfield/controlledVocabulary/subject:
     get:
       operationId: DatasetFieldServiceApi_showControlledVocabularyForSubject
@@ -527,6 +609,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Dataset field service api show controlled vocabulary for subject
+      x-summary-source: derived
   /admin/datasetfield/load:
     post:
       operationId: DatasetFieldServiceApi_loadDatasetFields
@@ -541,6 +625,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Dataset field service api load dataset fields
+      x-summary-source: derived
   /admin/datasetfield/loadNAControlledVocabularyValue:
     get:
       operationId: DatasetFieldServiceApi_loadNAControlledVocabularyValue
@@ -549,6 +635,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Dataset field service api load NA controlled vocabulary value
+      x-summary-source: derived
   /admin/datasetfield/loadpropertyfiles:
     post:
       operationId: DatasetFieldServiceApi_loadLanguagePropertyFile
@@ -563,6 +651,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Dataset field service api load language property file
+      x-summary-source: derived
   /admin/datasetfield/setDisplayOnCreate:
     post:
       operationId: DatasetFieldServiceApi_setDisplayOnCreate
@@ -580,6 +670,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Dataset field service api set display on create
+      x-summary-source: derived
   /admin/datasetfield/{name}:
     get:
       operationId: DatasetFieldServiceApi_getByName
@@ -594,6 +686,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Dataset field service api get by name
+      x-summary-source: derived
   /admin/datasets/integrity/{datasetVersionId}/fixmissingunf:
     post:
       operationId: Admin_fixUnf
@@ -612,6 +706,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin fix unf
+      x-summary-source: derived
   /admin/datasets/thumbnailMetadata/{id}:
     get:
       operationId: Admin_getDatasetThumbnailMetadata
@@ -627,6 +723,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get dataset thumbnail metadata
+      x-summary-source: derived
   /admin/dataverse/curationLabelSets:
     get:
       operationId: Admin_listCurationLabelSets
@@ -635,6 +733,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin list curation label sets
+      x-summary-source: derived
   /admin/dataverse/storageDrivers:
     get:
       operationId: Admin_listStorageDrivers
@@ -643,6 +743,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin list storage drivers
+      x-summary-source: derived
   /admin/dataverse/{alias}/addRoleAssignmentsToChildren:
     get:
       operationId: Admin_addRoleAssignementsToChildren
@@ -657,6 +759,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin add role assignements to children
+      x-summary-source: derived
   /admin/dataverse/{alias}/curationLabelSet:
     get:
       operationId: Admin_getCurationLabelSet
@@ -671,6 +775,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get curation label set
+      x-summary-source: derived
     put:
       operationId: Admin_setCurationLabelSet
       parameters:
@@ -688,6 +794,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin set curation label set
+      x-summary-source: derived
     delete:
       operationId: Admin_resetCurationLabelSet
       parameters:
@@ -701,6 +809,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin reset curation label set
+      x-summary-source: derived
   /admin/dataverse/{alias}/storageDriver:
     get:
       operationId: Admin_getStorageDriver
@@ -715,6 +825,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get storage driver
+      x-summary-source: derived
     put:
       operationId: Admin_setStorageDriver
       parameters:
@@ -728,6 +840,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin set storage driver
+      x-summary-source: derived
     delete:
       operationId: Admin_resetStorageDriver
       parameters:
@@ -741,6 +855,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin reset storage driver
+      x-summary-source: derived
   /admin/downloadTmpFile:
     get:
       operationId: Admin_downloadTmpFile
@@ -754,6 +870,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin download tmp file
+      x-summary-source: derived
   /admin/externalTools:
     get:
       operationId: ExternalTools_getExternalTools
@@ -762,6 +880,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: External tools get external tools
+      x-summary-source: derived
     post:
       operationId: ExternalTools_addExternalTool
       responses:
@@ -769,6 +889,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: External tools add external tool
+      x-summary-source: derived
   /admin/externalTools/{id}:
     get:
       operationId: ExternalTools_getExternalTool
@@ -784,6 +906,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: External tools get external tool
+      x-summary-source: derived
     delete:
       operationId: ExternalTools_deleteExternalTool
       parameters:
@@ -798,6 +922,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: External tools delete external tool
+      x-summary-source: derived
   /admin/featureFlags:
     get:
       operationId: Admin_getFeatureFlags
@@ -806,6 +932,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get feature flags
+      x-summary-source: derived
   /admin/featureFlags/{flag}:
     get:
       operationId: Admin_getFeatureFlag
@@ -820,6 +948,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get feature flag
+      x-summary-source: derived
   /admin/feedback:
     post:
       operationId: FeedbackApi_submitFeedback
@@ -828,6 +958,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Feedback api submit feedback
+      x-summary-source: derived
   /admin/groups/domain:
     get:
       operationId: Groups_listMailDomainGroups
@@ -836,6 +968,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups list mail domain groups
+      x-summary-source: derived
     post:
       operationId: Groups_createMailDomainGroup
       responses:
@@ -843,6 +977,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups create mail domain group
+      x-summary-source: derived
   /admin/groups/domain/{groupAlias}:
     get:
       operationId: Groups_getMailDomainGroup
@@ -857,6 +993,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups get mail domain group
+      x-summary-source: derived
     put:
       operationId: Groups_updateMailDomainGroups
       parameters:
@@ -870,6 +1008,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups update mail domain groups
+      x-summary-source: derived
     delete:
       operationId: Groups_deleteMailDomainGroup
       parameters:
@@ -883,6 +1023,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups delete mail domain group
+      x-summary-source: derived
   /admin/groups/ip:
     get:
       operationId: Groups_listIpGroups
@@ -891,6 +1033,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups list ip groups
+      x-summary-source: derived
     post:
       operationId: Groups_postIpGroup
       responses:
@@ -898,6 +1042,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups post ip group
+      x-summary-source: derived
   /admin/groups/ip/{group}:
     get:
       operationId: Groups_getIpGroup
@@ -912,6 +1058,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups get ip group
+      x-summary-source: derived
     put:
       operationId: Groups_putIpGroups
       parameters:
@@ -925,6 +1073,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups put ip groups
+      x-summary-source: derived
     delete:
       operationId: Groups_deleteIpGroup
       parameters:
@@ -938,6 +1088,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups delete ip group
+      x-summary-source: derived
   /admin/groups/shib:
     get:
       operationId: Groups_listShibGroups
@@ -946,6 +1098,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups list shib groups
+      x-summary-source: derived
     post:
       operationId: Groups_createShibGroup
       responses:
@@ -953,6 +1107,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups create shib group
+      x-summary-source: derived
   /admin/groups/shib/{primaryKey}:
     delete:
       operationId: Groups_deleteShibGroup
@@ -967,6 +1123,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Groups delete shib group
+      x-summary-source: derived
   /admin/index:
     get:
       operationId: Index_indexAllOrSubset
@@ -990,6 +1148,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index index all or subset
+      x-summary-source: derived
   /admin/index/clear:
     get:
       operationId: Index_clearSolrIndex
@@ -998,6 +1158,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index clear solr index
+      x-summary-source: derived
   /admin/index/clear-orphans:
     get:
       operationId: Index_clearOrphans
@@ -1011,6 +1173,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index clear orphans
+      x-summary-source: derived
   /admin/index/continue:
     get:
       operationId: Index_indexAllOrSubsetContinue
@@ -1034,6 +1198,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index index all or subset continue
+      x-summary-source: derived
   /admin/index/dataset:
     get:
       operationId: Index_indexDatasetByPersistentId
@@ -1047,6 +1213,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index index dataset by persistent id
+      x-summary-source: derived
   /admin/index/datasets/{id}:
     delete:
       operationId: Index_clearDatasetFromIndex
@@ -1062,6 +1230,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index clear dataset from index
+      x-summary-source: derived
   /admin/index/filemetadata/{dataset_id}:
     get:
       operationId: Index_getFileMetadataByDatasetId
@@ -1090,6 +1260,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index get file metadata by dataset id
+      x-summary-source: derived
   /admin/index/filesearch:
     get:
       operationId: Index_filesearch
@@ -1111,6 +1283,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index filesearch
+      x-summary-source: derived
   /admin/index/mod:
     get:
       operationId: Index_indexMod
@@ -1130,6 +1304,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index index mod
+      x-summary-source: derived
   /admin/index/perms:
     get:
       operationId: Index_indexAllPermissions
@@ -1138,6 +1314,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index index all permissions
+      x-summary-source: derived
   /admin/index/perms/{id}:
     get:
       operationId: Index_indexPermissions
@@ -1153,6 +1331,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index index permissions
+      x-summary-source: derived
   /admin/index/permsDebug:
     get:
       operationId: Index_searchPermsDebug
@@ -1171,6 +1351,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index search perms debug
+      x-summary-source: derived
   /admin/index/solr/schema:
     get:
       operationId: Index_getSolrSchema
@@ -1183,6 +1365,8 @@ paths:
                 type: string
       tags:
       - Admin
+      summary: Index get solr schema
+      x-summary-source: derived
   /admin/index/status:
     get:
       operationId: Index_indexStatus
@@ -1196,6 +1380,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index index status
+      x-summary-source: derived
   /admin/index/test:
     get:
       operationId: Index_searchDebug
@@ -1219,6 +1405,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index search debug
+      x-summary-source: derived
   /admin/index/timestamps:
     delete:
       operationId: Index_deleteAllTimestamps
@@ -1227,6 +1415,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index delete all timestamps
+      x-summary-source: derived
   /admin/index/timestamps/{dvObjectId}:
     delete:
       operationId: Index_deleteTimestamp
@@ -1242,6 +1432,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index delete timestamp
+      x-summary-source: derived
   /admin/index/{type}/{id}:
     get:
       operationId: Index_indexTypeById
@@ -1262,6 +1454,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Index index type by id
+      x-summary-source: derived
   /admin/isOrcid:
     get:
       operationId: Admin_isOrcidEnabled
@@ -1270,6 +1464,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin is orcid enabled
+      x-summary-source: derived
   /admin/list-users:
     get:
       operationId: Admin_filterAuthenticatedUsers
@@ -1297,6 +1493,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin filter authenticated users
+      x-summary-source: derived
   /admin/makeDataCount/addUsageMetricsFromSushiReport:
     post:
       operationId: MakeDataCountApi_addUsageMetricsFromSushiReportAll
@@ -1310,6 +1508,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Make data count api add usage metrics from sushi report all
+      x-summary-source: derived
   /admin/makeDataCount/sendToHub:
     post:
       operationId: MakeDataCountApi_sendDataToHub
@@ -1318,6 +1518,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Make data count api send data to hub
+      x-summary-source: derived
   /admin/makeDataCount/{id}/addUsageMetricsFromSushiReport:
     post:
       operationId: MakeDataCountApi_addUsageMetricsFromSushiReport
@@ -1336,6 +1538,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Make data count api add usage metrics from sushi report
+      x-summary-source: derived
   /admin/makeDataCount/{id}/updateCitationsForDataset:
     post:
       operationId: MakeDataCountApi_updateCitationsForDataset
@@ -1350,6 +1554,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Make data count api update citations for dataset
+      x-summary-source: derived
   /admin/makeDataCount/{yearMonth}/processingState:
     get:
       operationId: MakeDataCountApi_getProcessingState
@@ -1364,6 +1570,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Make data count api get processing state
+      x-summary-source: derived
     post:
       operationId: MakeDataCountApi_updateProcessingState
       parameters:
@@ -1385,6 +1593,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Make data count api update processing state
+      x-summary-source: derived
     delete:
       operationId: MakeDataCountApi_deleteProcessingState
       parameters:
@@ -1398,6 +1608,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Make data count api delete processing state
+      x-summary-source: derived
   /admin/metadata/clearExportTimestamps:
     get:
       operationId: Metadata_clearExportTimestamps
@@ -1406,6 +1618,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Metadata clear export timestamps
+      x-summary-source: derived
   /admin/metadata/exportAll:
     get:
       operationId: Metadata_exportAll
@@ -1414,6 +1628,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Metadata export all
+      x-summary-source: derived
   /admin/metadata/exportOAI/{specname}:
     put:
       operationId: Metadata_exportOaiSet
@@ -1428,6 +1644,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Metadata export oai set
+      x-summary-source: derived
   /admin/metadata/reExportAll:
     get:
       operationId: Metadata_reExportAll
@@ -1436,6 +1654,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Metadata re export all
+      x-summary-source: derived
   /admin/metadata/{id}/reExportDataset:
     get:
       operationId: Metadata_indexDatasetByPersistentId
@@ -1450,6 +1670,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Metadata index dataset by persistent id
+      x-summary-source: derived
   /admin/permissions/{dvo}:
     get:
       operationId: Admin_findPermissonsOn
@@ -1464,6 +1686,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin find permissons on
+      x-summary-source: derived
   /admin/publishDataverseAsCreator/{id}:
     post:
       operationId: Admin_publishDataverseAsCreator
@@ -1479,6 +1703,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin publish dataverse as creator
+      x-summary-source: derived
   /admin/rateLimitStats:
     get:
       operationId: Admin_rateLimitStats
@@ -1493,6 +1719,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin rate limit stats
+      x-summary-source: derived
   /admin/registerDataFileAll:
     get:
       operationId: Admin_registerDataFileAll
@@ -1501,6 +1729,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin register data file all
+      x-summary-source: derived
   /admin/registerDataFiles/{alias}:
     get:
       operationId: Admin_registerDataFilesInCollection
@@ -1520,6 +1750,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin register data files in collection
+      x-summary-source: derived
   /admin/requestSignedUrl:
     post:
       operationId: Admin_getSignedUrl
@@ -1533,6 +1765,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get signed url
+      x-summary-source: derived
   /admin/roles:
     get:
       operationId: Admin_listBuiltinRoles
@@ -1541,6 +1775,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin list builtin roles
+      x-summary-source: derived
     post:
       operationId: Admin_createNewBuiltinRole
       responses:
@@ -1548,6 +1784,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin create new builtin role
+      x-summary-source: derived
   /admin/roles/{id}:
     put:
       operationId: Admin_updateBuiltinRole
@@ -1563,6 +1801,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin update builtin role
+      x-summary-source: derived
     delete:
       operationId: Admin_deleteRole
       parameters:
@@ -1576,6 +1816,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin delete role
+      x-summary-source: derived
   /admin/savedsearches:
     get:
       operationId: SavedSearches_meta
@@ -1584,6 +1826,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Saved searches meta
+      x-summary-source: derived
     post:
       operationId: SavedSearches_add
       responses:
@@ -1591,6 +1835,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Saved searches add
+      x-summary-source: derived
   /admin/savedsearches/list:
     get:
       operationId: SavedSearches_list
@@ -1599,6 +1845,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Saved searches list
+      x-summary-source: derived
   /admin/savedsearches/makelinks/all:
     put:
       operationId: SavedSearches_makeLinksForAllSavedSearches
@@ -1612,6 +1860,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Saved searches make links for all saved searches
+      x-summary-source: derived
   /admin/savedsearches/makelinks/{id}:
     put:
       operationId: SavedSearches_makeLinksForSingleSavedSearch
@@ -1631,6 +1881,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Saved searches make links for single saved search
+      x-summary-source: derived
   /admin/savedsearches/{id}:
     get:
       operationId: SavedSearches_show
@@ -1646,6 +1898,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Saved searches show
+      x-summary-source: derived
     delete:
       operationId: SavedSearches_delete
       parameters:
@@ -1664,6 +1918,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Saved searches delete
+      x-summary-source: derived
   /admin/settings:
     get:
       operationId: Admin_listAllSettings
@@ -1672,6 +1928,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin list all settings
+      x-summary-source: derived
   /admin/settings/{name}:
     get:
       operationId: Admin_getSetting
@@ -1686,6 +1944,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin get setting
+      x-summary-source: derived
     put:
       operationId: Admin_putSetting
       parameters:
@@ -1699,6 +1959,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin put setting
+      x-summary-source: derived
     delete:
       operationId: Admin_deleteSetting
       parameters:
@@ -1712,6 +1974,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin delete setting
+      x-summary-source: derived
   /admin/settings/{name}/lang/{lang}:
     put:
       operationId: Admin_putSettingLang
@@ -1731,6 +1995,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin put setting lang
+      x-summary-source: derived
     delete:
       operationId: Admin_deleteSettingLang
       parameters:
@@ -1749,6 +2015,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin delete setting lang
+      x-summary-source: derived
   /admin/sitemap:
     post:
       operationId: SiteMap_updateSiteMap
@@ -1757,6 +2025,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Site map update site map
+      x-summary-source: derived
   /admin/storageSites:
     get:
       operationId: StorageSites_listAll
@@ -1765,6 +2035,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Storage sites list all
+      x-summary-source: derived
     post:
       operationId: StorageSites_addSite
       responses:
@@ -1772,6 +2044,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Storage sites add site
+      x-summary-source: derived
   /admin/storageSites/{id}:
     get:
       operationId: StorageSites_get
@@ -1787,6 +2061,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Storage sites get
+      x-summary-source: derived
     delete:
       operationId: StorageSites_delete
       parameters:
@@ -1801,6 +2077,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Storage sites delete
+      x-summary-source: derived
   /admin/storageSites/{id}/primaryStorage:
     put:
       operationId: StorageSites_setPrimary
@@ -1816,6 +2094,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Storage sites set primary
+      x-summary-source: derived
   /admin/submitDatasetVersionToArchive/{id}/{version}:
     post:
       operationId: Admin_submitDatasetVersionToArchive
@@ -1835,6 +2115,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin submit dataset version to archive
+      x-summary-source: derived
   /admin/superuser/{identifier}:
     put:
       operationId: Admin_setSuperuserStatus
@@ -1849,6 +2131,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin set superuser status
+      x-summary-source: derived
     post:
       operationId: Admin_toggleSuperuser
       parameters:
@@ -1863,6 +2147,8 @@ paths:
       deprecated: true
       tags:
       - Admin
+      summary: Admin toggle superuser
+      x-summary-source: derived
   /admin/template/{id}:
     delete:
       operationId: Admin_deleteTemplate
@@ -1878,6 +2164,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin delete template
+      x-summary-source: derived
   /admin/templates:
     get:
       operationId: Admin_findAllTemplates
@@ -1886,6 +2174,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin find all templates
+      x-summary-source: derived
   /admin/templates/{alias}:
     get:
       operationId: Admin_findTemplates
@@ -1900,6 +2190,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin find templates
+      x-summary-source: derived
   /admin/test/datasets/{id}/externalTool/{toolId}:
     get:
       operationId: TestApi_getExternalToolforDatasetById
@@ -1923,6 +2215,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Test api get external toolfor dataset by id
+      x-summary-source: derived
   /admin/test/datasets/{id}/externalTools:
     get:
       operationId: TestApi_getDatasetExternalToolsforFile
@@ -1941,6 +2235,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Test api get dataset external toolsfor file
+      x-summary-source: derived
   /admin/test/files/{id}/externalTool/{toolId}:
     get:
       operationId: TestApi_getExternalToolForFileById
@@ -1964,6 +2260,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Test api get external tool for file by id
+      x-summary-source: derived
   /admin/test/files/{id}/externalTools:
     get:
       operationId: TestApi_getExternalToolsForFile
@@ -1982,6 +2280,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Test api get external tools for file
+      x-summary-source: derived
   /admin/updateHashValues/{alg}:
     get:
       operationId: Admin_updateHashValues
@@ -2001,6 +2301,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin update hash values
+      x-summary-source: derived
   /admin/validate/dataset/files/{id}:
     get:
       operationId: Admin_validateDatasetDatafiles
@@ -2015,6 +2317,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin validate dataset datafiles
+      x-summary-source: derived
   /admin/validate/dataset/{id}:
     get:
       operationId: Admin_validateDataset
@@ -2033,6 +2337,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin validate dataset
+      x-summary-source: derived
   /admin/validate/datasets:
     get:
       operationId: Admin_validateAllDatasets
@@ -2046,6 +2352,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin validate all datasets
+      x-summary-source: derived
   /admin/validateDataFileHashValue/{fileId}:
     post:
       operationId: Admin_validateDataFileHashValue
@@ -2060,6 +2368,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin validate data file hash value
+      x-summary-source: derived
   /admin/validatePassword:
     post:
       operationId: Admin_validatePassword
@@ -2068,6 +2378,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin validate password
+      x-summary-source: derived
   /admin/workflows:
     get:
       operationId: WorkflowsAdmin_listWorkflows
@@ -2076,6 +2388,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Workflows admin list workflows
+      x-summary-source: derived
     post:
       operationId: WorkflowsAdmin_addWorkflow
       responses:
@@ -2083,6 +2397,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Workflows admin add workflow
+      x-summary-source: derived
   /admin/workflows/default:
     get:
       operationId: WorkflowsAdmin_listDefaults
@@ -2091,6 +2407,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Workflows admin list defaults
+      x-summary-source: derived
   /admin/workflows/default/{triggerType}:
     get:
       operationId: WorkflowsAdmin_getDefault
@@ -2105,6 +2423,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Workflows admin get default
+      x-summary-source: derived
     put:
       operationId: WorkflowsAdmin_setDefault
       parameters:
@@ -2118,6 +2438,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Workflows admin set default
+      x-summary-source: derived
     delete:
       operationId: WorkflowsAdmin_deleteDefault
       parameters:
@@ -2131,6 +2453,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Workflows admin delete default
+      x-summary-source: derived
   /admin/workflows/ip-whitelist:
     get:
       operationId: WorkflowsAdmin_getIpWhitelist
@@ -2139,6 +2463,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Workflows admin get ip whitelist
+      x-summary-source: derived
     put:
       operationId: WorkflowsAdmin_setIpWhitelist
       responses:
@@ -2146,6 +2472,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Workflows admin set ip whitelist
+      x-summary-source: derived
     delete:
       operationId: WorkflowsAdmin_deleteIpWhitelist
       responses:
@@ -2153,6 +2481,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Workflows admin delete ip whitelist
+      x-summary-source: derived
   /admin/workflows/{id}:
     get:
       operationId: WorkflowsAdmin_getWorkflow
@@ -2167,6 +2497,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Workflows admin get workflow
+      x-summary-source: derived
     delete:
       operationId: WorkflowsAdmin_deleteWorkflow
       parameters:
@@ -2180,6 +2512,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Workflows admin delete workflow
+      x-summary-source: derived
   /admin/{id}/registerDataFile:
     get:
       operationId: Admin_registerDataFile
@@ -2194,6 +2528,8 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin register data file
+      x-summary-source: derived
   /admin/{id}/reregisterHDLToPID:
     post:
       operationId: Admin_reregisterHdlToPID
@@ -2208,3 +2544,5 @@ paths:
           description: OK
       tags:
       - Admin
+      summary: Admin reregister hdl to PID
+      x-summary-source: derived

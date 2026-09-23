@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: KU Leuven Research Data Repository (RDR) Access Harvest API
+  title: KU Leuven Research Data Repository (RDR) Harvest API
   description: Dataverse-based institutional research data repository API for KU Leuven (rdr.kuleuven.be), running Dataverse 6.7.1. Public info endpoints are reachable without authentication; write operations require an API token, a registered ORCID, and the Dataset Creator role.
   version: 6.7.1
 servers:
@@ -22,6 +22,8 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting clients harvesting clients
+      x-summary-source: derived
   /harvest/clients/{nickName}:
     get:
       operationId: HarvestingClients_harvestingClient
@@ -40,6 +42,8 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting clients harvesting client
+      x-summary-source: derived
     put:
       operationId: HarvestingClients_modifyHarvestingClient
       parameters:
@@ -57,6 +61,8 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting clients modify harvesting client
+      x-summary-source: derived
     post:
       operationId: HarvestingClients_createHarvestingClient
       parameters:
@@ -74,6 +80,8 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting clients create harvesting client
+      x-summary-source: derived
     delete:
       operationId: HarvestingClients_deleteHarvestingClient
       parameters:
@@ -87,6 +95,8 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting clients delete harvesting client
+      x-summary-source: derived
   /harvest/clients/{nickName}/run:
     post:
       operationId: HarvestingClients_startHarvestingJob
@@ -105,6 +115,8 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting clients start harvesting job
+      x-summary-source: derived
   /harvest/server/oaisets:
     get:
       operationId: HarvestingServer_oaiSets
@@ -118,6 +130,8 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting server oai sets
+      x-summary-source: derived
   /harvest/server/oaisets/add:
     post:
       operationId: HarvestingServer_createOaiSet
@@ -131,6 +145,8 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting server create oai set
+      x-summary-source: derived
   /harvest/server/oaisets/{specname}:
     get:
       operationId: HarvestingServer_oaiSet
@@ -149,6 +165,8 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting server oai set
+      x-summary-source: derived
     put:
       operationId: HarvestingServer_modifyOaiSet
       parameters:
@@ -166,6 +184,8 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting server modify oai set
+      x-summary-source: derived
     delete:
       operationId: HarvestingServer_deleteOaiSet
       parameters:
@@ -183,6 +203,8 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting server delete oai set
+      x-summary-source: derived
   /harvest/server/oaisets/{specname}/datasets:
     get:
       operationId: HarvestingServer_oaiSetListDatasets
@@ -201,3 +223,5 @@ paths:
           description: OK
       tags:
       - Harvest
+      summary: Harvesting server oai set list datasets
+      x-summary-source: derived

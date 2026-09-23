@@ -1,0 +1,644 @@
+openapi: 3.0.3
+info:
+  title: KU Leuven ICTS Data Services API
+  description: >-
+    Institution-operated read API for KU Leuven's public reference data, run by KU Leuven ICTS
+    and documented at https://admin.kuleuven.be/icts/services/dataservices. The gateway at
+    dataservice.kuleuven.be exposes an OpenSearch/Elasticsearch query surface over eight public
+    indices — staff directory (wie-is-wie), academic CVs, organisational chart, educational
+    offering (programme guide), research projects, research teams, research infrastructure and
+    job vacancies — each published in a Dutch and an English index. Reads are unauthenticated
+    and were confirmed live on 2026-08-19; the underlying data is governed by the KU Leuven Data
+    Service terms of use.
+  version: '2026-08-19'
+  contact:
+    name: KU Leuven ICTS Data Services
+    url: https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag
+  termsOfService: https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html
+  x-operator: institution
+  x-provenance:
+    generated: '2026-08-19'
+    method: derived
+    source: >-
+      Derived from KU Leuven ICTS Data Services documentation pages (admin.kuleuven.be/icts/services/dataservices/*)
+      and confirmed against live unauthenticated responses from https://dataservice.kuleuven.be on 2026-08-19.
+      No endpoint, parameter or field appears here that is not documented by KU Leuven or observed in a live response.
+servers:
+- url: https://dataservice.kuleuven.be
+  description: KU Leuven ICTS Data Services production query gateway
+tags:
+- name: Person
+  description: Public staff / who-is-who person information (wie-is-wie).
+- name: Curriculum
+  description: Academic curriculum and CV information, including ORCID identifiers.
+- name: Organigram
+  description: Institutional organisational chart units.
+- name: Programs
+  description: Educational offering — degree programmes in the programme guide (onderwijsaanbod).
+- name: ResearchProjects
+  description: Research projects from the KU Leuven research database (onderzoeksdatabank).
+- name: ResearchTeams
+  description: Research teams / groups from the research database.
+- name: ResearchInfrastructure
+  description: Research infrastructure and core facilities from the research database.
+- name: Vacancies
+  description: Public job vacancies published on the KU Leuven job site.
+paths:
+  /employee/_search:
+    get:
+      summary: Search an index with a query supplied in the request body
+      description: >-
+        OpenSearch `_search`. The query document is supplied in the request body with
+        `Content-type: application/json` on either GET or POST, as documented by ICTS.
+      operationId: employee_search_get
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        '400':
+          $ref: '#/components/responses/QueryError'
+      tags: [Person]
+      x-verified: '2026-08-19'
+    post:
+      summary: Search an index with a query supplied in the request body
+      operationId: employee_search_post
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        '400':
+          $ref: '#/components/responses/QueryError'
+      tags: [Person]
+  /employee-en/_search:
+    get:
+      summary: Search the English-language staff directory index
+      operationId: employee_en_search_get
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [Person]
+      x-verified: '2026-08-19'
+  /employee/_doc/{id}:
+    get:
+      summary: Retrieve one staff directory document by identifier
+      operationId: employee_doc_get
+      parameters:
+      - $ref: '#/components/parameters/DocId'
+      - $ref: '#/components/parameters/SourceFields'
+      responses:
+        '200':
+          description: Document
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+        '404':
+          $ref: '#/components/responses/DocumentNotFound'
+      tags: [Person]
+      x-verified: '2026-08-19'
+  /cv/_search:
+    get:
+      summary: Search the Dutch-language curriculum index
+      operationId: cv_search_get
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [Curriculum]
+      x-verified: '2026-08-19'
+  /cv-en/_search:
+    get:
+      summary: Search the English-language curriculum index
+      operationId: cv_en_search_get
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [Curriculum]
+  /organigram/_search:
+    get:
+      summary: Search the Dutch-language organisational chart index
+      operationId: organigram_search_get
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [Organigram]
+      x-verified: '2026-08-19'
+  /organigram-en/_search:
+    get:
+      summary: Search the English-language organisational chart index
+      operationId: organigram_en_search_get
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [Organigram]
+      x-verified: '2026-08-19'
+  /organigram/_doc/{id}:
+    get:
+      summary: Retrieve one organisational unit by identifier
+      operationId: organigram_doc_get
+      parameters:
+      - $ref: '#/components/parameters/DocId'
+      - $ref: '#/components/parameters/SourceFields'
+      responses:
+        '200':
+          description: Document
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+        '404':
+          $ref: '#/components/responses/DocumentNotFound'
+      tags: [Organigram]
+  /pg/_search:
+    get:
+      summary: Search the current-academic-year programme guide index
+      description: >-
+        `pg` aliases the current academic year. Year-specific indices are addressable directly as
+        `pg<year>` (for example `pg2025`); the academic year rolls over on 15 July.
+      operationId: pg_search_get
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        '400':
+          $ref: '#/components/responses/QueryError'
+      tags: [Programs]
+      x-verified: '2026-08-19'
+  /pg{year}/_search:
+    get:
+      summary: Search a specific academic year's programme guide index
+      operationId: pg_year_search_get
+      parameters:
+      - name: year
+        in: path
+        required: true
+        description: Four-digit academic year, e.g. 2025 or 2026.
+        schema:
+          type: string
+          pattern: '^[0-9]{4}$'
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [Programs]
+      x-verified: '2026-08-19'
+  /pg/_doc/{id}:
+    get:
+      summary: Retrieve one programme document by identifier
+      operationId: pg_doc_get
+      parameters:
+      - $ref: '#/components/parameters/DocId'
+      - $ref: '#/components/parameters/SourceFields'
+      responses:
+        '200':
+          description: Document
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+        '404':
+          $ref: '#/components/responses/DocumentNotFound'
+      tags: [Programs]
+  /onderzoeksproject/_search:
+    get:
+      summary: Search the Dutch-language research project index
+      operationId: onderzoeksproject_search_get
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [ResearchProjects]
+      x-verified: '2026-08-19'
+  /onderzoeksproject-en/_search:
+    get:
+      summary: Search the English-language research project index
+      operationId: onderzoeksproject_en_search_get
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [ResearchProjects]
+  /onderzoeksproject/_search/template:
+    post:
+      summary: Run a stored search template against the research project index
+      description: >-
+        KU Leuven publishes three stored templates: `projectsbyou` (all projects of an
+        organisational unit, parameter `ou`), `projectsbyuid` (all projects of one or more
+        persons, parameter `uid`, comma-separated) and `projectsbyquery` (free-text, parameter
+        `query`). Optional parameters documented by ICTS: `from`, `size`, `startDate`, `endDate`,
+        `sortstartdate`, `sortenddate`, `sortstartandenddate`, `all`.
+      operationId: onderzoeksproject_search_template
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchTemplateRequest'
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [ResearchProjects]
+  /onderzoeksteams/_search:
+    get:
+      summary: Search the Dutch-language research team index
+      operationId: onderzoeksteams_search_get
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [ResearchTeams]
+      x-verified: '2026-08-19'
+  /onderzoeksteams-en/_search:
+    get:
+      summary: Search the English-language research team index
+      operationId: onderzoeksteams_en_search_get
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [ResearchTeams]
+  /onderzoeksteams/_doc/{id}:
+    get:
+      summary: Retrieve one research team by identifier
+      operationId: onderzoeksteams_doc_get
+      parameters:
+      - $ref: '#/components/parameters/DocId'
+      - $ref: '#/components/parameters/SourceFields'
+      responses:
+        '200':
+          description: Document
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+        '404':
+          $ref: '#/components/responses/DocumentNotFound'
+      tags: [ResearchTeams]
+  /onderzoeksinfrastructuur/_search:
+    get:
+      summary: Search the Dutch-language research infrastructure index
+      operationId: onderzoeksinfrastructuur_search_get
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [ResearchInfrastructure]
+      x-verified: '2026-08-19'
+  /onderzoeksinfrastructuur-en/_search:
+    get:
+      summary: Search the English-language research infrastructure index
+      operationId: onderzoeksinfrastructuur_en_search_get
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [ResearchInfrastructure]
+  /onderzoeksinfrastructuur/_doc/{id}:
+    get:
+      summary: Retrieve one research infrastructure record by identifier
+      operationId: onderzoeksinfrastructuur_doc_get
+      parameters:
+      - $ref: '#/components/parameters/DocId'
+      - $ref: '#/components/parameters/SourceFields'
+      responses:
+        '200':
+          description: Document
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+        '404':
+          $ref: '#/components/responses/DocumentNotFound'
+      tags: [ResearchInfrastructure]
+  /jobsite/_search:
+    get:
+      summary: Search the Dutch-language vacancy index
+      operationId: jobsite_search_get
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [Vacancies]
+      x-verified: '2026-08-19'
+  /jobsite-en/_search:
+    get:
+      summary: Search the English-language vacancy index
+      operationId: jobsite_en_search_get
+      responses:
+        '200':
+          description: Search hits
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+      tags: [Vacancies]
+  /jobsite/_doc/{id}:
+    get:
+      summary: Retrieve one vacancy by identifier
+      operationId: jobsite_doc_get
+      parameters:
+      - $ref: '#/components/parameters/DocId'
+      - $ref: '#/components/parameters/SourceFields'
+      responses:
+        '200':
+          description: Document
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentResponse'
+        '404':
+          $ref: '#/components/responses/DocumentNotFound'
+      tags: [Vacancies]
+components:
+  parameters:
+    DocId:
+      name: id
+      in: path
+      required: true
+      description: Document identifier within the index.
+      schema:
+        type: string
+    SourceFields:
+      name: _source
+      in: query
+      required: false
+      description: Comma-separated list of fields to return.
+      schema:
+        type: string
+  responses:
+    QueryError:
+      description: Malformed query document.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    DocumentNotFound:
+      description: No document with that identifier in the index.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DocumentResponse'
+  schemas:
+    SearchRequest:
+      type: object
+      description: OpenSearch query document as documented by KU Leuven ICTS.
+      properties:
+        query:
+          type: object
+          description: Query clause, e.g. `match_all` or `query_string`.
+        aggs:
+          type: object
+          description: Aggregations, previously described by ICTS as filters or facets.
+        _source:
+          type: array
+          description: Field list to return (ICTS documents this as returnFields).
+          items:
+            type: string
+        from:
+          type: integer
+          description: Start position for pagination.
+        size:
+          type: integer
+          description: Number of hits to return. Default 10.
+          default: 10
+    SearchTemplateRequest:
+      type: object
+      required: [id]
+      properties:
+        id:
+          type: string
+          description: Stored template identifier.
+          enum: [projectsbyou, projectsbyuid, projectsbyquery]
+        params:
+          type: object
+          description: Template parameters plus the documented optional parameters.
+          properties:
+            ou:
+              type: string
+              description: Organisational unit code from the organigram index.
+            uid:
+              type: string
+              description: One or more KU Leuven u-numbers, comma-separated.
+            query:
+              type: string
+            from:
+              type: integer
+            size:
+              type: integer
+            startDate:
+              type: string
+              description: Lower bound, formatted dd/MM/yyyy or yyyy.
+            endDate:
+              type: string
+              description: Upper bound, formatted dd/MM/yyyy or yyyy.
+            sortstartdate:
+              type: boolean
+            sortenddate:
+              type: boolean
+            sortstartandenddate:
+              type: boolean
+            all:
+              type: boolean
+              description: Return every available attribute rather than the default subset.
+    SearchResponse:
+      type: object
+      description: Standard OpenSearch search response envelope, as returned live on 2026-08-19.
+      properties:
+        took:
+          type: integer
+        timed_out:
+          type: boolean
+        _shards:
+          type: object
+          properties:
+            total: {type: integer}
+            successful: {type: integer}
+            skipped: {type: integer}
+            failed: {type: integer}
+        hits:
+          type: object
+          properties:
+            total:
+              type: object
+              properties:
+                value: {type: integer}
+                relation:
+                  type: string
+                  enum: [eq, gte]
+            max_score:
+              type: number
+              nullable: true
+            hits:
+              type: array
+              items:
+                $ref: '#/components/schemas/Hit'
+        aggregations:
+          type: object
+          description: Present when the request supplied `aggs`.
+    Hit:
+      type: object
+      properties:
+        _index:
+          type: string
+          description: >-
+            Physical index name. Snapshot indices carry a build timestamp,
+            e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
+        _id:
+          type: string
+        _score:
+          type: number
+          nullable: true
+        _source:
+          type: object
+          description: The document. Field sets differ per index.
+    DocumentResponse:
+      type: object
+      description: Single-document response from `_doc/{id}`.
+      properties:
+        _index: {type: string}
+        _id: {type: string}
+        found: {type: boolean}
+        _source: {type: object}
+    CurriculumDocument:
+      type: object
+      description: >-
+        Selected published fields of the `cv` index, observed live. Recorded to document the
+        ORCID identifier carried on KU Leuven researcher records; no personal record is stored
+        in this repository.
+      properties:
+        ID: {type: string}
+        uid:
+          type: string
+          description: KU Leuven u-number.
+        orcId:
+          type: string
+          description: ORCID iD of the researcher, e.g. 0000-0000-0000-0000.
+          pattern: '^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$'
+        disciplineCodes:
+          type: array
+          items:
+            type: object
+        researchTopics:
+          type: array
+          items:
+            type: object
+    ErrorResponse:
+      type: object
+      description: OpenSearch error envelope, captured live from a malformed query on 2026-08-19.
+      properties:
+        error:
+          type: object
+          properties:
+            root_cause:
+              type: array
+              items:
+                type: object
+                properties:
+                  type: {type: string}
+                  reason: {type: string}
+                  line: {type: integer}
+                  col: {type: integer}
+            type: {type: string}
+            reason: {type: string}
+            caused_by:
+              type: object
+        status:
+          type: integer

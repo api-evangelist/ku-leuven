@@ -74,49 +74,6 @@ paths:
       - ResearchProjects
 components:
   schemas:
-    SearchTemplateRequest:
-      type: object
-      required:
-      - id
-      properties:
-        id:
-          type: string
-          description: Stored template identifier.
-          enum:
-          - projectsbyou
-          - projectsbyuid
-          - projectsbyquery
-        params:
-          type: object
-          description: Template parameters plus the documented optional parameters.
-          properties:
-            ou:
-              type: string
-              description: Organisational unit code from the organigram index.
-            uid:
-              type: string
-              description: One or more KU Leuven u-numbers, comma-separated.
-            query:
-              type: string
-            from:
-              type: integer
-            size:
-              type: integer
-            startDate:
-              type: string
-              description: Lower bound, formatted dd/MM/yyyy or yyyy.
-            endDate:
-              type: string
-              description: Upper bound, formatted dd/MM/yyyy or yyyy.
-            sortstartdate:
-              type: boolean
-            sortenddate:
-              type: boolean
-            sortstartandenddate:
-              type: boolean
-            all:
-              type: boolean
-              description: Return every available attribute rather than the default subset.
     Hit:
       type: object
       properties:
@@ -197,3 +154,46 @@ components:
         aggregations:
           type: object
           description: Present when the request supplied `aggs`.
+    SearchTemplateRequest:
+      type: object
+      required:
+      - id
+      properties:
+        id:
+          type: string
+          description: Stored template identifier.
+          enum:
+          - projectsbyou
+          - projectsbyuid
+          - projectsbyquery
+        params:
+          type: object
+          description: Template parameters plus the documented optional parameters.
+          properties:
+            ou:
+              type: string
+              description: Organisational unit code from the organigram index.
+            uid:
+              type: string
+              description: One or more KU Leuven u-numbers, comma-separated.
+            query:
+              type: string
+            from:
+              type: integer
+            size:
+              type: integer
+            startDate:
+              type: string
+              description: Lower bound, formatted dd/MM/yyyy or yyyy.
+            endDate:
+              type: string
+              description: Upper bound, formatted dd/MM/yyyy or yyyy.
+            sortstartdate:
+              type: boolean
+            sortenddate:
+              type: boolean
+            sortstartandenddate:
+              type: boolean
+            all:
+              type: boolean
+              description: Return every available attribute rather than the default subset.

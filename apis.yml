@@ -188,7 +188,7 @@ apis:
   x-operator: institution
   x-surface-class: ResearchRepository
   x-surface: ku-leuven-rdr
-  name: KU Leuven addFilesToDataset API
+  name: KU Leuven Add Files To Dataset API
   description: Uploads a set of files to a dataset
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   baseURL: https://rdr.kuleuven.be/api
@@ -205,7 +205,7 @@ apis:
   x-operator: institution
   x-surface-class: ResearchRepository
   x-surface: ku-leuven-rdr
-  name: KU Leuven addFileToDataset API
+  name: KU Leuven Add File To Dataset API
   description: Uploads a file for a dataset
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   baseURL: https://rdr.kuleuven.be/api
@@ -222,7 +222,7 @@ apis:
   x-operator: institution
   x-surface-class: ResearchRepository
   x-surface: ku-leuven-rdr
-  name: KU Leuven addGlobusFilesToDataset API
+  name: KU Leuven Add Globus Files To Dataset API
   description: Uploads a Globus file for a dataset
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   baseURL: https://rdr.kuleuven.be/api
@@ -635,7 +635,7 @@ apis:
   x-operator: institution
   x-surface-class: ResearchRepository
   x-surface: ku-leuven-rdr
-  name: KU Leuven replaceFilesInDataset API
+  name: KU Leuven Replace Files In Dataset API
   description: Replace a file to a dataset
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   baseURL: https://rdr.kuleuven.be/api
@@ -669,7 +669,7 @@ apis:
   x-operator: institution
   x-surface-class: ResearchRepository
   x-surface: ku-leuven-rdr
-  name: KU Leuven saveAuxiliaryFileWithVersion API
+  name: KU Leuven Save Auxiliary File With Version API
   description: Save Auxiliary File With Version
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   baseURL: https://rdr.kuleuven.be/api
@@ -704,7 +704,7 @@ apis:
   x-operator: institution
   x-surface-class: ResearchRepository
   x-surface: ku-leuven-rdr
-  name: KU Leuven uploadDatasetLogo API
+  name: KU Leuven Upload Dataset Logo API
   description: Uploads a logo for a dataset
   humanURL: https://www.kuleuven.be/rdm/en/rdr/api-documentation
   baseURL: https://rdr.kuleuven.be/api
@@ -1156,8 +1156,6 @@ apis:
   humanURL: https://admin.kuleuven.be/icts/services/dataservices/api/person
   baseURL: https://dataservice.kuleuven.be/employee
   tags:
-  - Sendfeedback
-  tags_raw:
   - Send Feedback
   properties:
   - type: OpenAPI

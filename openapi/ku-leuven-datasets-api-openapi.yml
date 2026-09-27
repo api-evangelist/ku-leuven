@@ -30,7 +30,7 @@ paths:
       x-summary-source: derived
   /datasets/datasetTypes/{idOrName}:
     get:
-      operationId: Datasets_getDatasetTypes
+      operationId: getDatasetsDatasetTypesByIdOrName
       parameters:
       - name: idOrName
         in: path
@@ -44,6 +44,8 @@ paths:
       - Datasets
       summary: Datasets get dataset types
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: Datasets_getDatasetTypes
     put:
       operationId: Datasets_updateDatasetTypeLinksWithMetadataBlocks
       parameters:

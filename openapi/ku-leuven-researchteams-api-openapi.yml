@@ -65,22 +65,22 @@ paths:
       tags:
       - ResearchTeams
 components:
-  parameters:
-    SourceFields:
-      name: _source
-      in: query
-      required: false
-      description: Comma-separated list of fields to return.
-      schema:
-        type: string
-    DocId:
-      name: id
-      in: path
-      required: true
-      description: Document identifier within the index.
-      schema:
-        type: string
   schemas:
+    Hit:
+      type: object
+      properties:
+        _index:
+          type: string
+          description: Physical index name. Snapshot indices carry a build timestamp, e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
+        _id:
+          type: string
+        _score:
+          type:
+          - number
+          - 'null'
+        _source:
+          type: object
+          description: The document. Field sets differ per index.
     SearchResponse:
       type: object
       description: Standard OpenSearch search response envelope, as returned live on 2026-08-19.
@@ -124,21 +124,6 @@ components:
         aggregations:
           type: object
           description: Present when the request supplied `aggs`.
-    Hit:
-      type: object
-      properties:
-        _index:
-          type: string
-          description: Physical index name. Snapshot indices carry a build timestamp, e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
-        _id:
-          type: string
-        _score:
-          type:
-          - number
-          - 'null'
-        _source:
-          type: object
-          description: The document. Field sets differ per index.
     DocumentResponse:
       type: object
       description: Single-document response from `_doc/{id}`.
@@ -151,6 +136,21 @@ components:
           type: boolean
         _source:
           type: object
+  parameters:
+    DocId:
+      name: id
+      in: path
+      required: true
+      description: Document identifier within the index.
+      schema:
+        type: string
+    SourceFields:
+      name: _source
+      in: query
+      required: false
+      description: Comma-separated list of fields to return.
+      schema:
+        type: string
   responses:
     DocumentNotFound:
       description: No document with that identifier in the index.

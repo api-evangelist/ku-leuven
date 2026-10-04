@@ -83,19 +83,6 @@ paths:
       tags:
       - Programs
 components:
-  responses:
-    QueryError:
-      description: Malformed query document.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    DocumentNotFound:
-      description: No document with that identifier in the index.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/DocumentResponse'
   schemas:
     Hit:
       type: object
@@ -217,18 +204,31 @@ components:
           type: boolean
         _source:
           type: object
+  responses:
+    QueryError:
+      description: Malformed query document.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    DocumentNotFound:
+      description: No document with that identifier in the index.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DocumentResponse'
   parameters:
-    DocId:
-      name: id
-      in: path
-      required: true
-      description: Document identifier within the index.
-      schema:
-        type: string
     SourceFields:
       name: _source
       in: query
       required: false
       description: Comma-separated list of fields to return.
+      schema:
+        type: string
+    DocId:
+      name: id
+      in: path
+      required: true
+      description: Document identifier within the index.
       schema:
         type: string

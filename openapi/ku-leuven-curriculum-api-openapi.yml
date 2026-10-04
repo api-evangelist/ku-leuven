@@ -54,28 +54,21 @@ paths:
       - Curriculum
 components:
   schemas:
-    SearchRequest:
+    Hit:
       type: object
-      description: OpenSearch query document as documented by KU Leuven ICTS.
       properties:
-        query:
-          type: object
-          description: Query clause, e.g. `match_all` or `query_string`.
-        aggs:
-          type: object
-          description: Aggregations, previously described by ICTS as filters or facets.
+        _index:
+          type: string
+          description: Physical index name. Snapshot indices carry a build timestamp, e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
+        _id:
+          type: string
+        _score:
+          type:
+          - number
+          - 'null'
         _source:
-          type: array
-          description: Field list to return (ICTS documents this as returnFields).
-          items:
-            type: string
-        from:
-          type: integer
-          description: Start position for pagination.
-        size:
-          type: integer
-          description: Number of hits to return. Default 10.
-          default: 10
+          type: object
+          description: The document. Field sets differ per index.
     SearchResponse:
       type: object
       description: Standard OpenSearch search response envelope, as returned live on 2026-08-19.
@@ -119,18 +112,25 @@ components:
         aggregations:
           type: object
           description: Present when the request supplied `aggs`.
-    Hit:
+    SearchRequest:
       type: object
+      description: OpenSearch query document as documented by KU Leuven ICTS.
       properties:
-        _index:
-          type: string
-          description: Physical index name. Snapshot indices carry a build timestamp, e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
-        _id:
-          type: string
-        _score:
-          type:
-          - number
-          - 'null'
-        _source:
+        query:
           type: object
-          description: The document. Field sets differ per index.
+          description: Query clause, e.g. `match_all` or `query_string`.
+        aggs:
+          type: object
+          description: Aggregations, previously described by ICTS as filters or facets.
+        _source:
+          type: array
+          description: Field list to return (ICTS documents this as returnFields).
+          items:
+            type: string
+        from:
+          type: integer
+          description: Start position for pagination.
+        size:
+          type: integer
+          description: Number of hits to return. Default 10.
+          default: 10

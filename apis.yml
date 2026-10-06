@@ -70,7 +70,7 @@ tags:
   - OpenSearch
   - Public Research University
 created: '2026-06-03'
-modified: '2026-08-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: ku-leuven:person
@@ -1165,6 +1165,10 @@ apis:
   - type: Documentation
     url: https://guides.dataverse.org/en/latest/api/index.html
 common:
+  - url: https://nieuws.kuleuven.be/en/
+    type: Blog
+  - url: https://nieuws.kuleuven.be/en/latest-news/RSS
+    type: BlogRSS
   - type: AgenticAccess
     url: agentic-access/ku-leuven-agentic-access.yml
   - type: VulnerabilityDisclosure

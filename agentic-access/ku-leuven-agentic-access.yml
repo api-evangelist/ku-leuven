@@ -1,17 +1,34 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/ku-leuven-rdr.yaml
+source: openapi/ku-leuven-access-api-openapi.yml, openapi/ku-leuven-addfilestodataset-api-openapi.yml,
+  openapi/ku-leuven-addfiletodataset-api-openapi.yml, openapi/ku-leuven-addglobusfilestodataset-api-openapi.yml,
+  openapi/ku-leuven-admin-api-openapi.yml, openapi/ku-leuven-batch-api-openapi.yml, openapi/ku-leuven-builtin-users-api-openapi.yml,
+  openapi/ku-leuven-curriculum-api-openapi.yml, openapi/ku-leuven-datasetfields-api-openapi.yml,
+  openapi/ku-leuven-datasets-api-openapi.yml, openapi/ku-leuven-datatags-api-openapi.yml, openapi/ku-leuven-dataversefeatureditems-api-openapi.yml,
+  openapi/ku-leuven-dataverses-api-openapi.yml, openapi/ku-leuven-edit-api-openapi.yml, openapi/ku-leuven-external-tools-api-openapi.yml,
+  openapi/ku-leuven-files-api-openapi.yml, openapi/ku-leuven-harvest-api-openapi.yml, openapi/ku-leuven-inbox-api-openapi.yml,
+  openapi/ku-leuven-info-api-openapi.yml, openapi/ku-leuven-ingest-api-openapi.yml, openapi/ku-leuven-licenses-api-openapi.yml,
+  openapi/ku-leuven-localcontexts-api-openapi.yml, openapi/ku-leuven-logout-api-openapi.yml,
+  openapi/ku-leuven-mail-api-openapi.yml, openapi/ku-leuven-meta-api-openapi.yml, openapi/ku-leuven-metadatablocks-api-openapi.yml,
+  openapi/ku-leuven-mydata-api-openapi.yml, openapi/ku-leuven-notifications-api-openapi.yml,
+  openapi/ku-leuven-organigram-api-openapi.yml, openapi/ku-leuven-person-api-openapi.yml, openapi/ku-leuven-pids-api-openapi.yml,
+  openapi/ku-leuven-programs-api-openapi.yml, openapi/ku-leuven-replacefilesindataset-api-openapi.yml,
+  openapi/ku-leuven-researchinfrastructure-api-openapi.yml, openapi/ku-leuven-researchprojects-api-openapi.yml,
+  openapi/ku-leuven-researchteams-api-openapi.yml, openapi/ku-leuven-roles-api-openapi.yml,
+  openapi/ku-leuven-saveauxiliaryfilewithversion-api-openapi.yml, openapi/ku-leuven-search-api-openapi.yml,
+  openapi/ku-leuven-send-feedback-api-openapi.yml, openapi/ku-leuven-uploaddatasetlogo-api-openapi.yml,
+  openapi/ku-leuven-users-api-openapi.yml, openapi/ku-leuven-vacancies-api-openapi.yml, openapi/ku-leuven-workflows-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
-  operations: 536
+  operations: 560
   by_action_class:
-    connected: 282
-    acting: 254
+    connected: 305
+    acting: 255
   by_consequence:
-    read: 282
-    write: 243
+    read: 305
+    write: 244
     safety-critical: 7
     physical: 4
   human_in_the_loop_required: 7
@@ -56,22 +73,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}
-  method: post
-  operationId: Access_saveAuxiliaryFileWithVersion
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}
   method: delete
   operationId: Access_deleteAuxiliaryFileWithVersion
@@ -301,6 +302,54 @@ operations:
 - path: /access/{id}/allowAccessRequest
   method: put
   operationId: Access_allowAccessRequest
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /datasets/{id}/addFiles
+  method: post
+  operationId: Datasets_addFilesToDataset
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /datasets/{id}/add
+  method: post
+  operationId: Datasets_addFileToDataset
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /datasets/{id}/addGlobusFiles
+  method: post
+  operationId: Datasets_addGlobusFilesToDataset
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2616,6 +2665,26 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /cv/_search
+  method: get
+  operationId: cv_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /cv-en/_search
+  method: get
+  operationId: cv_en_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /datasetfields/facetables
   method: get
   operationId: DatasetFields_listAllFacetableDatasetFields
@@ -3272,54 +3341,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /datasets/{id}/add
-  method: post
-  operationId: Datasets_addFileToDataset
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /datasets/{id}/addFiles
-  method: post
-  operationId: Datasets_addFilesToDataset
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /datasets/{id}/addGlobusFiles
-  method: post
-  operationId: Datasets_addGlobusFilesToDataset
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /datasets/{id}/citationdate
   method: put
   operationId: Datasets_setCitationDate
@@ -3860,22 +3881,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /datasets/{id}/replaceFiles
-  method: post
-  operationId: Datasets_replaceFilesInDataset
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /datasets/{id}/requestGlobusDownload
   method: post
   operationId: Datasets_requestGlobusDownload
@@ -3950,22 +3955,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /datasets/{id}/thumbnail
-  method: post
-  operationId: Datasets_uploadDatasetLogo
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /datasets/{id}/thumbnail
   method: delete
   operationId: Datasets_removeDatasetLogo
@@ -5510,22 +5499,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /files/{id}/replace
-  method: post
-  operationId: Files_replaceFileInDataset
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /files/{id}/restrict
   method: put
   operationId: Files_restrictFileInDataset
@@ -5766,36 +5739,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /info/apiTermsOfUse
-  method: get
-  operationId: Info_getTermsOfUse
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /info/applicationTermsOfUse
-  method: get
-  operationId: Info_getApplicationTermsOfUse
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /info/exportFormats
-  method: get
-  operationId: Info_getExportFormats
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /info/metrics/accounts
   method: get
   operationId: Metrics_getAccountsAllTime
@@ -6196,6 +6139,36 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /info/apiTermsOfUse
+  method: get
+  operationId: Info_getTermsOfUse
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /info/applicationTermsOfUse
+  method: get
+  operationId: Info_getApplicationTermsOfUse
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /info/exportFormats
+  method: get
+  operationId: Info_getExportFormats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /info/server
   method: get
   operationId: Info_getServer
@@ -6584,6 +6557,76 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /organigram/_search
+  method: get
+  operationId: organigram_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /organigram-en/_search
+  method: get
+  operationId: organigram_en_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /organigram/_doc/{id}
+  method: get
+  operationId: organigram_doc_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /employee/_search
+  method: get
+  operationId: employee_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /employee/_search
+  method: post
+  operationId: employee_search_post
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /employee-en/_search
+  method: get
+  operationId: employee_en_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /employee/_doc/{id}
+  method: get
+  operationId: employee_doc_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /pids
   method: get
   operationId: Pids_getPid
@@ -6656,6 +6699,164 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /pg/_search
+  method: get
+  operationId: pg_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pg{year}/_search
+  method: get
+  operationId: pg_year_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pg/_doc/{id}
+  method: get
+  operationId: pg_doc_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /datasets/{id}/replaceFiles
+  method: post
+  operationId: Datasets_replaceFilesInDataset
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /files/{id}/replace
+  method: post
+  operationId: Files_replaceFileInDataset
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /onderzoeksinfrastructuur/_search
+  method: get
+  operationId: onderzoeksinfrastructuur_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /onderzoeksinfrastructuur-en/_search
+  method: get
+  operationId: onderzoeksinfrastructuur_en_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /onderzoeksinfrastructuur/_doc/{id}
+  method: get
+  operationId: onderzoeksinfrastructuur_doc_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /onderzoeksproject/_search
+  method: get
+  operationId: onderzoeksproject_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /onderzoeksproject-en/_search
+  method: get
+  operationId: onderzoeksproject_en_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /onderzoeksproject/_search/template
+  method: post
+  operationId: onderzoeksproject_search_template
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /onderzoeksteams/_search
+  method: get
+  operationId: onderzoeksteams_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /onderzoeksteams-en/_search
+  method: get
+  operationId: onderzoeksteams_en_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /onderzoeksteams/_doc/{id}
+  method: get
+  operationId: onderzoeksteams_doc_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /roles
   method: post
   operationId: Roles_createNewRole
@@ -6708,6 +6909,22 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /access/datafile/{fileId}/auxiliary/{formatTag}/{formatVersion}
+  method: post
+  operationId: Access_saveAuxiliaryFileWithVersion
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /search
   method: get
   operationId: Search_search
@@ -6740,6 +6957,22 @@ operations:
       max-ttl: 300
       exchange: true
       purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /datasets/{id}/thumbnail
+  method: post
+  operationId: Datasets_uploadDatasetLogo
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
     escalation:
       human-in-the-loop: conditional
       triggers:
@@ -6885,6 +7118,36 @@ operations:
 - path: /users/{identifier}/traces/{element}
   method: get
   operationId: Users_getTracesElement
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /jobsite/_search
+  method: get
+  operationId: jobsite_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /jobsite-en/_search
+  method: get
+  operationId: jobsite_en_search_get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /jobsite/_doc/{id}
+  method: get
+  operationId: jobsite_doc_get
   x-agentic-access:
     action-class: connected
     consequence: read

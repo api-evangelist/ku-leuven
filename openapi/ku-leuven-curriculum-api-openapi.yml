@@ -54,21 +54,6 @@ paths:
       - Curriculum
 components:
   schemas:
-    Hit:
-      type: object
-      properties:
-        _index:
-          type: string
-          description: Physical index name. Snapshot indices carry a build timestamp, e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
-        _id:
-          type: string
-        _score:
-          type:
-          - number
-          - 'null'
-        _source:
-          type: object
-          description: The document. Field sets differ per index.
     SearchResponse:
       type: object
       description: Standard OpenSearch search response envelope, as returned live on 2026-08-19.
@@ -134,3 +119,18 @@ components:
           type: integer
           description: Number of hits to return. Default 10.
           default: 10
+    Hit:
+      type: object
+      properties:
+        _index:
+          type: string
+          description: Physical index name. Snapshot indices carry a build timestamp, e.g. `employee_2026-07-08_12h33m04s211`, which reveals the refresh date of the data.
+        _id:
+          type: string
+        _score:
+          type:
+          - number
+          - 'null'
+        _source:
+          type: object
+          description: The document. Field sets differ per index.

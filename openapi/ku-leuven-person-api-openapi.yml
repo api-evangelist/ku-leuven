@@ -97,6 +97,46 @@ paths:
       x-verified: '2026-08-19'
 components:
   schemas:
+    ErrorResponse:
+      type: object
+      description: OpenSearch error envelope, captured live from a malformed query on 2026-08-19.
+      properties:
+        error:
+          type: object
+          properties:
+            root_cause:
+              type: array
+              items:
+                type: object
+                properties:
+                  type:
+                    type: string
+                  reason:
+                    type: string
+                  line:
+                    type: integer
+                  col:
+                    type: integer
+            type:
+              type: string
+            reason:
+              type: string
+            caused_by:
+              type: object
+        status:
+          type: integer
+    DocumentResponse:
+      type: object
+      description: Single-document response from `_doc/{id}`.
+      properties:
+        _index:
+          type: string
+        _id:
+          type: string
+        found:
+          type: boolean
+        _source:
+          type: object
     Hit:
       type: object
       properties:
@@ -112,6 +152,28 @@ components:
         _source:
           type: object
           description: The document. Field sets differ per index.
+    SearchRequest:
+      type: object
+      description: OpenSearch query document as documented by KU Leuven ICTS.
+      properties:
+        query:
+          type: object
+          description: Query clause, e.g. `match_all` or `query_string`.
+        aggs:
+          type: object
+          description: Aggregations, previously described by ICTS as filters or facets.
+        _source:
+          type: array
+          description: Field list to return (ICTS documents this as returnFields).
+          items:
+            type: string
+        from:
+          type: integer
+          description: Start position for pagination.
+        size:
+          type: integer
+          description: Number of hits to return. Default 10.
+          default: 10
     SearchResponse:
       type: object
       description: Standard OpenSearch search response envelope, as returned live on 2026-08-19.
@@ -155,81 +217,6 @@ components:
         aggregations:
           type: object
           description: Present when the request supplied `aggs`.
-    ErrorResponse:
-      type: object
-      description: OpenSearch error envelope, captured live from a malformed query on 2026-08-19.
-      properties:
-        error:
-          type: object
-          properties:
-            root_cause:
-              type: array
-              items:
-                type: object
-                properties:
-                  type:
-                    type: string
-                  reason:
-                    type: string
-                  line:
-                    type: integer
-                  col:
-                    type: integer
-            type:
-              type: string
-            reason:
-              type: string
-            caused_by:
-              type: object
-        status:
-          type: integer
-    SearchRequest:
-      type: object
-      description: OpenSearch query document as documented by KU Leuven ICTS.
-      properties:
-        query:
-          type: object
-          description: Query clause, e.g. `match_all` or `query_string`.
-        aggs:
-          type: object
-          description: Aggregations, previously described by ICTS as filters or facets.
-        _source:
-          type: array
-          description: Field list to return (ICTS documents this as returnFields).
-          items:
-            type: string
-        from:
-          type: integer
-          description: Start position for pagination.
-        size:
-          type: integer
-          description: Number of hits to return. Default 10.
-          default: 10
-    DocumentResponse:
-      type: object
-      description: Single-document response from `_doc/{id}`.
-      properties:
-        _index:
-          type: string
-        _id:
-          type: string
-        found:
-          type: boolean
-        _source:
-          type: object
-  responses:
-    QueryError:
-      description: Malformed query document.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    DocumentNotFound:
-      description: No document with that identifier in the index.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/DocumentResponse'
   parameters:
     SourceFields:
       name: _source
@@ -245,3 +232,16 @@ components:
       description: Document identifier within the index.
       schema:
         type: string
+  responses:
+    DocumentNotFound:
+      description: No document with that identifier in the index.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/DocumentResponse'
+    QueryError:
+      description: Malformed query document.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'

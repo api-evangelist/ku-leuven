@@ -66,6 +66,18 @@ paths:
       - ResearchTeams
 components:
   schemas:
+    DocumentResponse:
+      type: object
+      description: Single-document response from `_doc/{id}`.
+      properties:
+        _index:
+          type: string
+        _id:
+          type: string
+        found:
+          type: boolean
+        _source:
+          type: object
     Hit:
       type: object
       properties:
@@ -124,18 +136,6 @@ components:
         aggregations:
           type: object
           description: Present when the request supplied `aggs`.
-    DocumentResponse:
-      type: object
-      description: Single-document response from `_doc/{id}`.
-      properties:
-        _index:
-          type: string
-        _id:
-          type: string
-        found:
-          type: boolean
-        _source:
-          type: object
   parameters:
     SourceFields:
       name: _source

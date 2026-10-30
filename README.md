@@ -1,4 +1,4 @@
-# KU Leuven (ku-leuven)
+# KU Leuven
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,111 +64,258 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-KU Leuven (Katholieke Universiteit Leuven) is a research university in Leuven, Belgium, founded in 1425 and ranked #45 in the QS World University Rankings 2025. This repository catalogs its public developer and API footprint as an [APIs.json](https://apisjson.org) profile for the API Evangelist network.
+KU Leuven (Katholieke Universiteit Leuven) is a Flemish public research university in Leuven, Belgium, founded in 1425 and ranked in the QS world top 50. Re-profiled on 2026-08-19 with operator attribution settled before anything was saved, it is one of the few universities in this cohort whose machine-readable surface is genuinely its own: every host below resolves inside KU Leuven's own 134.58.0.0/16 address space, and no Figshare, Elsevier Pure, Ex Libris or Symplectic contract is attributed here. Its central programmable surface is the ICTS Data Services gateway at dataservice.kuleuven.be — an unauthenticated OpenSearch query API over eight public index families covering the staff directory, academic CVs, the organisational chart, the programme guide, research projects, research teams, research infrastructure and job vacancies — documented in Dutch at admin.kuleuven.be and confirmed live returning real records. It also runs the Research Data Repository (RDR), a self-hosted Dataverse 6.7.1 installation at rdr.kuleuven.be that serves its own OpenAPI publicly, mints DOIs as DataCite repository client BRVZ.RDR, and exposes OAI-PMH; the Lirias institutional repository exposes a second OAI-PMH endpoint; and idp.kuleuven.be serves SAML 2.0 Shibboleth metadata registered in the Belnet federation with REFEDS SIRTFI and Research & Scholarship assurance. Honest caveats: the 36 RDR entries below are tag-splits of ONE Dataverse deployment, and that contract is upstream open-source Dataverse's work — KU Leuven operates the deployment and owns the data, it does not author the API. There is no unified developer portal, no self-serve credential anywhere in the estate, no versioning on the data services gateway, and the personal timetable API's production host does not resolve from the public internet.
 
-- APIs.json: https://raw.githubusercontent.com/api-evangelist/ku-leuven/refs/heads/main/apis.yml
-- Run with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=ku-leuven-api-evangelist&utm_content=repo
+**Areas:** University · Higher Education · Education · Belgium · Europe · Flanders · Research Data · Research Repository · Open Data · Course Catalog · Identity Federation · OAI-PMH
 
-## Type
+## KU Leuven on APIs.io
 
-- Type: Index
-- Position: Consumer
-- Access: 3rd-Party
+Everything profiled for KU Leuven is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ku-leuven/](https://apis.io/providers/ku-leuven/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (56)
 
-University, Higher Education, Education, Belgium, Europe, Flanders, Research Data, Research Repository, Open Data, Course Catalog, Identity Federation, OAI-PMH, Dataverse, OpenSearch, Public Research University
+- [KU Leuven Person Information API](https://apis.io/apis/ku-leuven/person/) — ICTS Data Services REST API exposing public personnel / who-is-who person information. An expanded intranet variant requires a service account.
+- [KU Leuven Educational Offering (Onderwijsaanbod) API](https://apis.io/apis/ku-leuven/program/) — ICTS Data Services REST API exposing public educational offering data, including programs (opleidingen) and course components.
+- [KU Leuven Organizational Chart (Organigram) API](https://apis.io/apis/ku-leuven/organigram/) — ICTS Data Services REST API exposing public organizational-structure information matching the institutional organizational chart. An expanded intranet…
+- [KU Leuven Vacancies (Vacatures) API](https://apis.io/apis/ku-leuven/vacancies/) — ICTS Data Services REST API exposing public job vacancy / job posting data.
+- [KU Leuven Individual Timetable (Uurrooster) API](https://apis.io/apis/ku-leuven/timetable/) — ICTS Data Services API exposing an individual's personal timetable. Protected by OAuth 2.0 (authorization code grant) with SAML as a fallback; OAuth client…
+- [KU Leuven Access API](https://apis.io/apis/ku-leuven/ku-leuven-access-api/) — The Access API from KU Leuven — 23 operation(s) for access.
+- [KU Leuven Add Files To Dataset API](https://apis.io/apis/ku-leuven/ku-leuven-addfilestodataset-api/) — Uploads a set of files to a dataset
+- [KU Leuven Add File To Dataset API](https://apis.io/apis/ku-leuven/ku-leuven-addfiletodataset-api/) — Uploads a file for a dataset
+- [KU Leuven Add Globus Files To Dataset API](https://apis.io/apis/ku-leuven/ku-leuven-addglobusfilestodataset-api/) — Uploads a Globus file for a dataset
+- [KU Leuven Admin API](https://apis.io/apis/ku-leuven/ku-leuven-admin-api/) — The Admin API from KU Leuven — 131 operation(s) for admin.
+- [KU Leuven Batch API](https://apis.io/apis/ku-leuven/ku-leuven-batch-api/) — The Batch API from KU Leuven — 3 operation(s) for batch.
+- [KU Leuven Builtin Users API](https://apis.io/apis/ku-leuven/ku-leuven-builtin-users-api/) — The Builtin Users API from KU Leuven — 4 operation(s) for builtin users.
+- [KU Leuven Datasetfields API](https://apis.io/apis/ku-leuven/ku-leuven-datasetfields-api/) — The Datasetfields API from KU Leuven — 1 operation(s) for datasetfields.
+- [KU Leuven Datasets API](https://apis.io/apis/ku-leuven/ku-leuven-datasets-api/) — The Datasets API from KU Leuven — 92 operation(s) for datasets.
+- [KU Leuven Datatags API](https://apis.io/apis/ku-leuven/ku-leuven-datatags-api/) — The Datatags API from KU Leuven — 1 operation(s) for datatags.
+- [KU Leuven DataverseFeaturedItems API](https://apis.io/apis/ku-leuven/ku-leuven-dataversefeatureditems-api/) — The DataverseFeaturedItems API from KU Leuven — 1 operation(s) for dataversefeatureditems.
+- [KU Leuven Dataverses API](https://apis.io/apis/ku-leuven/ku-leuven-dataverses-api/) — The Dataverses API from KU Leuven — 39 operation(s) for dataverses.
+- [KU Leuven Edit API](https://apis.io/apis/ku-leuven/ku-leuven-edit-api/) — The Edit API from KU Leuven — 1 operation(s) for edit.
+- [KU Leuven Files API](https://apis.io/apis/ku-leuven/ku-leuven-files-api/) — The Files API from KU Leuven — 20 operation(s) for files.
+- [KU Leuven Harvest API](https://apis.io/apis/ku-leuven/ku-leuven-harvest-api/) — The Harvest API from KU Leuven — 7 operation(s) for harvest.
+- [KU Leuven Inbox API](https://apis.io/apis/ku-leuven/ku-leuven-inbox-api/) — The Inbox API from KU Leuven — 1 operation(s) for inbox.
+- [KU Leuven Info API](https://apis.io/apis/ku-leuven/ku-leuven-info-api/) — The Info API from KU Leuven — 49 operation(s) for info.
+- [KU Leuven Ingest API](https://apis.io/apis/ku-leuven/ku-leuven-ingest-api/) — The Ingest API from KU Leuven — 1 operation(s) for ingest.
+- [KU Leuven Licenses API](https://apis.io/apis/ku-leuven/ku-leuven-licenses-api/) — The Licenses API from KU Leuven — 6 operation(s) for licenses.
+- [KU Leuven Localcontexts API](https://apis.io/apis/ku-leuven/ku-leuven-localcontexts-api/) — The Localcontexts API from KU Leuven — 2 operation(s) for localcontexts.
+- [KU Leuven Logout API](https://apis.io/apis/ku-leuven/ku-leuven-logout-api/) — The Logout API from KU Leuven — 1 operation(s) for logout.
+- [KU Leuven Mail API](https://apis.io/apis/ku-leuven/ku-leuven-mail-api/) — The Mail API from KU Leuven — 1 operation(s) for mail.
+- [KU Leuven Meta API](https://apis.io/apis/ku-leuven/ku-leuven-meta-api/) — The Meta API from KU Leuven — 2 operation(s) for meta.
+- [KU Leuven Metadatablocks API](https://apis.io/apis/ku-leuven/ku-leuven-metadatablocks-api/) — The Metadatablocks API from KU Leuven — 2 operation(s) for metadatablocks.
+- [KU Leuven Mydata API](https://apis.io/apis/ku-leuven/ku-leuven-mydata-api/) — The Mydata API from KU Leuven — 1 operation(s) for mydata.
+- [KU Leuven Notifications API](https://apis.io/apis/ku-leuven/ku-leuven-notifications-api/) — The Notifications API from KU Leuven — 6 operation(s) for notifications.
+- [KU Leuven Pids API](https://apis.io/apis/ku-leuven/ku-leuven-pids-api/) — The Pids API from KU Leuven — 6 operation(s) for pids.
+- [KU Leuven Replace Files In Dataset API](https://apis.io/apis/ku-leuven/ku-leuven-replacefilesindataset-api/) — Replace a file to a dataset
+- [KU Leuven Roles API](https://apis.io/apis/ku-leuven/ku-leuven-roles-api/) — The Roles API from KU Leuven — 3 operation(s) for roles.
+- [KU Leuven Save Auxiliary File With Version API](https://apis.io/apis/ku-leuven/ku-leuven-saveauxiliaryfilewithversion-api/) — Save Auxiliary File With Version
+- [KU Leuven Search API](https://apis.io/apis/ku-leuven/ku-leuven-search-api/) — The Search API from KU Leuven — 2 operation(s) for search.
+- [KU Leuven Upload Dataset Logo API](https://apis.io/apis/ku-leuven/ku-leuven-uploaddatasetlogo-api/) — Uploads a logo for a dataset
+- [KU Leuven Users API](https://apis.io/apis/ku-leuven/ku-leuven-users-api/) — The Users API from KU Leuven — 10 operation(s) for users.
+- [KU Leuven Workflows API](https://apis.io/apis/ku-leuven/ku-leuven-workflows-api/) — The Workflows API from KU Leuven — 1 operation(s) for workflows.
+- [KU Leuven Curriculum Information (Curriculuminformatie) API](https://apis.io/apis/ku-leuven/curriculum/) — ICTS Data Services index of academic curriculum and CV records — discipline codes, research topics and the researcher's ORCID iD in the `orcId` field.…
+- [KU Leuven Research Projects (Onderzoeksprojecten) API](https://apis.io/apis/ku-leuven/research-projects/) — ICTS Data Services index over the KU Leuven research database, the richest surface in the estate. Beyond free search it publishes three stored search…
+- [KU Leuven Research Teams (Onderzoeksteams) API](https://apis.io/apis/ku-leuven/research-teams/) — ICTS Data Services index of research groups, 740 records live on 2026-08-19, joined to projects and to the organisational chart by unit code. Supports…
+- [KU Leuven Research Infrastructure (Onderzoeksinfrastructuur) API](https://apis.io/apis/ku-leuven/research-infrastructure/) — ICTS Data Services index of core facilities and shared research equipment, 379 records live on 2026-08-19. A machine-readable research-facility catalogue is…
+- [KU Leuven RDR OAI-PMH Harvesting Interface](https://apis.io/apis/ku-leuven/rdr-oai-pmh/) — OAI-PMH 2.0 interface of the Research Data Repository, served from KU Leuven's own host. Identify returned repositoryName "KU Leuven RDR Dataverse OAI…
+- [Lirias OAI-PMH Harvesting Interface](https://apis.io/apis/ku-leuven/lirias-oai-pmh/) — Lirias is the institutional publication repository of the KU Leuven Association, running on KU Leuven's own host and address space. Its OAI-PMH 2.0 Identify…
+- [KU Leuven Shibboleth Identity Provider (SAML 2.0 metadata)](https://apis.io/apis/ku-leuven/identity-federation/) — KU Leuven serves its own SAML 2.0 federation metadata from idp.kuleuven.be, which resolves to 134.58.64.219 inside the university's own address space —…
+- [KU Leuven Curriculum API](https://apis.io/apis/ku-leuven/ku-leuven-curriculum-api/) — Academic curriculum and CV information, including ORCID identifiers.
+- [KU Leuven Organigram API](https://apis.io/apis/ku-leuven/ku-leuven-organigram-api/) — Institutional organisational chart units.
+- [KU Leuven Person API](https://apis.io/apis/ku-leuven/ku-leuven-person-api/) — Public staff / who-is-who person information (wie-is-wie).
+- [KU Leuven Programs API](https://apis.io/apis/ku-leuven/ku-leuven-programs-api/) — Educational offering — degree programmes in the programme guide (onderwijsaanbod).
+- [KU Leuven Research Infrastructure API](https://apis.io/apis/ku-leuven/ku-leuven-researchinfrastructure-api/) — Research infrastructure and core facilities from the research database.
+- [KU Leuven Research Projects API](https://apis.io/apis/ku-leuven/ku-leuven-researchprojects-api/) — Research projects from the KU Leuven research database (onderzoeksdatabank).
+- [KU Leuven Research Teams API](https://apis.io/apis/ku-leuven/ku-leuven-researchteams-api/) — Research teams / groups from the research database.
+- [KU Leuven Vacancies API](https://apis.io/apis/ku-leuven/ku-leuven-vacancies-api/) — Public job vacancies published on the KU Leuven job site.
+- [KU Leuven External Tools API](https://apis.io/apis/ku-leuven/ku-leuven-external-tools-api/) — The External Tools API from KU Leuven — 2 operation(s) for external tools.
+- [KU Leuven Send Feedback API](https://apis.io/apis/ku-leuven/ku-leuven-send-feedback-api/) — The Send Feedback API from KU Leuven — 1 operation(s) for send feedback.
 
-## APIs
+### Published properties
 
-Every surface below is `x-operator: institution` — KU Leuven's own host, inside its own
-134.58.0.0/16 address space. No vendor contract (Figshare, Elsevier Pure, Ex Libris, Symplectic,
-Dataverse.org hosted) is attributed to this institution.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **ICTS Data Services API (OpenSearch gateway)** — `https://dataservice.kuleuven.be`. Eight public,
-  unauthenticated index families: staff directory, academic CVs (with ORCID iDs), organisational
-  chart, programme guide, research projects, research teams, research infrastructure, vacancies —
-  each in a Dutch and an English index. Docs (Dutch):
-  https://admin.kuleuven.be/icts/services/dataservices ·
-  Contract: [openapi/ku-leuven-data-services-api-openapi.yml](openapi/ku-leuven-data-services-api-openapi.yml)
-  (derived by API Evangelist from KU Leuven's documentation and verified live — KU Leuven publishes
-  no machine-readable description of this surface itself).
-- **Research Data Repository (RDR)** — `https://rdr.kuleuven.be/api`. Self-hosted Dataverse 6.7.1,
-  830 published datasets, DataCite repository client BRVZ.RDR, prefix 10.48804. It serves its own
-  OpenAPI publicly at https://rdr.kuleuven.be/openapi. The 36 RDR entries in `apis.yml` are
-  tag-splits of this **one** deployment, and the contract is upstream open-source Dataverse's work:
-  KU Leuven operates the deployment and owns the data, it does not author the API.
-- **RDR OAI-PMH** — `https://rdr.kuleuven.be/oai`. "KU Leuven RDR Dataverse OAI Archive".
-- **Lirias OAI-PMH** — `https://lirias.kuleuven.be/oai`. The KU Leuven Association institutional
-  publication repository. Previously uncatalogued.
-- **Shibboleth Identity Provider (SAML 2.0 metadata)** — `https://idp.kuleuven.be/idp/shibboleth`.
-  entityID `urn:mace:kuleuven.be:kulassoc:kuleuven.be`, registered by the Belnet federation,
-  asserting REFEDS SIRTFI and Research & Scholarship. Previously uncatalogued.
-- **Individual Timetable (Uurrooster) API** — SAP OData, OAuth 2.0 authorization-code grant with
-  SAML fallback, credentials issued by KU Leuven on request. The production host did not resolve
-  from the public internet on 2026-08-19, so no contract is recorded for it.
+#### Agentic access (1)
 
-## Education-regime conformance
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Five of the twelve `education` regime domain standards are met, all by institution-operated
-surfaces: **oai-pmh** (two endpoints), **datacite** (repository client BRVZ.RDR), **shibboleth** and
-**saml** (own IdP metadata), **orcid** (carried in the cv index and required for RDR deposit).
-Not found: scim, lti, oneroster, ed-fi, caliper, qti, crossref. See
-[conformance/ku-leuven-education-standards.yml](conformance/ku-leuven-education-standards.yml).
+- [Ku Leuven Agentic Access](https://apis.io/agentic-access/ku-leuven/ku-leuven-agentic-access/)
 
-## Plans, Rate Limits, and FinOps
+#### JSON Schema (5)
 
-- Plans & Pricing: [plans/ku-leuven-plans-pricing.yml](plans/ku-leuven-plans-pricing.yml)
-- Rate Limits: [rate-limits/ku-leuven-rate-limits.yml](rate-limits/ku-leuven-rate-limits.yml)
-- FinOps: [finops/ku-leuven-finops.yml](finops/ku-leuven-finops.yml)
+The data models the API reads and writes.
 
-## Timestamps
+- [KU Leuven ICTS Data Services Search Response](https://apis.io/schemas/ku-leuven/ku-leuven-data-services-search-response/)
+- [KU Leuven RDR DataFile](https://apis.io/schemas/ku-leuven/ku-leuven-datafile/)
+- [KU Leuven RDR Dataset](https://apis.io/schemas/ku-leuven/ku-leuven-dataset/)
+- [KU Leuven RDR DatasetVersion](https://apis.io/schemas/ku-leuven/ku-leuven-datasetversion/)
+- [KU Leuven RDR Info Version Response](https://apis.io/schemas/ku-leuven/ku-leuven-info-version/)
 
-- Created: 2026-06-03
-- Modified: 2026-08-19
+#### JSON Structure (3)
 
-## Common Properties
+Data models expressed in JSON Structure.
 
-- Website: https://www.kuleuven.be
-- Developer Portal (ICTS Data Services): https://admin.kuleuven.be/icts/services/dataservices
-- GitHub: https://github.com/kuleuven
-- LinkedIn: https://www.linkedin.com/school/ku-leuven/
-- Source Code (KU Leuven Libraries): https://github.com/KU-Leuven-Libraries
+- [Ku Leuven Datafile Structure](https://apis.io/json-structure/ku-leuven/ku-leuven-datafile-structure/)
+- [Ku Leuven Dataset Structure](https://apis.io/json-structure/ku-leuven/ku-leuven-dataset-structure/)
+- [Ku Leuven Datasetversion Structure](https://apis.io/json-structure/ku-leuven/ku-leuven-datasetversion-structure/)
 
-## Notes
+#### JSON-LD (1)
 
-Re-profiled on 2026-08-19 under the API Evangelist university pipeline, which settles **who operates
-each surface** before saving anything. Every external pointer in `apis.yml` was probed on that date
-and returned HTTP 200.
+Linked-data contexts for the provider's vocabulary.
 
-Corrections to the June 2026 profile:
+- [Ku Leuven Context](https://apis.io/jsonld/ku-leuven/ku-leuven-context/)
 
-- The RDR OpenAPI is **not** IP-restricted. `https://rdr.kuleuven.be/openapi` returns 200 publicly
-  with 425 paths. Its `info.title` is "Dataverse API" and it carries no `servers` block — the copy
-  in `openapi/_original/` was retitled and given a server at harvest time and is therefore not
-  byte-pristine; see `lifecycle/ku-leuven-lifecycle.yml`.
-- The ICTS APIs are not documentation-only. They are served by a live OpenSearch gateway at
-  `dataservice.kuleuven.be` that answers unauthenticated queries; the earlier profile recorded the
-  documentation pages but never the gateway.
-- Three surfaces were missing entirely: the curriculum, research-project, research-team and
-  research-infrastructure indices; both OAI-PMH endpoints; and the Shibboleth IdP metadata.
+#### Vocabulary (1)
 
-Open findings:
+The provider's domain terms, defined.
 
-- An unpublished index name on `dataservice.kuleuven.be` returns an HTML **503** from the front
-  proxy rather than a 404, so a typo is indistinguishable from an outage.
-- Snapshot index names reveal data staleness: the research-project index had not been rebuilt in
-  over sixteen months as of 2026-08-19.
-- `https://www.kuleuven.be/.well-known/security.txt` exists but its `Expires` value (2026-04-16) is
-  both malformed and in the past.
-- No versioning, changelog, deprecation policy, status page, published scopes or self-serve
-  credential exists anywhere in the estate.
-- The directory, CV and organigram indices publish staff names, work addresses and work telephone
-  numbers openly. This is deliberate who-is-who publication by KU Leuven; personal values are
-  redacted from the examples in this repository under the API Evangelist PII guardrail.
+- [KU Leuven Research Data Repository (RDR) Vocabulary](https://apis.io/vocabularies/ku-leuven/ku-leuven-vocabulary/)
 
-No endpoints or properties were fabricated.
+#### Examples (5)
 
-## Maintainers
+Example requests and responses.
 
-- Kin Lane — kin@apievangelist.com
+- [Ku Leuven Data Services Error Example](https://apis.io/examples/ku-leuven/ku-leuven-data-services-error-example/)
+- [Ku Leuven Data Services Search Example](https://apis.io/examples/ku-leuven/ku-leuven-data-services-search-example/)
+- [Ku Leuven Dataset Example](https://apis.io/examples/ku-leuven/ku-leuven-dataset-example/)
+- [Ku Leuven Info Version Example](https://apis.io/examples/ku-leuven/ku-leuven-info-version-example/)
+- [Ku Leuven Organigram Unit Example](https://apis.io/examples/ku-leuven/ku-leuven-organigram-unit-example/)
+
+#### Collections (36)
+
+Postman and Open Collection request collections.
+
+- [KU Leuven Research Data Repository (RDR) Access API](https://apis.io/collections/ku-leuven/open-ku-leuven-access-api/)
+- [KU Leuven Research Data Repository (RDR) Access addFilesToDataset API](https://apis.io/collections/ku-leuven/open-ku-leuven-addfilestodataset-api/)
+- [KU Leuven Research Data Repository (RDR) Access addFileToDataset API](https://apis.io/collections/ku-leuven/open-ku-leuven-addfiletodataset-api/)
+- [KU Leuven Research Data Repository (RDR) Access addGlobusFilesToDataset API](https://apis.io/collections/ku-leuven/open-ku-leuven-addglobusfilestodataset-api/)
+- [KU Leuven Research Data Repository (RDR) Access Admin API](https://apis.io/collections/ku-leuven/open-ku-leuven-admin-api/)
+- [KU Leuven Research Data Repository (RDR) Access Batch API](https://apis.io/collections/ku-leuven/open-ku-leuven-batch-api/)
+- [KU Leuven Research Data Repository (RDR) Access Builtin Users API](https://apis.io/collections/ku-leuven/open-ku-leuven-builtin-users-api/)
+- [KU Leuven Research Data Repository (RDR) Access Datasetfields API](https://apis.io/collections/ku-leuven/open-ku-leuven-datasetfields-api/)
+- [KU Leuven Research Data Repository (RDR) Access Datasets API](https://apis.io/collections/ku-leuven/open-ku-leuven-datasets-api/)
+- [KU Leuven Research Data Repository (RDR) Access Datatags API](https://apis.io/collections/ku-leuven/open-ku-leuven-datatags-api/)
+- [KU Leuven Research Data Repository (RDR) Access DataverseFeaturedItems API](https://apis.io/collections/ku-leuven/open-ku-leuven-dataversefeatureditems-api/)
+- [KU Leuven Research Data Repository (RDR) Access Dataverses API](https://apis.io/collections/ku-leuven/open-ku-leuven-dataverses-api/)
+- [KU Leuven Research Data Repository (RDR) Access Edit API](https://apis.io/collections/ku-leuven/open-ku-leuven-edit-api/)
+- [KU Leuven Research Data Repository (RDR) Access ExternalTools API](https://apis.io/collections/ku-leuven/open-ku-leuven-externaltools-api/)
+- [KU Leuven Research Data Repository (RDR) Access Files API](https://apis.io/collections/ku-leuven/open-ku-leuven-files-api/)
+- [KU Leuven Research Data Repository (RDR) Access Harvest API](https://apis.io/collections/ku-leuven/open-ku-leuven-harvest-api/)
+- [KU Leuven Research Data Repository (RDR) Access Inbox API](https://apis.io/collections/ku-leuven/open-ku-leuven-inbox-api/)
+- [KU Leuven Research Data Repository (RDR) Access Info API](https://apis.io/collections/ku-leuven/open-ku-leuven-info-api/)
+- [KU Leuven Research Data Repository (RDR) Access Ingest API](https://apis.io/collections/ku-leuven/open-ku-leuven-ingest-api/)
+- [KU Leuven Research Data Repository (RDR) Access Licenses API](https://apis.io/collections/ku-leuven/open-ku-leuven-licenses-api/)
+- [KU Leuven Research Data Repository (RDR) Access Localcontexts API](https://apis.io/collections/ku-leuven/open-ku-leuven-localcontexts-api/)
+- [KU Leuven Research Data Repository (RDR) Access Logout API](https://apis.io/collections/ku-leuven/open-ku-leuven-logout-api/)
+- [KU Leuven Research Data Repository (RDR) Access Mail API](https://apis.io/collections/ku-leuven/open-ku-leuven-mail-api/)
+- [KU Leuven Research Data Repository (RDR) Access Meta API](https://apis.io/collections/ku-leuven/open-ku-leuven-meta-api/)
+- [KU Leuven Research Data Repository (RDR) Access Metadatablocks API](https://apis.io/collections/ku-leuven/open-ku-leuven-metadatablocks-api/)
+- …and 11 more published on APIs.io
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [KU Leuven — jsonschema rules](https://apis.io/rules/ku-leuven/ku-leuven-jsonschema-spectral-rules/)
+- [KU Leuven API Rules](https://apis.io/rules/ku-leuven/ku-leuven-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ku Leuven Authentication](https://apis.io/security/ku-leuven/ku-leuven-authentication/)
+- [Ku Leuven Domain Security](https://apis.io/security/ku-leuven/ku-leuven-domain-security/)
+- [Ku Leuven Vulnerability Disclosure](https://apis.io/security/ku-leuven/ku-leuven-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Ku Leuven Scopes](https://apis.io/scopes/ku-leuven/ku-leuven-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Ku Leuven Plans Pricing](https://apis.io/plans/ku-leuven/ku-leuven-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ku Leuven Rate Limits](https://apis.io/rate-limits/ku-leuven/ku-leuven-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Ku Leuven Finops](https://apis.io/finops/ku-leuven/ku-leuven-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.kuleuven.be)
+- [Documentation](https://www.kuleuven.be/rdm/en/rdr/api-documentation)
+- [API reference](https://rdr.kuleuven.be/openapi)
+- [Support](https://admin.kuleuven.be/icts/services/dataservices/data-service-vraag)
+- [Blog](https://nieuws.kuleuven.be/en/)
+- [Security](https://admin.kuleuven.be/icts/english/responsible-disclosure)
+- [Terms of service](https://admin.kuleuven.be/icts/services/dataservices/gebruiksvoorwaarden.html)
+- [Privacy policy](https://www.kuleuven.be/privacy)
+- [GitHub](https://github.com/kuleuven)
+
+## API Evangelist rating
+
+**Kin Score 39.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 67.9 |
+| Contract quality | 45.4 |
+| Contract governance | 17.4 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 45.2 |
+| Access clarity | 26.3 |
+
+**Agent readiness 27.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | yes |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ku-leuven/](https://apis.io/providers/ku-leuven/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for KU Leuven: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ku-leuven/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
